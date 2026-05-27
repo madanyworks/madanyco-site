@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Read(//Users/abdalrahmanmadany/.nvm/versions/**)",
+      "Read(//Users/abdalrahmanmadany/.volta/**)",
+      "WebFetch(domain:www.madanyco.com)"
+    ]
+  }
+}
