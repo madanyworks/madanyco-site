@@ -1,6 +1,9 @@
 import ServiceHero from "@/components/ServiceHero";
 import ServiceCTA from "@/components/ServiceCTA";
 import Reveal from "@/components/Reveal";
+import VideoPlayer from "@/components/VideoPlayer";
+import { BRAND_FILMS, REELS, HERO_VIDEOS } from "@/lib/videos";
+import Link from "next/link";
 
 export const metadata = {
   title: "Video Production",
@@ -110,6 +113,56 @@ export default function Page() {
             </Reveal>
           ))}
         </ol>
+      </section>
+
+      {/* SHOWCASE — Brand films */}
+      <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 border-t hairline border-t-bone/10">
+        <Reveal>
+          <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
+            <span className="h-px w-12 bg-blush" />
+            Selected brand films
+          </div>
+          <h2 className="font-display text-huge leading-[0.9] tracking-tighter max-w-4xl">
+            Press play.
+          </h2>
+        </Reveal>
+
+        <div className="mt-14 grid gap-6 sm:grid-cols-2">
+          {BRAND_FILMS.map((vid, i) => (
+            <Reveal key={vid.src} delay={Math.min(i * 0.05, 0.3)}>
+              <VideoPlayer video={vid} />
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* SHOWCASE — Reels */}
+      <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 bg-ink-700/40">
+        <Reveal>
+          <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
+            <span className="h-px w-12 bg-blush" />
+            Short-form reels
+          </div>
+          <div className="flex items-end justify-between flex-wrap gap-6">
+            <h2 className="font-display text-huge leading-[0.9] tracking-tighter max-w-3xl">
+              Native to the feed.
+            </h2>
+            <Link
+              href="/work"
+              className="text-sm uppercase tracking-widest text-bone/70 link-underline"
+            >
+              See all work →
+            </Link>
+          </div>
+        </Reveal>
+
+        <div className="mt-14 grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+          {REELS.map((vid, i) => (
+            <Reveal key={vid.src} delay={Math.min((i % 5) * 0.04, 0.2)}>
+              <VideoPlayer video={vid} />
+            </Reveal>
+          ))}
+        </div>
       </section>
 
       <ServiceCTA

@@ -2,7 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import Marquee from "@/components/Marquee";
+import VideoPlayer from "@/components/VideoPlayer";
 import { IMAGES } from "@/lib/images";
+import { BRAND_FILMS, REELS } from "@/lib/videos";
 
 export const metadata = {
   title: "Work",
@@ -270,53 +272,76 @@ export default function WorkPage() {
         </div>
       </section>
 
-      {/* SMM + VIDEO PRODUCTION — reels live on IG */}
+      {/* VIDEO PRODUCTION — brand films */}
+      <section className="px-6 sm:px-10 lg:px-14 py-20 sm:py-28 border-t hairline border-t-bone/10 bg-ink-700/40">
+        <Reveal>
+          <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
+            <span className="h-px w-12 bg-blush" />
+            Video production · Brand films
+          </div>
+          <div className="flex items-end justify-between flex-wrap gap-6">
+            <h2 className="font-display text-huge leading-[0.9] tracking-tighter max-w-3xl">
+              Films that{" "}
+              <span className="italic font-display-light text-blush">
+                move people
+              </span>
+              .
+            </h2>
+            <Link
+              href="/services/video-production"
+              className="text-sm uppercase tracking-widest text-bone/70 link-underline"
+            >
+              See the video service →
+            </Link>
+          </div>
+          <p className="mt-6 text-lg text-bone/70 max-w-2xl leading-relaxed">
+            Concept through final cut. Hotel openings, brand stories, founder
+            POV pieces — every frame designed with purpose.
+          </p>
+        </Reveal>
+
+        <div className="mt-14 grid gap-6 sm:grid-cols-2">
+          {BRAND_FILMS.map((vid, i) => (
+            <Reveal key={vid.src} delay={Math.min(i * 0.05, 0.3)}>
+              <VideoPlayer video={vid} />
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* VIDEO PRODUCTION — reels */}
       <section className="px-6 sm:px-10 lg:px-14 py-20 sm:py-28 border-t hairline border-t-bone/10">
         <Reveal>
-          <div className="grid gap-10 lg:grid-cols-2">
-            <div>
-              <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-6">
-                <span className="h-px w-12 bg-blush" />
-                Reels & social
-              </div>
-              <h3 className="font-display text-big leading-[0.95] tracking-tighter">
-                Short-form lives on Instagram.
-              </h3>
-              <p className="mt-6 text-bone/70 leading-relaxed max-w-md">
-                The reels speak best where they were built to live. See the
-                full feed of client work — strategy-led, platform-native, made
-                to stop the scroll.
-              </p>
-              <a
-                href="https://instagram.com/madanyco"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 inline-flex items-center gap-3 rounded-full border border-bone/30 text-bone px-6 py-3 text-sm uppercase tracking-widest font-semibold hover:bg-bone/5 transition"
-              >
-                Open Instagram →
-              </a>
-            </div>
-            <div>
-              <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-6">
-                <span className="h-px w-12 bg-blush" />
-                Promotional videos
-              </div>
-              <h3 className="font-display text-big leading-[0.95] tracking-tighter">
-                Brand films that move people.
-              </h3>
-              <p className="mt-6 text-bone/70 leading-relaxed max-w-md">
-                A curated reel of promotional content built to elevate brands,
-                drive emotion, and move audiences — concept through final cut.
-              </p>
-              <Link
-                href="/services/video-production"
-                className="mt-8 inline-flex items-center gap-3 rounded-full border border-bone/30 text-bone px-6 py-3 text-sm uppercase tracking-widest font-semibold hover:bg-bone/5 transition"
-              >
-                See the video service →
-              </Link>
-            </div>
+          <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
+            <span className="h-px w-12 bg-blush" />
+            Vertical reels & short-form
           </div>
+          <div className="flex items-end justify-between flex-wrap gap-6">
+            <h2 className="font-display text-huge leading-[0.9] tracking-tighter max-w-3xl">
+              Built to stop the scroll.
+            </h2>
+            <a
+              href="https://instagram.com/madanyco"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm uppercase tracking-widest text-bone/70 link-underline"
+            >
+              See live on Instagram →
+            </a>
+          </div>
+          <p className="mt-6 text-lg text-bone/70 max-w-2xl leading-relaxed">
+            Native-format short-form — strategy-led, platform-native, written
+            for the algorithm and the audience at the same time.
+          </p>
         </Reveal>
+
+        <div className="mt-14 grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+          {REELS.map((vid, i) => (
+            <Reveal key={vid.src} delay={Math.min((i % 5) * 0.04, 0.2)}>
+              <VideoPlayer video={vid} />
+            </Reveal>
+          ))}
+        </div>
       </section>
 
       <section className="px-6 sm:px-10 lg:px-14 py-20 sm:py-28 border-t hairline border-t-bone/10">

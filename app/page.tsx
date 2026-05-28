@@ -3,7 +3,9 @@ import Image from "next/image";
 import Marquee from "@/components/Marquee";
 import EmailSignup from "@/components/EmailSignup";
 import Reveal from "@/components/Reveal";
+import VideoPlayer from "@/components/VideoPlayer";
 import { IMAGES } from "@/lib/images";
+import { HERO_VIDEOS } from "@/lib/videos";
 
 const HERO_PHRASES = [
   "Raise conversions without raising spend.",
@@ -244,6 +246,53 @@ export default function HomePage() {
             </Reveal>
           ))}
         </div>
+      </section>
+
+      {/* ───────────────────────────── FEATURED REEL */}
+      <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 border-t hairline border-t-bone/10">
+        <div className="grid gap-10 lg:grid-cols-12 items-end mb-12">
+          <Reveal className="lg:col-span-7">
+            <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-6">
+              <span className="h-px w-12 bg-blush" />
+              Press play
+            </div>
+            <h2 className="font-display text-huge leading-[0.9] tracking-tighter">
+              The brand,{" "}
+              <span className="italic font-display-light text-blush">
+                in motion
+              </span>
+              .
+            </h2>
+          </Reveal>
+          <Reveal className="lg:col-span-5" delay={0.15}>
+            <p className="text-base sm:text-lg text-bone/70 leading-relaxed max-w-md">
+              Short reel from a recent brand film. Concept through final cut —
+              the kind of work we ship for clients across hospitality,
+              wellness, and DTC.
+            </p>
+          </Reveal>
+        </div>
+
+        <Reveal delay={0.2}>
+          <VideoPlayer video={HERO_VIDEOS.reel} className="w-full" />
+        </Reveal>
+
+        <Reveal delay={0.3}>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link
+              href="/work"
+              className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-bone link-underline"
+            >
+              See more work →
+            </Link>
+            <Link
+              href="/services/video-production"
+              className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-bone/70 link-underline"
+            >
+              About the video service →
+            </Link>
+          </div>
+        </Reveal>
       </section>
 
       {/* ───────────────────────────── SOCIAL PROOF */}
