@@ -1,31 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import { IMAGES } from "@/lib/images";
+import { CASE_STUDIES } from "@/content/portfolio";
 
 export const metadata = {
   title: "Portfolio · Corporate Experience",
   description:
-    "Corporate experience of Abdalrahman Madany — projects directly undertaken or managed across Snap Inc., Genpact EMEA, Seissense, Hype, Buffalo Burger, and more.",
+    "Corporate experience of Abdalrahman Madany — projects directly undertaken or managed across Snap Inc., Genpact EMEA, Seissense, Hype Energy, Buffalo Burger, and more.",
 };
-
-type CorporateProject = {
-  name: string;
-  img: string;
-};
-
-const PROJECTS: CorporateProject[] = [
-  { name: "Seissense", img: IMAGES.ceSeissense },
-  { name: "Snap Inc. (Snapchat)", img: IMAGES.ceSnap },
-  { name: "Genpact EMEA", img: IMAGES.ceGenpact },
-  { name: "Hype Energy Drinks", img: IMAGES.ceHype },
-  { name: "Buffalo Burger", img: IMAGES.ceBuffalo },
-  { name: "LongeBlack", img: IMAGES.ceLongeBlack },
-  { name: "Roma Pizza To Go", img: IMAGES.ceRomaPizza },
-  { name: "WILLNWILLY", img: IMAGES.ceWillnWilly },
-  { name: "UGO Beverages", img: IMAGES.ceUGO },
-  { name: "HAC", img: IMAGES.ceHAC },
-];
 
 const CAPABILITIES = [
   "Strategic Marketing Planning",
@@ -64,9 +46,9 @@ export default function PortfolioPage() {
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mt-10 max-w-2xl text-lg sm:text-xl text-bone/70 leading-snug">
-              A portfolio of projects directly undertaken or managed by
-              MadanyCo&apos;s founder, Abdalrahman Madany — across global
-              brands, regional leaders, and high-growth startups.
+              Ten case studies. From Snap Inc. and Genpact EMEA to Seissense and
+              Hype Energy — projects directly undertaken or managed by
+              MadanyCo&apos;s founder, Abdalrahman Madany.
             </p>
           </Reveal>
         </div>
@@ -74,7 +56,7 @@ export default function PortfolioPage() {
 
       <div className="divider-line" />
 
-      {/* CLIENT LOGO GRID */}
+      {/* CASE STUDY GRID */}
       <section className="px-6 sm:px-10 lg:px-14 py-20 sm:py-28">
         <Reveal>
           <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
@@ -82,29 +64,39 @@ export default function PortfolioPage() {
             Selected brands
           </div>
           <h2 className="font-display text-huge leading-[0.9] tracking-tighter max-w-3xl">
-            Ten brands.{" "}
+            Click any logo to see the{" "}
             <span className="italic font-display-light text-blush">
-              One operating logic.
+              full story
             </span>
+            .
           </h2>
         </Reveal>
 
         <ul className="mt-14 grid gap-px bg-bone/10 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 border hairline">
-          {PROJECTS.map((p, i) => (
-            <Reveal key={p.name} delay={(i % 5) * 0.05} className="bg-ink">
-              <li className="group relative aspect-square overflow-hidden bg-bone/[0.03]">
-                <Image
-                  src={p.img}
-                  alt={p.name}
-                  fill
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                  className="object-contain p-6 sm:p-8 transition duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
-                />
-                <div className="absolute inset-0 flex items-end p-4 pointer-events-none">
-                  <span className="text-[10px] uppercase tracking-[0.25em] text-bone/0 group-hover:text-bone/90 transition duration-500">
-                    {p.name}
-                  </span>
-                </div>
+          {CASE_STUDIES.map((p, i) => (
+            <Reveal key={p.slug} delay={(i % 5) * 0.05} className="bg-ink">
+              <li>
+                <Link
+                  href={`/portfolio/${p.slug}`}
+                  className="group block relative aspect-square overflow-hidden bg-bone/[0.03]"
+                  aria-label={`See ${p.name} case study`}
+                >
+                  <Image
+                    src={p.logo}
+                    alt={p.name}
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                    className="object-contain p-6 sm:p-8 transition duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
+                  />
+                  <div className="absolute inset-0 flex flex-col justify-between p-4 sm:p-5 pointer-events-none">
+                    <span className="text-[10px] uppercase tracking-[0.25em] text-bone/0 group-hover:text-blush transition duration-500 self-end font-display">
+                      ↗
+                    </span>
+                    <span className="text-[10px] uppercase tracking-[0.25em] text-bone/0 group-hover:text-bone/90 transition duration-500">
+                      {p.name}
+                    </span>
+                  </div>
+                </Link>
               </li>
             </Reveal>
           ))}
@@ -119,7 +111,7 @@ export default function PortfolioPage() {
             Core competencies
           </div>
           <h2 className="font-display text-huge leading-[0.9] tracking-tighter max-w-3xl">
-            What I bring to the table.
+            What the founder brings to the table.
           </h2>
         </Reveal>
 
