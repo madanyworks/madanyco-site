@@ -248,7 +248,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ───────────────────────────── FEATURED REEL */}
+      {/* ───────────────────────────── PROMOTIONAL VIDEOS */}
       <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 border-t hairline border-t-bone/10">
         <div className="grid gap-10 lg:grid-cols-12 items-end mb-12">
           <Reveal className="lg:col-span-7">
@@ -266,33 +266,47 @@ export default function HomePage() {
           </Reveal>
           <Reveal className="lg:col-span-5" delay={0.15}>
             <p className="text-base sm:text-lg text-bone/70 leading-relaxed max-w-md">
-              Short reel from a recent brand film. Concept through final cut —
-              the kind of work we ship for clients across hospitality,
+              Promotional pieces from recent brand work. Concept through final
+              cut — the kind of films we ship for clients across hospitality,
               wellness, and DTC.
             </p>
           </Reveal>
         </div>
 
+        {/* Featured large reel — full width */}
         <Reveal delay={0.2}>
           <VideoPlayer video={HERO_VIDEOS.reel} className="w-full" />
         </Reveal>
 
-        <Reveal delay={0.3}>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              href="/work"
-              className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-bone link-underline"
-            >
-              See more work →
-            </Link>
-            <Link
-              href="/services/video-production"
-              className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-bone/70 link-underline"
-            >
-              About the video service →
-            </Link>
-          </div>
-        </Reveal>
+        {/* Secondary piece + side copy */}
+        <div className="mt-6 grid gap-6 lg:grid-cols-12 items-center">
+          <Reveal className="lg:col-span-5" delay={0.05}>
+            <VideoPlayer video={HERO_VIDEOS.loop} className="w-full" />
+          </Reveal>
+          <Reveal className="lg:col-span-7" delay={0.15}>
+            <p className="font-display text-2xl sm:text-3xl tracking-tighter leading-tight max-w-xl">
+              Two pieces. One philosophy:{" "}
+              <span className="text-blush italic font-display-light">
+                every frame earns the next one
+              </span>
+              .
+            </p>
+            <div className="mt-8 flex flex-wrap gap-5">
+              <Link
+                href="/work"
+                className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-bone link-underline"
+              >
+                See more work →
+              </Link>
+              <Link
+                href="/services/video-production"
+                className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-bone/70 link-underline"
+              >
+                About the video service →
+              </Link>
+            </div>
+          </Reveal>
+        </div>
       </section>
 
       {/* ───────────────────────────── SOCIAL PROOF */}
