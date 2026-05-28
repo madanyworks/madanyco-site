@@ -4,8 +4,19 @@ import Marquee from "@/components/Marquee";
 import EmailSignup from "@/components/EmailSignup";
 import Reveal from "@/components/Reveal";
 import VideoPlayer from "@/components/VideoPlayer";
+import RotatingWord from "@/components/RotatingWord";
 import { HERO_VIDEOS } from "@/lib/videos";
 import { CASE_STUDIES } from "@/content/portfolio";
+
+const ROTATING_VERBS = [
+  "launch",
+  "scale",
+  "compound",
+  "rebrand",
+  "unstick",
+  "turn around",
+  "grow",
+];
 
 // ──────────────────────────────────────────── data
 const HERO_PHRASES = [
@@ -139,6 +150,36 @@ export default function HomePage() {
           textClass="font-display text-3xl sm:text-5xl lg:text-6xl tracking-tightest"
           separator="✦"
         />
+      </section>
+
+      {/* ═════════════════════════════════════════ ROTATING MISSION */}
+      <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 lg:py-40 border-b hairline border-b-bone/10">
+        <Reveal>
+          <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-10">
+            <span className="h-px w-12 bg-blush" />
+            What we do
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.1}>
+          <h2 className="font-display text-huge sm:text-mega leading-[0.95] tracking-tightest text-bone max-w-[20ch]">
+            We help ambitious businesses{" "}
+            <RotatingWord
+              words={ROTATING_VERBS}
+              className="italic font-display-light text-blush"
+            />
+            .
+          </h2>
+        </Reveal>
+
+        <Reveal delay={0.25}>
+          <p className="mt-12 max-w-2xl text-lg sm:text-xl text-bone/70 leading-relaxed">
+            With one operating system, built for profitable growth — a
+            financial plan, a marketing plan, and the daily workflow that
+            holds them together. We onboard a small number of brands each
+            quarter; that&apos;s the only way the cadence actually compounds.
+          </p>
+        </Reveal>
       </section>
 
       {/* ═════════════════════════════════════════ CLIENT LOGO MARQUEE */}
