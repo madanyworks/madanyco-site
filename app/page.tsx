@@ -330,11 +330,11 @@ export default function HomePage() {
           </h2>
         </Reveal>
 
-        <ul className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-px bg-bone/10 border hairline">
+        <ul className="mt-20 grid grid-cols-2 xl:grid-cols-4 gap-px bg-bone/10 border hairline">
           {STATS.map((s, i) => (
             <Reveal key={s.label} delay={i * 0.08} className="bg-ink">
               <li className="h-full p-8 sm:p-10 lg:p-12 hover:bg-ink-600 transition">
-                <p className="font-display text-[clamp(3.5rem,8vw,7rem)] leading-[0.9] tracking-tightest text-blush">
+                <p className="font-display text-[clamp(2.75rem,6vw,5.5rem)] leading-[1] tracking-tighter text-blush whitespace-nowrap">
                   {s.value}
                 </p>
                 <p className="mt-6 text-xs sm:text-sm uppercase tracking-[0.25em] text-bone/70 max-w-[20ch]">
