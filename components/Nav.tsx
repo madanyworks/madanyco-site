@@ -18,6 +18,7 @@ const SERVICES = [
 
 const PRIMARY = [
   { href: "/about", label: "About" },
+  { href: "/team", label: "Team" },
   { href: "/work", label: "Work" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/blog", label: "Blog" },
