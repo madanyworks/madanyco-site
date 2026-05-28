@@ -7,7 +7,7 @@ import { IMAGES } from "@/lib/images";
 export const metadata = {
   title: "Work",
   description:
-    "Selected work across social media, video, paid acquisition, and website development.",
+    "Selected work across social media management, video production, social media advertising, and website development.",
 };
 
 const CATEGORIES = [
@@ -33,73 +33,46 @@ const CATEGORIES = [
   },
 ];
 
-type Project = {
-  title: string;
-  category: string;
-  blurb: string;
-  metric?: { label: string; value: string };
+const SMA_CAMPAIGNS = [
+  IMAGES.smaCampaign1,
+  IMAGES.smaCampaign2,
+  IMAGES.smaCampaign3,
+  IMAGES.smaCampaign4,
+  IMAGES.smaCampaign5,
+  IMAGES.smaCampaign6,
+];
+
+type WebsiteCase = {
+  name: string;
+  url: string;
+  liveUrl: string;
+  img: string;
 };
 
-const PROJECTS: Project[] = [
+const WEBSITES: WebsiteCase[] = [
   {
-    title: "CoForm Bahrain",
-    category: "Website Development",
-    blurb:
-      "End-to-end brand storefront for a regional fitness destination — design system, CMS, and SEO foundations.",
-    metric: { value: "3.2×", label: "Inbound enquiries" },
+    name: "Aven KSA",
+    url: "avensksa.com",
+    liveUrl: "https://avensksa.com",
+    img: IMAGES.webAvensksa,
   },
   {
-    title: "Rawan Pre-School",
-    category: "Website + Brand",
-    blurb:
-      "Warm, bilingual parent experience with an enrolment funnel built around the school's real intake calendar.",
-    metric: { value: "+62%", label: "Enrolment leads" },
+    name: "Tiny-OM",
+    url: "tiny-om.com",
+    liveUrl: "https://tiny-om.com",
+    img: IMAGES.webTinyOM,
   },
   {
-    title: "The Foundry Wellington",
-    category: "Social Media Management",
-    blurb:
-      "Channel rebuild and weekly content engine — content pillars, UGC pipeline, and reporting cadence.",
-    metric: { value: "+184%", label: "Engaged followers" },
+    name: "Edamah Bahrain",
+    url: "edamah.com",
+    liveUrl: "https://www.edamah.com",
+    img: IMAGES.webEdamah,
   },
   {
-    title: "Quest School Bahrain",
-    category: "Performance + Web",
-    blurb:
-      "Paid acquisition + landing-page rebuild aimed at the open day calendar.",
-    metric: { value: "4.7×", label: "ROAS on Meta" },
-  },
-  {
-    title: "Volonte Wellness Centre",
-    category: "Video Production",
-    blurb:
-      "Founder-led brand film + a library of short-form cuts for ongoing channel use.",
-    metric: { value: "210k", label: "Organic reach" },
-  },
-  {
-    title: "Victoria Dance Bahrain",
-    category: "Social Media Advertising",
-    blurb:
-      "Termly enrolment campaigns built around a clear cost-per-lead target and creative testing framework.",
-    metric: { value: "$3.40", label: "Cost per lead" },
-  },
-  {
-    title: "Edamah Bahrain Real Estate",
-    category: "Corporate Web Platform",
-    blurb:
-      "Multi-stakeholder real-estate platform built for clarity, governance, and scale.",
-  },
-  {
-    title: "David Parker Personal Brand",
-    category: "Website + Positioning",
-    blurb:
-      "A personal brand site designed to do the trust-building work before the first call.",
-  },
-  {
-    title: "Multi-National School Dhahran",
-    category: "Website Development",
-    blurb:
-      "Editor-friendly site with parent-portal integration and a fast, accessible enrolment journey.",
+    name: "The Foundry · Bahrain",
+    url: "thefoundryrestaurants.com",
+    liveUrl: "https://thefoundryrestaurants.com/locations/bahrain/",
+    img: IMAGES.webFoundry,
   },
 ];
 
@@ -113,7 +86,7 @@ export default function WorkPage() {
           <Reveal>
             <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
               <span className="h-px w-12 bg-blush" />
-              Selected Work
+              Work examples
             </div>
           </Reveal>
           <Reveal delay={0.1}>
@@ -127,9 +100,8 @@ export default function WorkPage() {
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mt-10 max-w-2xl text-lg sm:text-xl text-bone/70 leading-snug">
-              A selection of brands we&apos;ve built systems for — across
-              social, paid acquisition, video, and websites. Detailed case
-              studies coming soon.
+              Real campaigns, real sites, real reels. A selection across the
+              four disciplines we run for growing brands.
             </p>
           </Reveal>
         </div>
@@ -137,11 +109,10 @@ export default function WorkPage() {
 
       <Marquee
         items={[
-          "DTC growth",
-          "Schools & enrolment",
-          "Wellness & fitness",
-          "Real estate",
-          "Founder-led brands",
+          "Social Media Management",
+          "Video Production",
+          "Social Media Advertising",
+          "Website Development",
         ]}
         className="border-y hairline border-y-bone/10 py-6 sm:py-8"
         textClass="font-display text-3xl sm:text-5xl tracking-tightest"
@@ -199,53 +170,156 @@ export default function WorkPage() {
 
       <div className="divider-line" />
 
-      {/* Selected client work */}
-      <section className="px-6 sm:px-10 lg:px-14 py-20 sm:py-28">
+      {/* RECENT CAMPAIGNS — SMA gallery */}
+      <section className="px-6 sm:px-10 lg:px-14 py-20 sm:py-28 bg-ink-700/40">
         <Reveal>
           <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
             <span className="h-px w-12 bg-blush" />
-            Selected clients
+            Recent campaigns
           </div>
-          <h2 className="font-display text-huge leading-[0.9] tracking-tighter max-w-3xl">
-            Brands we&apos;ve shipped for.
-          </h2>
+          <div className="flex items-end justify-between flex-wrap gap-6">
+            <h2 className="font-display text-huge leading-[0.9] tracking-tighter max-w-3xl">
+              Paid social, in the wild.
+            </h2>
+            <Link
+              href="/services/social-media-advertising"
+              className="text-sm uppercase tracking-widest text-bone/70 link-underline"
+            >
+              See the SMA service →
+            </Link>
+          </div>
+          <p className="mt-6 text-lg text-bone/70 max-w-2xl">
+            From Meta to Snapchat, TikTok to Google — tailored creative put in
+            front of the right audience. Never disrupting. Always
+            scroll-stopping.
+          </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {PROJECTS.map((p, i) => (
-            <Reveal key={p.title} delay={i * 0.05}>
-              <article className="group relative h-full p-7 sm:p-8 rounded-2xl border hairline border-bone/10 bg-ink-600/40 hover:bg-blush hover:text-ink transition duration-500 flex flex-col gap-6">
-                <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.3em] opacity-70">
-                  <span>{p.category}</span>
-                  <span className="font-display">↗</span>
-                </div>
-                <h3 className="mt-2 font-display text-3xl tracking-tighter leading-tight">
-                  {p.title}
-                </h3>
-                <p className="text-sm leading-relaxed opacity-80">{p.blurb}</p>
-                <div className="mt-auto pt-6 border-t border-bone/10 group-hover:border-ink/20 flex items-end justify-between">
-                  {p.metric ? (
-                    <div>
-                      <p className="font-display text-3xl tracking-tightest">
-                        {p.metric.value}
-                      </p>
-                      <p className="text-[10px] uppercase tracking-[0.3em] opacity-70 mt-1">
-                        {p.metric.label}
-                      </p>
-                    </div>
-                  ) : (
-                    <span className="text-xs uppercase tracking-[0.25em] opacity-60">
-                      Case study coming soon
-                    </span>
-                  )}
-                </div>
-              </article>
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {SMA_CAMPAIGNS.map((src, i) => (
+            <Reveal key={i} delay={(i % 3) * 0.06}>
+              <div className="group relative aspect-square rounded-2xl overflow-hidden border hairline border-bone/10 bg-ink-600/40">
+                <Image
+                  src={src}
+                  alt={`Campaign creative ${i + 1}`}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
+              </div>
             </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 border-t hairline border-t-bone/10">
+      {/* WEBSITES SHIPPED — real case studies */}
+      <section className="px-6 sm:px-10 lg:px-14 py-20 sm:py-28">
+        <Reveal>
+          <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
+            <span className="h-px w-12 bg-blush" />
+            Websites shipped
+          </div>
+          <div className="flex items-end justify-between flex-wrap gap-6">
+            <h2 className="font-display text-huge leading-[0.9] tracking-tighter max-w-3xl">
+              Live & scaling.
+            </h2>
+            <Link
+              href="/services/website-development"
+              className="text-sm uppercase tracking-widest text-bone/70 link-underline"
+            >
+              See the web service →
+            </Link>
+          </div>
+        </Reveal>
+
+        <div className="mt-14 grid gap-6 sm:grid-cols-2">
+          {WEBSITES.map((w, i) => (
+            <Reveal key={w.url} delay={i * 0.06}>
+              <a
+                href={w.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block rounded-2xl overflow-hidden border hairline border-bone/10 bg-ink-600/40"
+              >
+                <div className="relative aspect-[16/10]">
+                  <Image
+                    src={w.img}
+                    alt={w.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                    className="object-cover transition duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6 sm:p-7 flex items-center justify-between">
+                  <div>
+                    <h3 className="font-display text-2xl sm:text-3xl tracking-tighter group-hover:text-blush transition">
+                      {w.name}
+                    </h3>
+                    <p className="mt-1 text-xs uppercase tracking-[0.2em] text-bone/60">
+                      {w.url}
+                    </p>
+                  </div>
+                  <span className="text-blush font-display text-2xl group-hover:translate-x-1 transition">
+                    ↗
+                  </span>
+                </div>
+              </a>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* SMM + VIDEO PRODUCTION — reels live on IG */}
+      <section className="px-6 sm:px-10 lg:px-14 py-20 sm:py-28 border-t hairline border-t-bone/10">
+        <Reveal>
+          <div className="grid gap-10 lg:grid-cols-2">
+            <div>
+              <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-6">
+                <span className="h-px w-12 bg-blush" />
+                Reels & social
+              </div>
+              <h3 className="font-display text-big leading-[0.95] tracking-tighter">
+                Short-form lives on Instagram.
+              </h3>
+              <p className="mt-6 text-bone/70 leading-relaxed max-w-md">
+                The reels speak best where they were built to live. See the
+                full feed of client work — strategy-led, platform-native, made
+                to stop the scroll.
+              </p>
+              <a
+                href="https://instagram.com/madanyco"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-flex items-center gap-3 rounded-full border border-bone/30 text-bone px-6 py-3 text-sm uppercase tracking-widest font-semibold hover:bg-bone/5 transition"
+              >
+                Open Instagram →
+              </a>
+            </div>
+            <div>
+              <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-6">
+                <span className="h-px w-12 bg-blush" />
+                Promotional videos
+              </div>
+              <h3 className="font-display text-big leading-[0.95] tracking-tighter">
+                Brand films that move people.
+              </h3>
+              <p className="mt-6 text-bone/70 leading-relaxed max-w-md">
+                A curated reel of promotional content built to elevate brands,
+                drive emotion, and move audiences — concept through final cut.
+              </p>
+              <Link
+                href="/services/video-production"
+                className="mt-8 inline-flex items-center gap-3 rounded-full border border-bone/30 text-bone px-6 py-3 text-sm uppercase tracking-widest font-semibold hover:bg-bone/5 transition"
+              >
+                See the video service →
+              </Link>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      <section className="px-6 sm:px-10 lg:px-14 py-20 sm:py-28 border-t hairline border-t-bone/10">
         <Reveal>
           <div className="grid gap-10 lg:grid-cols-12 items-end">
             <div className="lg:col-span-8">
@@ -260,7 +334,7 @@ export default function WorkPage() {
             <div className="lg:col-span-4 flex lg:justify-end">
               <Link
                 href="/get-started"
-                className="group inline-flex items-center gap-3 rounded-full bg-bone text-ink px-7 py-4 text-sm font-semibold uppercase tracking-widest hover:bg-blush transition"
+                className="group inline-flex items-center gap-3 rounded-full bg-hot text-ink px-7 py-4 text-sm font-bold uppercase tracking-widest hover:bg-blush transition"
               >
                 Start the conversation
                 <span className="group-hover:translate-x-1 transition">→</span>

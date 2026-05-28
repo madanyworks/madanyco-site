@@ -5,9 +5,10 @@
 :root {
   --bg: #0a0a0a;
   --bg-soft: #121212;
-  --fg: #f5f0eb;
-  --fg-muted: #b8aea4;
-  --blush: #d4a89a;
+  --fg: #e7e6e0;
+  --fg-muted: #aeaca4;
+  --blush: #fc74b6;
+  --hot: #ff32af;
   --sand: #f0e0d0;
 }
 

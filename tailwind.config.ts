@@ -15,21 +15,30 @@ const config: Config = {
           700: "#121212",
           600: "#1a1a1a",
         },
+        // bone = warm cream text colour from brand
         bone: {
-          DEFAULT: "#f5f0eb",
-          50: "#fbf8f4",
-          100: "#f5f0eb",
-          200: "#ebe3d8",
+          DEFAULT: "#e7e6e0",
+          50: "#f2f1ed",
+          100: "#e7e6e0",
+          200: "#d4d2cb",
         },
         sand: "#f0e0d0",
+        // blush = primary brand pink (FC74B6)
         blush: {
-          DEFAULT: "#d4a89a",
-          400: "#e1b8aa",
-          500: "#d4a89a",
-          600: "#c9968a",
-          700: "#b88476",
+          DEFAULT: "#fc74b6",
+          300: "#fda6d0",
+          400: "#fd8dc4",
+          500: "#fc74b6",
+          600: "#e85ea1",
+          700: "#cc4d8b",
         },
-        coral: "#ff7a59",
+        // hot = high-emphasis magenta for primary CTAs (FF32AF)
+        hot: {
+          DEFAULT: "#ff32af",
+          400: "#ff5cbf",
+          500: "#ff32af",
+          600: "#e51c97",
+        },
       },
       fontFamily: {
         display: ["var(--font-display)", "ui-sans-serif", "system-ui"],

@@ -1,61 +1,43 @@
-import Reveal from "@/components/Reveal";
+import Image from "next/image";
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
+import { IMAGES } from "@/lib/images";
 
 export const metadata = {
   title: "Portfolio · Corporate Experience",
   description:
-    "Two decades of marketing leadership across schools, real estate, wellness, DTC, and enterprise brands across the GCC and beyond.",
+    "Corporate experience of Abdalrahman Madany — projects directly undertaken or managed across Snap Inc., Genpact EMEA, Seissense, Hype, Buffalo Burger, and more.",
 };
 
-type Experience = {
-  year: string;
-  org: string;
-  role: string;
-  body: string;
+type CorporateProject = {
+  name: string;
+  img: string;
 };
 
-const EXPERIENCE: Experience[] = [
-  {
-    year: "2024 — Today",
-    org: "MadanyCo.™",
-    role: "Founder & Fractional CMO",
-    body: "Profit-first growth partnerships with DTC and e-commerce brands across the GCC. Building The Pulse System™ for teams that want clarity, pace, and accountability.",
-  },
-  {
-    year: "2021 — 2024",
-    org: "Group Marketing Leadership (GCC)",
-    role: "Director, Marketing & Brand",
-    body: "Led multi-brand portfolios across schools, hospitality, and wellness. Built media planning frameworks, in-house creative pods, and reporting cadences adopted across the group.",
-  },
-  {
-    year: "2018 — 2021",
-    org: "Education Group",
-    role: "Head of Marketing",
-    body: "Owned enrolment growth, brand positioning, and digital transformation across multi-campus operations. Cut cost-per-lead while doubling intake-season funnel volume.",
-  },
-  {
-    year: "2014 — 2018",
-    org: "Real Estate & Property",
-    role: "Marketing Manager",
-    body: "Marketing leadership across residential and commercial portfolios. Brand identity, sales enablement, and digital channel build-outs from the ground up.",
-  },
-  {
-    year: "2010 — 2014",
-    org: "Agency & Brand Side",
-    role: "Strategist & Account Lead",
-    body: "Account leadership for FMCG, telco, and lifestyle brands. Foundational years in media planning, creative development, and integrated campaigns.",
-  },
+const PROJECTS: CorporateProject[] = [
+  { name: "Seissense", img: IMAGES.ceSeissense },
+  { name: "Snap Inc. (Snapchat)", img: IMAGES.ceSnap },
+  { name: "Genpact EMEA", img: IMAGES.ceGenpact },
+  { name: "Hype Energy Drinks", img: IMAGES.ceHype },
+  { name: "Buffalo Burger", img: IMAGES.ceBuffalo },
+  { name: "LongeBlack", img: IMAGES.ceLongeBlack },
+  { name: "Roma Pizza To Go", img: IMAGES.ceRomaPizza },
+  { name: "WILLNWILLY", img: IMAGES.ceWillnWilly },
+  { name: "UGO Beverages", img: IMAGES.ceUGO },
+  { name: "HAC", img: IMAGES.ceHAC },
 ];
 
 const CAPABILITIES = [
-  "Fractional CMO leadership",
-  "Marketing operating systems",
-  "Performance media (Meta / TikTok / Google)",
-  "Brand positioning & messaging",
-  "Content & creative direction",
-  "Lifecycle marketing & CRM",
-  "Reporting & decision frameworks",
-  "Team building & training",
+  "Strategic Marketing Planning",
+  "Digital Marketing",
+  "Creative & Branding",
+  "Public Relations",
+  "Market Research & Analysis",
+  "Email Marketing",
+  "CRM",
+  "E-Commerce",
+  "Mobile Marketing",
+  "Influencer & Affiliate Marketing",
 ];
 
 export default function PortfolioPage() {
@@ -72,19 +54,19 @@ export default function PortfolioPage() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <h1 className="font-display text-mega leading-[0.85] tracking-tightest max-w-[16ch]">
-              Two decades of{" "}
+            <h1 className="font-display text-mega leading-[0.85] tracking-tightest max-w-[18ch]">
+              Brands the founder has{" "}
               <span className="italic font-display-light text-blush">
-                building
+                shipped for
               </span>
               .
             </h1>
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mt-10 max-w-2xl text-lg sm:text-xl text-bone/70 leading-snug">
-              Founder-led, but corporate-trained. Marketing leadership across
-              education, real estate, wellness, hospitality, and DTC — built on
-              the same operating principles we now run for MadanyCo clients.
+              A portfolio of projects directly undertaken or managed by
+              MadanyCo&apos;s founder, Abdalrahman Madany — across global
+              brands, regional leaders, and high-growth startups.
             </p>
           </Reveal>
         </div>
@@ -92,39 +74,41 @@ export default function PortfolioPage() {
 
       <div className="divider-line" />
 
-      {/* TIMELINE */}
-      <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32">
+      {/* CLIENT LOGO GRID */}
+      <section className="px-6 sm:px-10 lg:px-14 py-20 sm:py-28">
         <Reveal>
-          <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-12">
+          <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
             <span className="h-px w-12 bg-blush" />
-            Timeline
+            Selected brands
           </div>
+          <h2 className="font-display text-huge leading-[0.9] tracking-tighter max-w-3xl">
+            Ten brands.{" "}
+            <span className="italic font-display-light text-blush">
+              One operating logic.
+            </span>
+          </h2>
         </Reveal>
 
-        <ol className="grid">
-          {EXPERIENCE.map((e, i) => (
-            <Reveal key={e.year + e.org} delay={i * 0.06}>
-              <li className="group grid gap-6 lg:grid-cols-12 items-start border-t hairline border-t-bone/10 py-10 hover:bg-ink-700/30 transition">
-                <div className="lg:col-span-3">
-                  <p className="text-xs uppercase tracking-[0.3em] text-blush">
-                    {e.year}
-                  </p>
+        <ul className="mt-14 grid gap-px bg-bone/10 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 border hairline">
+          {PROJECTS.map((p, i) => (
+            <Reveal key={p.name} delay={(i % 5) * 0.05} className="bg-ink">
+              <li className="group relative aspect-square overflow-hidden bg-bone/[0.03]">
+                <Image
+                  src={p.img}
+                  alt={p.name}
+                  fill
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                  className="object-contain p-6 sm:p-8 transition duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
+                />
+                <div className="absolute inset-0 flex items-end p-4 pointer-events-none">
+                  <span className="text-[10px] uppercase tracking-[0.25em] text-bone/0 group-hover:text-bone/90 transition duration-500">
+                    {p.name}
+                  </span>
                 </div>
-                <div className="lg:col-span-5">
-                  <h3 className="font-display text-3xl sm:text-4xl tracking-tighter leading-tight group-hover:text-blush transition">
-                    {e.org}
-                  </h3>
-                  <p className="mt-2 text-sm uppercase tracking-[0.2em] text-bone/60">
-                    {e.role}
-                  </p>
-                </div>
-                <p className="lg:col-span-4 text-bone/75 leading-relaxed">
-                  {e.body}
-                </p>
               </li>
             </Reveal>
           ))}
-        </ol>
+        </ul>
       </section>
 
       {/* CAPABILITIES */}
@@ -132,18 +116,18 @@ export default function PortfolioPage() {
         <Reveal>
           <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
             <span className="h-px w-12 bg-blush" />
-            Capabilities
+            Core competencies
           </div>
           <h2 className="font-display text-huge leading-[0.9] tracking-tighter max-w-3xl">
             What I bring to the table.
           </h2>
         </Reveal>
 
-        <ul className="mt-14 grid gap-px bg-bone/10 sm:grid-cols-2 lg:grid-cols-4 border hairline">
+        <ul className="mt-14 grid gap-px bg-bone/10 sm:grid-cols-2 lg:grid-cols-5 border hairline">
           {CAPABILITIES.map((c, i) => (
-            <Reveal key={c} delay={i * 0.04} className="bg-ink">
-              <li className="h-full p-7 hover:bg-ink-600 transition">
-                <p className="font-display text-xl tracking-tighter leading-tight">
+            <Reveal key={c} delay={(i % 5) * 0.04} className="bg-ink">
+              <li className="h-full p-6 lg:p-7 hover:bg-ink-600 transition">
+                <p className="font-display text-lg lg:text-xl tracking-tighter leading-tight">
                   {c}
                 </p>
               </li>
@@ -152,7 +136,31 @@ export default function PortfolioPage() {
         </ul>
       </section>
 
-      <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32">
+      {/* DISCLAIMER */}
+      <section className="px-6 sm:px-10 lg:px-14 py-20 sm:py-24">
+        <Reveal>
+          <div className="max-w-3xl">
+            <p className="text-xs uppercase tracking-[0.3em] text-blush mb-6">
+              A note on attribution
+            </p>
+            <p className="text-base sm:text-lg text-bone/70 leading-relaxed">
+              This portfolio section showcases projects either directly
+              undertaken or managed by Abdalrahman Madany, our Founder. This is
+              the individual portfolio of our Founder who has shaped the
+              agency. Some projects here may have been completed during previous
+              full-time employment — the stakeholders of those companies were
+              involved in the collaborative process. Therefore, while the
+              projects reflect the expertise and contributions of AM, they are
+              not solely attributed to MadanyCo.™ agency. We acknowledge the
+              collaborative nature of the industry and aim to transparently
+              represent the diverse range of experiences and contributions that
+              have shaped our portfolio of experience.
+            </p>
+          </div>
+        </Reveal>
+      </section>
+
+      <section className="px-6 sm:px-10 lg:px-14 py-20 sm:py-28 border-t hairline border-t-bone/10">
         <Reveal>
           <div className="grid gap-10 lg:grid-cols-12 items-end">
             <div className="lg:col-span-8">
@@ -168,7 +176,7 @@ export default function PortfolioPage() {
             <div className="lg:col-span-4 flex lg:justify-end">
               <Link
                 href="/get-started"
-                className="group inline-flex items-center gap-3 rounded-full bg-blush text-ink px-7 py-4 text-sm font-semibold uppercase tracking-widest hover:bg-bone transition"
+                className="group inline-flex items-center gap-3 rounded-full bg-hot text-ink px-7 py-4 text-sm font-bold uppercase tracking-widest hover:bg-blush transition"
               >
                 Start the conversation
                 <span className="group-hover:translate-x-1 transition">→</span>

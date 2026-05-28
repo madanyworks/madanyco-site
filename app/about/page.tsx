@@ -248,7 +248,7 @@ export default function AboutPage() {
             <div className="lg:col-span-5 flex lg:justify-end">
               <Link
                 href="/get-started"
-                className="group inline-flex items-center gap-3 rounded-full bg-blush text-ink px-7 py-4 text-sm font-semibold uppercase tracking-widest hover:bg-bone transition"
+                className="group inline-flex items-center gap-3 rounded-full bg-hot text-ink px-7 py-4 text-sm font-bold uppercase tracking-widest hover:bg-blush transition"
               >
                 Start the conversation
                 <span className="group-hover:translate-x-1 transition">→</span>

@@ -25,7 +25,7 @@ export default function ServiceCTA({
           <div className="lg:col-span-4 flex lg:justify-end">
             <Link
               href="/get-started"
-              className="group inline-flex items-center gap-3 rounded-full bg-bone text-ink px-7 py-4 text-sm font-semibold uppercase tracking-widest hover:bg-blush transition"
+              className="group inline-flex items-center gap-3 rounded-full bg-hot text-ink px-7 py-4 text-sm font-bold uppercase tracking-widest hover:bg-blush transition"
             >
               Get Started
               <span className="group-hover:translate-x-1 transition">→</span>

@@ -95,7 +95,7 @@ export default function HomePage() {
             <div className="lg:col-span-7 flex flex-wrap items-center gap-5 lg:justify-end">
               <Link
                 href="/get-started"
-                className="group inline-flex items-center gap-3 rounded-full bg-bone text-ink px-7 py-4 text-sm font-semibold uppercase tracking-widest transition hover:bg-blush hover:text-ink"
+                className="group inline-flex items-center gap-3 rounded-full bg-hot text-ink px-7 py-4 text-sm font-bold uppercase tracking-widest transition hover:bg-blush hover:text-ink"
               >
                 Get Started
                 <span className="inline-block transition-transform group-hover:translate-x-1">

@@ -138,7 +138,7 @@ export default function Nav() {
 
             <Link
               href="/get-started"
-              className="ml-3 rounded-full bg-bone text-ink px-5 py-2.5 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-blush transition"
+              className="ml-3 rounded-full bg-hot text-ink px-5 py-2.5 text-xs uppercase tracking-[0.2em] font-bold hover:bg-blush transition"
             >
               Get Started
             </Link>
@@ -218,7 +218,7 @@ export default function Nav() {
 
           <Link
             href="/get-started"
-            className="mt-10 inline-flex items-center gap-3 rounded-full bg-bone text-ink px-6 py-3.5 text-sm font-semibold uppercase tracking-widest"
+            className="mt-10 inline-flex items-center gap-3 rounded-full bg-hot text-ink px-6 py-3.5 text-sm font-bold uppercase tracking-widest"
           >
             Get Started <span>→</span>
           </Link>

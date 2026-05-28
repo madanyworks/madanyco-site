@@ -41,7 +41,7 @@ export default function GetStartedPage() {
               below. Expect to hear back within 1 to 2 business days.{" "}
               <Link
                 href="/about"
-                className="text-blush link-underline ml-1"
+                className="text-hot link-underline ml-1"
               >
                 Or read what we&apos;re about first →
               </Link>
