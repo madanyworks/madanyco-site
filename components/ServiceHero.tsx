@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "./Reveal";
 
 type ServiceHeroProps = {
@@ -5,6 +6,8 @@ type ServiceHeroProps = {
   title: string;
   hook: string;
   accent?: string;
+  /** Optional background image URL. Renders with a darkening overlay so type stays legible. */
+  bgImage?: string;
 };
 
 export default function ServiceHero({
@@ -12,9 +15,23 @@ export default function ServiceHero({
   title,
   hook,
   accent,
+  bgImage,
 }: ServiceHeroProps) {
   return (
-    <section className="relative min-h-[80svh] flex items-end pt-32 pb-16 px-6 sm:px-10 lg:px-14">
+    <section className="relative min-h-[80svh] flex items-end pt-32 pb-16 px-6 sm:px-10 lg:px-14 overflow-hidden">
+      {bgImage && (
+        <>
+          <Image
+            src={bgImage}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center opacity-35"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/40 pointer-events-none" />
+        </>
+      )}
       <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-blush/10 via-transparent to-transparent pointer-events-none" />
       <div className="relative w-full">
         <Reveal>

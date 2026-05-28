@@ -2,6 +2,7 @@ import ServiceHero from "@/components/ServiceHero";
 import ServiceCTA from "@/components/ServiceCTA";
 import PricingCard, { PricingTier } from "@/components/PricingCard";
 import Reveal from "@/components/Reveal";
+import { IMAGES } from "@/lib/images";
 
 export const metadata = {
   title: "TikTok Ads",
@@ -65,6 +66,7 @@ export default function Page() {
         title="Stop sleeping on"
         accent="TikTok."
         hook="If you're still not advertising on TikTok, you're missing the wave. TikTok isn't a trend — it's a global phenomenon. While most brands stay glued to Meta, TikTok offers a unique opportunity to engage with a vast and active user base. We've been at the forefront — crafting campaigns that resonate, and deliver."
+        bgImage={IMAGES.tiktok1}
       />
 
       <section className="px-6 sm:px-10 lg:px-14 py-20">

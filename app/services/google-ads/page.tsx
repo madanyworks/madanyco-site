@@ -2,6 +2,7 @@ import ServiceHero from "@/components/ServiceHero";
 import ServiceCTA from "@/components/ServiceCTA";
 import PricingCard, { PricingTier } from "@/components/PricingCard";
 import Reveal from "@/components/Reveal";
+import { IMAGES } from "@/lib/images";
 
 export const metadata = {
   title: "Google Ads",
@@ -76,6 +77,7 @@ export default function Page() {
         title="If you don't show up,"
         accent="you don't exist."
         hook="Attention business owners — if your business doesn't show up when people search, it might as well not exist. We build Google Ads for businesses at every stage of growth, by specialists, backed by performance."
+        bgImage={IMAGES.googleAds1}
       />
 
       <div className="divider-line" />

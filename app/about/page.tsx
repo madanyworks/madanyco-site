@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import Marquee from "@/components/Marquee";
 import Reveal from "@/components/Reveal";
+import { IMAGES } from "@/lib/images";
 
 export const metadata = {
   title: "About",
@@ -62,7 +64,16 @@ export default function AboutPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative min-h-[80svh] flex items-end pt-32 pb-16 px-6 sm:px-10 lg:px-14">
+      <section className="relative min-h-[90svh] flex items-end pt-32 pb-16 px-6 sm:px-10 lg:px-14 overflow-hidden">
+        <Image
+          src={IMAGES.aboutHero}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center opacity-40"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/40 pointer-events-none" />
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-blush/10 via-transparent to-transparent pointer-events-none" />
         <div className="relative">
           <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-10">

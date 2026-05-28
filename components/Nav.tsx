@@ -75,7 +75,10 @@ export default function Nav() {
               onMouseLeave={() => setServicesOpen(false)}
             >
               <button
-                className="text-sm uppercase tracking-[0.2em] text-bone/85 hover:text-blush flex items-center gap-1.5"
+                className={cn(
+                  "text-sm uppercase tracking-[0.2em] hover:text-blush flex items-center gap-1.5 transition",
+                  servicesOpen ? "text-blush" : "text-bone/85"
+                )}
                 aria-haspopup="menu"
                 aria-expanded={servicesOpen}
                 onClick={() => setServicesOpen((v) => !v)}
@@ -83,18 +86,26 @@ export default function Nav() {
                 Services
                 <span
                   className={cn(
-                    "transition-transform",
+                    "inline-block transition-transform duration-200",
                     servicesOpen && "rotate-180"
                   )}
                 >
                   ↓
                 </span>
               </button>
-              {servicesOpen && (
-                <div
-                  role="menu"
-                  className="absolute top-full right-0 mt-3 min-w-[300px] rounded-2xl border hairline border-bone/10 bg-ink-700/95 backdrop-blur-md p-3 shadow-xl"
-                >
+
+              {/* Dropdown: use pt-3 (padding) instead of mt-3 (margin) so the panel's
+                  hitbox covers the gap between trigger and menu — fixes hover-loss bug. */}
+              <div
+                role="menu"
+                className={cn(
+                  "absolute top-full right-0 pt-3 z-50 transition-all duration-150",
+                  servicesOpen
+                    ? "opacity-100 visible translate-y-0"
+                    : "opacity-0 invisible -translate-y-1 pointer-events-none"
+                )}
+              >
+                <div className="min-w-[320px] rounded-2xl border hairline border-bone/10 bg-ink-700/95 backdrop-blur-md p-3 shadow-2xl">
                   {SERVICES.map((s) => (
                     <Link
                       key={s.href}
@@ -109,7 +120,7 @@ export default function Nav() {
                     </Link>
                   ))}
                 </div>
-              )}
+              </div>
             </div>
 
             {PRIMARY.map((l) => (

@@ -2,6 +2,7 @@ import ServiceHero from "@/components/ServiceHero";
 import ServiceCTA from "@/components/ServiceCTA";
 import PricingCard, { PricingTier } from "@/components/PricingCard";
 import Reveal from "@/components/Reveal";
+import { IMAGES } from "@/lib/images";
 
 export const metadata = {
   title: "Social Media Management",
@@ -122,6 +123,7 @@ export default function Page() {
         title="Stop chasing attention."
         accent="Start earning it."
         hook="You're focused on building a real business. Social media demands a second full-time job: content, engagement, strategy, platform changes. We get it — we craft media strategies that don't just post into the void; they connect, convert, and build real momentum."
+        bgImage={IMAGES.smmHero}
       />
 
       <div className="divider-line" />

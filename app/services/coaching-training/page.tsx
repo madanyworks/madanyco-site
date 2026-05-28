@@ -2,6 +2,7 @@ import ServiceHero from "@/components/ServiceHero";
 import ServiceCTA from "@/components/ServiceCTA";
 import Reveal from "@/components/Reveal";
 import Marquee from "@/components/Marquee";
+import { IMAGES } from "@/lib/images";
 
 export const metadata = {
   title: "Coaching & Training",
@@ -58,6 +59,7 @@ export default function Page() {
         title="Stop chasing tactics."
         accent="Start building traction."
         hook="You're not just running a business — you're shaping a brand. But if you're stuck inside the chaos, juggling posts, tweaking campaigns, second-guessing every move, you're not building. You're reacting. That's where a marketing coach steps in."
+        bgImage={IMAGES.coachingHero}
       />
 
       <div className="divider-line" />

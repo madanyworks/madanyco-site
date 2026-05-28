@@ -1,7 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import Marquee from "@/components/Marquee";
 import EmailSignup from "@/components/EmailSignup";
 import Reveal from "@/components/Reveal";
+import { IMAGES } from "@/lib/images";
 
 const HERO_PHRASES = [
   "Raise conversions without raising spend.",
@@ -49,22 +51,19 @@ const PROMISE_FEATURES = [
 
 const SOCIAL_CARDS = [
   {
-    tag: "Pulse Note 01",
-    quote:
-      "The feed rewards rhythm. Discipline compounds. Stop optimizing for the day; build for the quarter.",
-    meta: "Instagram · @madanyco",
+    img: IMAGES.social1,
+    tag: "From the feed",
+    caption: "The feed rewards rhythm. Discipline compounds.",
   },
   {
-    tag: "Pulse Note 02",
-    quote:
-      "ROAS is a diagnostic, not a strategy. Contribution margin is the conversation.",
-    meta: "Instagram · @madanyco",
+    img: IMAGES.social2,
+    tag: "From the feed",
+    caption: "ROAS is a diagnostic. Margin is the conversation.",
   },
   {
-    tag: "Pulse Note 03",
-    quote:
-      "Growth lives in the doing — in the volume of decisions made per unit of time.",
-    meta: "Instagram · @madanyco",
+    img: IMAGES.social3,
+    tag: "From the feed",
+    caption: "Growth lives in the doing — actions per unit of time.",
   },
 ];
 
@@ -275,19 +274,31 @@ export default function HomePage() {
 
         <div className="grid gap-6 lg:grid-cols-3">
           {SOCIAL_CARDS.map((c, i) => (
-            <Reveal key={c.tag} delay={i * 0.08}>
-              <article className="group h-full p-7 sm:p-8 border hairline rounded-2xl bg-ink-600/40 hover:bg-blush hover:text-ink transition duration-500">
-                <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.3em] opacity-70">
-                  <span>{c.tag}</span>
-                  <span className="font-display">↗</span>
+            <Reveal key={i} delay={i * 0.08}>
+              <a
+                href="https://instagram.com/madanyco"
+                target="_blank"
+                rel="noopener"
+                className="group block relative aspect-square rounded-2xl overflow-hidden border hairline border-bone/10 bg-ink-700/40"
+              >
+                <Image
+                  src={c.img}
+                  alt={c.caption}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  className="object-cover transition duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent" />
+                <div className="absolute inset-0 p-6 sm:p-7 flex flex-col justify-between text-bone">
+                  <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.3em] opacity-80">
+                    <span>{c.tag}</span>
+                    <span className="font-display">↗</span>
+                  </div>
+                  <p className="font-display text-xl sm:text-2xl leading-tight tracking-tight max-w-[24ch]">
+                    {c.caption}
+                  </p>
                 </div>
-                <p className="mt-12 font-display text-2xl leading-snug tracking-tight">
-                  &ldquo;{c.quote}&rdquo;
-                </p>
-                <p className="mt-10 text-xs uppercase tracking-[0.25em] opacity-70">
-                  {c.meta}
-                </p>
-              </article>
+              </a>
             </Reveal>
           ))}
         </div>

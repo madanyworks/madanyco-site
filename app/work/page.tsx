@@ -1,12 +1,37 @@
 import Link from "next/link";
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import Marquee from "@/components/Marquee";
+import { IMAGES } from "@/lib/images";
 
 export const metadata = {
   title: "Work",
   description:
     "Selected work across social media, video, paid acquisition, and website development.",
 };
+
+const CATEGORIES = [
+  {
+    href: "/services/social-media-management",
+    title: "Social Media Management",
+    img: IMAGES.workSocialMgmt,
+  },
+  {
+    href: "/services/video-production",
+    title: "Video Production",
+    img: IMAGES.workVideo,
+  },
+  {
+    href: "/services/social-media-advertising",
+    title: "Social Media Advertising",
+    img: IMAGES.workSMA,
+  },
+  {
+    href: "/services/website-development",
+    title: "Website Development",
+    img: IMAGES.workWebDev,
+  },
+];
 
 type Project = {
   title: string;
@@ -123,9 +148,70 @@ export default function WorkPage() {
         separator="✦"
       />
 
-      {/* GRID */}
-      <section className="px-6 sm:px-10 lg:px-14 py-20 sm:py-32">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Categories with real visuals from old site */}
+      <section className="px-6 sm:px-10 lg:px-14 py-20 sm:py-28">
+        <Reveal>
+          <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
+            <span className="h-px w-12 bg-blush" />
+            Areas of expertise
+          </div>
+          <h2 className="font-display text-huge leading-[0.9] tracking-tighter max-w-3xl">
+            Four disciplines.{" "}
+            <span className="italic font-display-light text-blush">
+              One operating system.
+            </span>
+          </h2>
+        </Reveal>
+
+        <div className="mt-14 grid gap-6 sm:grid-cols-2">
+          {CATEGORIES.map((c, i) => (
+            <Reveal key={c.href} delay={i * 0.06}>
+              <Link
+                href={c.href}
+                className="group block relative aspect-[4/3] sm:aspect-[5/4] rounded-2xl overflow-hidden border hairline border-bone/10"
+              >
+                <Image
+                  src={c.img}
+                  alt={c.title}
+                  fill
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  className="object-cover transition duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
+                <div className="absolute inset-0 p-7 sm:p-9 flex flex-col justify-between text-bone">
+                  <span className="text-[10px] uppercase tracking-[0.3em] opacity-80 self-end font-display">
+                    ↗
+                  </span>
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.3em] text-blush mb-3">
+                      0{i + 1}
+                    </p>
+                    <h3 className="font-display text-3xl sm:text-4xl tracking-tightest leading-[0.95] group-hover:text-blush transition">
+                      {c.title}
+                    </h3>
+                  </div>
+                </div>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <div className="divider-line" />
+
+      {/* Selected client work */}
+      <section className="px-6 sm:px-10 lg:px-14 py-20 sm:py-28">
+        <Reveal>
+          <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
+            <span className="h-px w-12 bg-blush" />
+            Selected clients
+          </div>
+          <h2 className="font-display text-huge leading-[0.9] tracking-tighter max-w-3xl">
+            Brands we&apos;ve shipped for.
+          </h2>
+        </Reveal>
+
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {PROJECTS.map((p, i) => (
             <Reveal key={p.title} delay={i * 0.05}>
               <article className="group relative h-full p-7 sm:p-8 rounded-2xl border hairline border-bone/10 bg-ink-600/40 hover:bg-blush hover:text-ink transition duration-500 flex flex-col gap-6">
