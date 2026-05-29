@@ -14,22 +14,22 @@ export const metadata = {
 
 const CATEGORIES = [
   {
-    href: "/services/social-media-management",
+    href: "/solutions/social-media-management",
     title: "Social Media Management",
     img: IMAGES.workSocialMgmt,
   },
   {
-    href: "/services/video-production",
+    href: "/solutions/video-production",
     title: "Video Production",
     img: IMAGES.workVideo,
   },
   {
-    href: "/services/social-media-advertising",
+    href: "/solutions/social-media-advertising",
     title: "Social Media Advertising",
     img: IMAGES.workSMA,
   },
   {
-    href: "/services/website-development",
+    href: "/solutions/website-development",
     title: "Website Development",
     img: IMAGES.workWebDev,
   },
@@ -184,7 +184,7 @@ export default function WorkPage() {
               Paid social, in the wild.
             </h2>
             <Link
-              href="/services/social-media-advertising"
+              href="/solutions/social-media-advertising"
               className="text-sm uppercase tracking-widest text-bone/70 link-underline"
             >
               See the SMA service →
@@ -227,7 +227,7 @@ export default function WorkPage() {
               Live & scaling.
             </h2>
             <Link
-              href="/services/website-development"
+              href="/solutions/website-development"
               className="text-sm uppercase tracking-widest text-bone/70 link-underline"
             >
               See the web service →
@@ -288,7 +288,7 @@ export default function WorkPage() {
               .
             </h2>
             <Link
-              href="/services/video-production"
+              href="/solutions/video-production"
               className="text-sm uppercase tracking-widest text-bone/70 link-underline"
             >
               See the video service →

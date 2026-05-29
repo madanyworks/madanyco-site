@@ -26,7 +26,7 @@ export default function NotFound() {
             Back to home
           </Link>
           <Link
-            href="/services"
+            href="/solutions"
             className="rounded-full border border-bone/30 text-bone px-7 py-4 text-sm font-semibold uppercase tracking-widest hover:bg-bone/5 transition"
           >
             See services

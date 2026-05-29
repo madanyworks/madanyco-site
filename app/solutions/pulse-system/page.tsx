@@ -447,7 +447,7 @@ export default function PulseSystemPage() {
             <div className="text-xs uppercase tracking-[0.25em] text-bone/50 pt-4 border-t hairline border-t-bone/10">
               Looking for a single discipline?{" "}
               <Link
-                href="/services"
+                href="/solutions"
                 className="text-blush link-underline normal-case tracking-wide text-sm"
               >
                 See sub-services →

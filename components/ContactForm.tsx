@@ -4,14 +4,21 @@ import { useState } from "react";
 
 const SERVICES = [
   "The Pulse System™ (Flagship)",
-  "Social Media Management",
-  "Social Media Advertising",
-  "Video Production",
-  "TikTok Ads",
+  "Fractional CMO",
+  "Launch Strategy",
   "Coaching & Training",
+  "Snapchat Ads",
+  "Social Media Advertising",
+  "TikTok Ads",
+  "Google Ads",
+  "Social Media Management",
+  "Video Production",
+  "Content Creation",
   "Shopify e-Commerce",
   "Website Development",
-  "Google Ads",
+  "Marketing Automation",
+  "Marketing Recruitment",
+  "Events & Sponsorship",
   "Something else / not sure",
 ];
 

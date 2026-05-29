@@ -5,20 +5,70 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/cn";
 
-const SERVICES = [
+// The Pulse System™ — two destinations: methodology + flagship engagement.
+const PULSE_METHODOLOGY = {
+  href: "/pulse-system",
+  label: "The Pulse System™",
+  sub: "Our methodology",
+};
+const PULSE_FLAGSHIP = {
+  href: "/solutions/pulse-system",
+  label: "Pulse Engagement",
+  sub: "Flagship · the full install",
+};
+
+type PillarItem = {
+  href: string;
+  label: string;
+  badge?: "new" | "featured";
+};
+
+type Pillar = {
+  title: string;
+  items: PillarItem[];
+};
+
+const PILLARS: Pillar[] = [
   {
-    href: "/services/pulse-system",
-    label: "The Pulse System™",
-    flagship: true,
+    title: "Strategy & Leadership",
+    items: [
+      { href: "/solutions/fractional-cmo", label: "Fractional CMO", badge: "new" },
+      { href: "/solutions/coaching-training", label: "Coaching & Training" },
+      { href: "/solutions/launch", label: "Launch Strategy", badge: "new" },
+    ],
   },
-  { href: "/services/social-media-management", label: "Social Media Management" },
-  { href: "/services/social-media-advertising", label: "Social Media Advertising" },
-  { href: "/services/video-production", label: "Video Production" },
-  { href: "/services/tiktok-ads", label: "TikTok Ads" },
-  { href: "/services/coaching-training", label: "Coaching & Training" },
-  { href: "/services/shopify-ecommerce", label: "Shopify e-Commerce" },
-  { href: "/services/website-development", label: "Website Development" },
-  { href: "/services/google-ads", label: "Google Ads" },
+  {
+    title: "Performance & Paid",
+    items: [
+      { href: "/solutions/snapchat-ads", label: "Snapchat Ads", badge: "featured" },
+      { href: "/solutions/social-media-advertising", label: "Social Media Advertising" },
+      { href: "/solutions/tiktok-ads", label: "TikTok Ads" },
+      { href: "/solutions/google-ads", label: "Google Ads" },
+    ],
+  },
+  {
+    title: "Content & Social",
+    items: [
+      { href: "/solutions/social-media-management", label: "Social Media Management" },
+      { href: "/solutions/video-production", label: "Video Production" },
+      { href: "/solutions/content-creation", label: "Content Creation", badge: "new" },
+    ],
+  },
+  {
+    title: "Build & Systems",
+    items: [
+      { href: "/solutions/shopify-ecommerce", label: "Shopify e-Commerce" },
+      { href: "/solutions/website-development", label: "Website Development" },
+      { href: "/solutions/marketing-automation", label: "Marketing Automation", badge: "new" },
+    ],
+  },
+  {
+    title: "Talent & Experiential",
+    items: [
+      { href: "/solutions/recruitment", label: "Marketing Recruitment", badge: "new" },
+      { href: "/solutions/events-sponsorship", label: "Events & Sponsorship", badge: "new" },
+    ],
+  },
 ];
 
 const PRIMARY = [
@@ -32,7 +82,7 @@ export default function Nav() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 32);
@@ -43,7 +93,7 @@ export default function Nav() {
 
   useEffect(() => {
     setOpen(false);
-    setServicesOpen(false);
+    setSolutionsOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -76,66 +126,109 @@ export default function Nav() {
           <nav className="hidden lg:flex items-center gap-9">
             <div
               className="relative"
-              onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
+              onMouseEnter={() => setSolutionsOpen(true)}
+              onMouseLeave={() => setSolutionsOpen(false)}
             >
               <button
                 className={cn(
                   "text-sm uppercase tracking-[0.2em] hover:text-blush flex items-center gap-1.5 transition",
-                  servicesOpen ? "text-blush" : "text-bone/85"
+                  solutionsOpen || pathname.startsWith("/solutions") || pathname === "/pulse-system"
+                    ? "text-blush"
+                    : "text-bone/85"
                 )}
                 aria-haspopup="menu"
-                aria-expanded={servicesOpen}
-                onClick={() => setServicesOpen((v) => !v)}
+                aria-expanded={solutionsOpen}
+                onClick={() => setSolutionsOpen((v) => !v)}
               >
-                Services
+                Solutions
                 <span
                   className={cn(
                     "inline-block transition-transform duration-200",
-                    servicesOpen && "rotate-180"
+                    solutionsOpen && "rotate-180"
                   )}
                 >
                   ↓
                 </span>
               </button>
 
-              {/* Dropdown: use pt-3 (padding) instead of mt-3 (margin) so the panel's
-                  hitbox covers the gap between trigger and menu — fixes hover-loss bug. */}
+              {/* Mega-menu */}
               <div
                 role="menu"
                 className={cn(
                   "absolute top-full right-0 pt-3 z-50 transition-all duration-150",
-                  servicesOpen
+                  solutionsOpen
                     ? "opacity-100 visible translate-y-0"
                     : "opacity-0 invisible -translate-y-1 pointer-events-none"
                 )}
               >
-                <div className="min-w-[320px] rounded-2xl border hairline border-bone/10 bg-ink-700/95 backdrop-blur-md p-3 shadow-2xl">
-                  {SERVICES.map((s, idx) => (
-                    <div key={s.href}>
-                      <Link
-                        href={s.href}
-                        role="menuitem"
-                        className={cn(
-                          "flex items-center justify-between gap-3 px-4 py-2.5 rounded-lg text-sm transition",
-                          s.flagship
-                            ? "bg-blush/10 text-bone hover:bg-blush hover:text-ink"
-                            : "text-bone/80 hover:bg-blush hover:text-ink",
-                          pathname === s.href && "bg-bone/5 text-bone"
-                        )}
-                      >
-                        <span>{s.label}</span>
-                        {s.flagship && (
-                          <span className="text-[9px] uppercase tracking-[0.2em] bg-hot text-ink px-1.5 py-0.5 rounded-sm font-bold">
-                            Flagship
-                          </span>
-                        )}
-                      </Link>
-                      {s.flagship && idx === 0 && (
-                        <div className="my-2 mx-4 h-px bg-bone/10" />
-                      )}
-                    </div>
-                  ))}
+                <div className="w-[min(95vw,1100px)] rounded-2xl border hairline border-bone/10 bg-ink-700/95 backdrop-blur-md p-6 shadow-2xl">
+                  {/* Pulse top strip */}
+                  <div className="grid grid-cols-2 gap-3 mb-5 pb-5 border-b hairline border-b-bone/10">
+                    <PulseLink
+                      data={PULSE_METHODOLOGY}
+                      active={pathname === PULSE_METHODOLOGY.href}
+                    />
+                    <PulseLink
+                      data={PULSE_FLAGSHIP}
+                      active={pathname === PULSE_FLAGSHIP.href}
+                      flagship
+                    />
+                  </div>
+
+                  {/* 5 pillars */}
+                  <div className="grid grid-cols-2 lg:grid-cols-5 gap-x-4 gap-y-6">
+                    {PILLARS.map((p) => (
+                      <div key={p.title}>
+                        <p className="text-[10px] uppercase tracking-[0.25em] text-blush mb-3 font-bold">
+                          {p.title}
+                        </p>
+                        <ul className="grid gap-1">
+                          {p.items.map((it) => (
+                            <li key={it.href}>
+                              <Link
+                                href={it.href}
+                                role="menuitem"
+                                className={cn(
+                                  "block px-2 py-1.5 rounded-md text-sm text-bone/85 hover:bg-blush/15 hover:text-blush transition",
+                                  pathname === it.href && "bg-bone/5 text-bone"
+                                )}
+                              >
+                                <span className="flex items-center gap-2">
+                                  {it.label}
+                                  {it.badge === "new" && (
+                                    <span className="text-[8px] uppercase tracking-[0.2em] bg-blush/20 text-blush px-1.5 py-0.5 rounded-sm font-bold">
+                                      New
+                                    </span>
+                                  )}
+                                  {it.badge === "featured" && (
+                                    <span className="text-[8px] uppercase tracking-[0.2em] bg-hot/20 text-hot px-1.5 py-0.5 rounded-sm font-bold">
+                                      Featured
+                                    </span>
+                                  )}
+                                </span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Footer link */}
+                  <div className="mt-6 pt-5 border-t hairline border-t-bone/10 flex items-center justify-between">
+                    <Link
+                      href="/solutions"
+                      className="text-xs uppercase tracking-[0.25em] text-bone/70 hover:text-blush link-underline"
+                    >
+                      View all solutions →
+                    </Link>
+                    <Link
+                      href="/get-started"
+                      className="text-xs uppercase tracking-[0.25em] text-hot hover:text-blush link-underline"
+                    >
+                      Book a strategy call →
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -202,29 +295,66 @@ export default function Nav() {
         )}
       >
         <div className="pt-28 px-6 sm:px-10 h-full overflow-y-auto pb-12">
-          <p className="text-xs uppercase tracking-[0.3em] text-blush mb-6">
-            Services
-          </p>
-          <ul className="grid gap-1 mb-10">
-            {SERVICES.map((s) => (
-              <li key={s.href}>
-                <Link
-                  href={s.href}
-                  className={cn(
-                    "flex items-center justify-between gap-3 py-2 font-display text-2xl tracking-tight hover:text-blush transition",
-                    s.flagship ? "text-bone" : "text-bone/90"
-                  )}
-                >
-                  <span>{s.label}</span>
-                  {s.flagship && (
-                    <span className="text-[10px] uppercase tracking-[0.2em] bg-hot text-ink px-2 py-0.5 rounded-sm font-bold">
-                      Flagship
-                    </span>
-                  )}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          {/* Pulse pinned at top */}
+          <div className="mb-6 grid gap-3">
+            <Link
+              href={PULSE_METHODOLOGY.href}
+              className="block p-4 rounded-xl border hairline border-bone/10 bg-bone/[0.03] hover:bg-blush/10 transition"
+            >
+              <p className="text-[10px] uppercase tracking-[0.25em] text-blush mb-1">
+                {PULSE_METHODOLOGY.sub}
+              </p>
+              <p className="font-display text-xl tracking-tighter text-bone">
+                {PULSE_METHODOLOGY.label}
+              </p>
+            </Link>
+            <Link
+              href={PULSE_FLAGSHIP.href}
+              className="block p-4 rounded-xl border hairline border-blush/30 bg-blush/10 hover:bg-blush hover:text-ink transition"
+            >
+              <div className="flex items-center justify-between">
+                <p className="text-[10px] uppercase tracking-[0.25em] text-blush group-hover:text-ink/70 mb-1">
+                  {PULSE_FLAGSHIP.sub}
+                </p>
+                <span className="text-[9px] uppercase tracking-[0.2em] bg-hot text-ink px-1.5 py-0.5 rounded-sm font-bold">
+                  Flagship
+                </span>
+              </div>
+              <p className="font-display text-xl tracking-tighter text-bone">
+                {PULSE_FLAGSHIP.label}
+              </p>
+            </Link>
+          </div>
+
+          {PILLARS.map((p) => (
+            <div key={p.title} className="mb-6">
+              <p className="text-[10px] uppercase tracking-[0.25em] text-blush mb-3 font-bold">
+                {p.title}
+              </p>
+              <ul className="grid gap-1">
+                {p.items.map((it) => (
+                  <li key={it.href}>
+                    <Link
+                      href={it.href}
+                      className="flex items-center justify-between py-1.5 font-display text-lg tracking-tight text-bone/90 hover:text-blush"
+                    >
+                      <span>{it.label}</span>
+                      {it.badge === "new" && (
+                        <span className="text-[8px] uppercase tracking-[0.2em] bg-blush/20 text-blush px-1.5 py-0.5 rounded-sm font-bold">
+                          New
+                        </span>
+                      )}
+                      {it.badge === "featured" && (
+                        <span className="text-[8px] uppercase tracking-[0.2em] bg-hot/20 text-hot px-1.5 py-0.5 rounded-sm font-bold">
+                          Featured
+                        </span>
+                      )}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
 
           <div className="divider-line my-6" />
 
@@ -250,5 +380,48 @@ export default function Nav() {
         </div>
       </div>
     </>
+  );
+}
+
+function PulseLink({
+  data,
+  active,
+  flagship,
+}: {
+  data: { href: string; label: string; sub: string };
+  active: boolean;
+  flagship?: boolean;
+}) {
+  return (
+    <Link
+      href={data.href}
+      role="menuitem"
+      className={cn(
+        "group block p-4 rounded-xl border hairline transition",
+        flagship
+          ? "border-blush/40 bg-blush/10 hover:bg-blush hover:text-ink"
+          : "border-bone/10 bg-bone/[0.02] hover:bg-bone/5",
+        active && "ring-1 ring-blush"
+      )}
+    >
+      <div className="flex items-start justify-between gap-2">
+        <p
+          className={cn(
+            "text-[10px] uppercase tracking-[0.25em]",
+            flagship ? "text-blush group-hover:text-ink/70" : "text-blush"
+          )}
+        >
+          {data.sub}
+        </p>
+        {flagship && (
+          <span className="shrink-0 text-[8px] uppercase tracking-[0.2em] bg-hot text-ink px-1.5 py-0.5 rounded-sm font-bold">
+            Flagship
+          </span>
+        )}
+      </div>
+      <p className="mt-1 font-display text-base lg:text-lg tracking-tighter leading-tight">
+        {data.label}
+      </p>
+    </Link>
   );
 }

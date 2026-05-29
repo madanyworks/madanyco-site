@@ -75,6 +75,49 @@ const CLOSING_PHRASES = [
   "The Pulse System™",
 ];
 
+// 5 service pillars — new agency-model IA
+const SERVICE_PILLARS = [
+  {
+    n: "01",
+    title: "Strategy & Leadership",
+    href: "/solutions#strategy-leadership",
+    items: ["Fractional CMO", "Coaching & Training", "Launch Strategy"],
+  },
+  {
+    n: "02",
+    title: "Performance & Paid",
+    href: "/solutions#performance-paid",
+    items: ["Snapchat Ads", "Social Media Advertising", "TikTok Ads", "Google Ads"],
+  },
+  {
+    n: "03",
+    title: "Content & Social",
+    href: "/solutions#content-social",
+    items: ["Social Media Management", "Video Production", "Content Creation"],
+  },
+  {
+    n: "04",
+    title: "Build & Systems",
+    href: "/solutions#build-systems",
+    items: ["Shopify e-Commerce", "Website Development", "Marketing Automation"],
+  },
+  {
+    n: "05",
+    title: "Talent & Experiential",
+    href: "/solutions#talent-experiential",
+    items: ["Marketing Recruitment", "Events & Sponsorship"],
+  },
+];
+
+// Pulse System workbook months — placeholders until screenshots arrive
+const PULSE_MONTHS = [
+  { m: "Month 1", t: "Discovery + Plan" },
+  { m: "Month 2", t: "Install" },
+  { m: "Month 3", t: "First Pivot" },
+  { m: "Month 4", t: "Scale Decisions" },
+  { m: "Month 5", t: "Compound" },
+];
+
 // ──────────────────────────────────────────── page
 export default function HomePage() {
   return (
@@ -352,12 +395,131 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ═════════════════════════════════════════ 5 SERVICE PILLARS */}
+      <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 lg:py-40 border-t hairline border-t-bone/10">
+        <Reveal>
+          <div className="grid gap-8 lg:grid-cols-12 items-end mb-12">
+            <div className="lg:col-span-7">
+              <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
+                <span className="h-px w-12 bg-blush" />
+                (03) What we deliver
+              </div>
+              <h2 className="font-display text-huge leading-[0.9] tracking-tighter">
+                Five pillars,{" "}
+                <span className="italic font-display-light text-blush">
+                  full-stack
+                </span>
+                .
+              </h2>
+            </div>
+            <p className="lg:col-span-5 text-base sm:text-lg text-bone/70 leading-relaxed">
+              Strategy through execution, founder-led, with a vetted bench of
+              specialists brought in per engagement. Sixteen disciplines under
+              one operating layer.
+            </p>
+          </div>
+        </Reveal>
+
+        <ul className="grid gap-px bg-bone/10 sm:grid-cols-2 lg:grid-cols-5 border hairline">
+          {SERVICE_PILLARS.map((p, i) => (
+            <Reveal key={p.n} delay={i * 0.05} className="bg-ink">
+              <li>
+                <Link
+                  href={p.href}
+                  className="group flex flex-col h-full p-7 sm:p-8 hover:bg-blush hover:text-ink transition duration-500"
+                >
+                  <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.3em] opacity-70">
+                    <span>{p.n}</span>
+                    <span className="font-display">↗</span>
+                  </div>
+                  <h3 className="mt-10 font-display text-2xl lg:text-3xl tracking-tightest leading-[0.95]">
+                    {p.title}
+                  </h3>
+                  <ul className="mt-6 space-y-1.5 text-xs opacity-75">
+                    {p.items.map((item) => (
+                      <li key={item} className="leading-snug">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </Link>
+              </li>
+            </Reveal>
+          ))}
+        </ul>
+
+        <Reveal delay={0.3}>
+          <div className="mt-10 flex flex-wrap gap-5">
+            <Link
+              href="/solutions"
+              className="text-sm uppercase tracking-widest text-bone link-underline"
+            >
+              See all solutions →
+            </Link>
+            <Link
+              href="/pulse-system"
+              className="text-sm uppercase tracking-widest text-blush link-underline"
+            >
+              Read about The Pulse System™ →
+            </Link>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* ═════════════════════════════════════════ PULSE PROVEN — workbooks */}
+      <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 lg:py-40 bg-ink-700/40 border-t hairline border-t-bone/10">
+        <Reveal>
+          <div className="grid gap-8 lg:grid-cols-12 items-end mb-12">
+            <div className="lg:col-span-7">
+              <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
+                <span className="h-px w-12 bg-blush" />
+                (04) Proven — the workbooks
+              </div>
+              <h2 className="font-display text-huge leading-[0.9] tracking-tighter">
+                The Pulse System™,{" "}
+                <span className="italic font-display-light text-blush">
+                  run for real
+                </span>
+                .
+              </h2>
+            </div>
+            <p className="lg:col-span-5 text-base sm:text-lg text-bone/70 leading-relaxed">
+              Redacted screenshots from a recent 5-month installation —
+              showing the plan, the cadence, the decisions, the compounding.
+              <span className="block mt-3 text-xs uppercase tracking-[0.2em] text-bone/40">
+                Workbook screenshots to be added.
+              </span>
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          {PULSE_MONTHS.map((m, i) => (
+            <Reveal key={m.m} delay={i * 0.05}>
+              <div className="aspect-[3/4] rounded-2xl border-2 border-dashed border-bone/15 bg-ink-600/40 flex flex-col items-center justify-center p-6 text-center">
+                <p className="text-[10px] uppercase tracking-[0.3em] text-blush mb-4">
+                  {m.m}
+                </p>
+                <p className="font-display text-lg tracking-tighter text-bone">
+                  {m.t}
+                </p>
+                <p className="mt-6 text-[10px] uppercase tracking-[0.25em] text-bone/40">
+                  Screenshot
+                  <br />
+                  placeholder
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
       {/* ═════════════════════════════════════════ STATS */}
       <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 lg:py-40 border-t hairline border-t-bone/10">
         <Reveal>
           <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
             <span className="h-px w-12 bg-blush" />
-            (03) Numbers we steer by
+            (05) Numbers we steer by
           </div>
           <h2 className="font-display text-huge leading-[0.88] tracking-tighter max-w-4xl">
             ROAS is a thermometer.
@@ -390,7 +552,7 @@ export default function HomePage() {
           <Reveal className="lg:col-span-7">
             <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-6">
               <span className="h-px w-12 bg-blush" />
-              (04) Press play
+              (06) Press play
             </div>
             <h2 className="font-display text-huge leading-[0.88] tracking-tighter">
               The brand,{" "}
@@ -433,7 +595,7 @@ export default function HomePage() {
                 See more work →
               </Link>
               <Link
-                href="/services/video-production"
+                href="/solutions/video-production"
                 className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-bone/70 link-underline"
               >
                 About the video service →
@@ -448,7 +610,7 @@ export default function HomePage() {
         <Reveal>
           <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-10">
             <span className="h-px w-12 bg-blush" />
-            (05) Manifesto
+            (07) Manifesto
           </div>
         </Reveal>
 
@@ -502,6 +664,74 @@ export default function HomePage() {
               ))}
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* ═════════════════════════════════════════ DUAL CTA */}
+      <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 border-t hairline border-t-bone/10">
+        <Reveal>
+          <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-10">
+            <span className="h-px w-12 bg-blush" />
+            (08) Where to start
+          </div>
+          <h2 className="font-display text-huge leading-[0.9] tracking-tighter max-w-4xl">
+            Two ways{" "}
+            <span className="italic font-display-light text-blush">in</span>.
+          </h2>
+        </Reveal>
+
+        <div className="mt-14 grid gap-6 lg:grid-cols-2">
+          <Reveal>
+            <Link
+              href="/get-started"
+              className="group block h-full p-10 lg:p-12 rounded-3xl border hairline border-blush/30 bg-gradient-to-br from-blush/10 via-ink-700/40 to-ink-700/40 hover:border-blush transition relative overflow-hidden"
+            >
+              <span className="absolute top-6 right-6 text-[10px] uppercase tracking-[0.3em] bg-hot text-ink px-3 py-1.5 rounded-sm font-bold">
+                Retainer
+              </span>
+              <p className="text-xs uppercase tracking-[0.3em] text-blush mb-6">
+                Ongoing engagement
+              </p>
+              <h3 className="font-display text-big leading-[0.95] tracking-tightest max-w-[12ch]">
+                Book a strategy call.
+              </h3>
+              <p className="mt-6 text-base sm:text-lg text-bone/80 leading-relaxed max-w-md">
+                For Fractional CMO, the full Pulse System engagement, custom
+                builds, or anything ongoing. 20-minute scoping call — we&apos;ll
+                tell you honestly whether we&apos;re the right fit.
+              </p>
+              <span className="mt-10 inline-flex items-center gap-3 text-sm uppercase tracking-widest text-hot group-hover:text-bone transition">
+                Book a call
+                <span className="group-hover:translate-x-1 transition">→</span>
+              </span>
+            </Link>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <Link
+              href="/get-started"
+              className="group block h-full p-10 lg:p-12 rounded-3xl border hairline border-bone/10 bg-ink-700/40 hover:border-blush/40 transition relative overflow-hidden"
+            >
+              <span className="absolute top-6 right-6 text-[10px] uppercase tracking-[0.3em] bg-bone/10 text-bone px-3 py-1.5 rounded-sm font-bold">
+                Fixed scope
+              </span>
+              <p className="text-xs uppercase tracking-[0.3em] text-blush mb-6">
+                Productized work
+              </p>
+              <h3 className="font-display text-big leading-[0.95] tracking-tightest max-w-[14ch]">
+                Get a fixed-scope quote.
+              </h3>
+              <p className="mt-6 text-base sm:text-lg text-bone/80 leading-relaxed max-w-md">
+                For one-off audits, single-channel campaigns, build packages,
+                or a Snapchat strategy doc. Drop a brief through the form — we
+                respond within 1–2 business days with scope and price.
+              </p>
+              <span className="mt-10 inline-flex items-center gap-3 text-sm uppercase tracking-widest text-bone group-hover:text-blush transition">
+                Send a brief
+                <span className="group-hover:translate-x-1 transition">→</span>
+              </span>
+            </Link>
+          </Reveal>
         </div>
       </section>
 
