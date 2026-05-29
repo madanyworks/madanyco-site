@@ -6,6 +6,11 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/cn";
 
 const SERVICES = [
+  {
+    href: "/services/pulse-system",
+    label: "The Pulse System™",
+    flagship: true,
+  },
   { href: "/services/social-media-management", label: "Social Media Management" },
   { href: "/services/social-media-advertising", label: "Social Media Advertising" },
   { href: "/services/video-production", label: "Video Production" },
@@ -106,18 +111,30 @@ export default function Nav() {
                 )}
               >
                 <div className="min-w-[320px] rounded-2xl border hairline border-bone/10 bg-ink-700/95 backdrop-blur-md p-3 shadow-2xl">
-                  {SERVICES.map((s) => (
-                    <Link
-                      key={s.href}
-                      href={s.href}
-                      role="menuitem"
-                      className={cn(
-                        "block px-4 py-2.5 rounded-lg text-sm text-bone/80 hover:bg-blush hover:text-ink transition",
-                        pathname === s.href && "bg-bone/5 text-bone"
+                  {SERVICES.map((s, idx) => (
+                    <div key={s.href}>
+                      <Link
+                        href={s.href}
+                        role="menuitem"
+                        className={cn(
+                          "flex items-center justify-between gap-3 px-4 py-2.5 rounded-lg text-sm transition",
+                          s.flagship
+                            ? "bg-blush/10 text-bone hover:bg-blush hover:text-ink"
+                            : "text-bone/80 hover:bg-blush hover:text-ink",
+                          pathname === s.href && "bg-bone/5 text-bone"
+                        )}
+                      >
+                        <span>{s.label}</span>
+                        {s.flagship && (
+                          <span className="text-[9px] uppercase tracking-[0.2em] bg-hot text-ink px-1.5 py-0.5 rounded-sm font-bold">
+                            Flagship
+                          </span>
+                        )}
+                      </Link>
+                      {s.flagship && idx === 0 && (
+                        <div className="my-2 mx-4 h-px bg-bone/10" />
                       )}
-                    >
-                      {s.label}
-                    </Link>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -193,9 +210,17 @@ export default function Nav() {
               <li key={s.href}>
                 <Link
                   href={s.href}
-                  className="block py-2 font-display text-2xl tracking-tight text-bone/90 hover:text-blush"
+                  className={cn(
+                    "flex items-center justify-between gap-3 py-2 font-display text-2xl tracking-tight hover:text-blush transition",
+                    s.flagship ? "text-bone" : "text-bone/90"
+                  )}
                 >
-                  {s.label}
+                  <span>{s.label}</span>
+                  {s.flagship && (
+                    <span className="text-[10px] uppercase tracking-[0.2em] bg-hot text-ink px-2 py-0.5 rounded-sm font-bold">
+                      Flagship
+                    </span>
+                  )}
                 </Link>
               </li>
             ))}
