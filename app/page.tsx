@@ -123,7 +123,7 @@ export default function HomePage() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blush opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-blush" />
               </span>
-              Online · Bahrain → Globally
+              Online · Globally
             </div>
             <div className="hidden sm:flex items-center gap-3 text-[10px] uppercase tracking-[0.3em] text-bone/40">
               <span>The Pulse System™</span>
