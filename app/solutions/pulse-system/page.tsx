@@ -1,7 +1,6 @@
 import Link from "next/link";
 import ServiceCTA from "@/components/ServiceCTA";
 import Reveal from "@/components/Reveal";
-import Marquee from "@/components/Marquee";
 
 export const metadata = {
   title: "The Pulse System™ — Flagship engagement",
@@ -142,70 +141,65 @@ export default function PulseSystemPage() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <h1 className="font-display text-mega leading-[0.82] tracking-tightest max-w-[14ch]">
-              The{" "}
+            <h1 className="font-display text-mega leading-[0.82] tracking-tightest max-w-[15ch]">
+              The Pulse System™,{" "}
               <span className="italic font-display-light text-blush">
-                Pulse System
+                installed.
               </span>
-              ™
             </h1>
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mt-10 max-w-2xl text-lg sm:text-xl text-bone/75 leading-snug">
-              Our full operating-system install. The fractional-CMO seat, the
-              embedded squad, the financial plan, the marketing plan, and the
-              weekly cadence that holds it all together. Not a retainer — an
-              operating model.
+              This is the engagement — not the explainer. A founder-led squad
+              installs the financial plan, the marketing plan, and the weekly
+              cadence, then runs them with your team until the numbers move.
+              New to the model?{" "}
+              <Link href="/pulse-system" className="text-blush link-underline">
+                Read the methodology →
+              </Link>
             </p>
           </Reveal>
         </div>
       </section>
 
-      <Marquee
-        items={[
-          "Financial Plan",
-          "+",
-          "Marketing Plan",
-          "×",
-          "Daily Workflow",
-          "=",
-          "Profitable Growth",
-        ]}
-        className="border-y hairline border-y-bone/10 py-6 sm:py-8 bg-ink"
-        textClass="font-display text-3xl sm:text-5xl tracking-tightest"
-        separator="·"
-      />
-
-      {/* ═════════════════════════════════════════ THE EQUATION */}
-      <section className="px-6 sm:px-10 lg:px-14 py-16 sm:py-20 lg:py-24">
+      {/* ═════════════════════════════════════════ WHAT THIS IS */}
+      <section className="px-6 sm:px-10 lg:px-14 py-16 sm:py-20 lg:py-24 border-t hairline border-t-bone/10">
         <Reveal>
-          <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-10">
-            <span className="h-px w-12 bg-blush" />
-            (01) The equation
+          <div className="grid gap-10 lg:grid-cols-12 items-end">
+            <div className="lg:col-span-5">
+              <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
+                <span className="h-px w-12 bg-blush" />
+                (01) What this is
+              </div>
+              <h2 className="font-display text-big leading-[0.95] tracking-tighter">
+                Not a retainer.{" "}
+                <span className="italic font-display-light text-blush">
+                  An operating model.
+                </span>
+              </h2>
+            </div>
+            <div className="lg:col-span-7 space-y-5 text-lg text-bone/80 leading-relaxed max-w-2xl">
+              <p>
+                The Pulse System™ is our methodology — the equation, the five
+                pillars, and the cadence that sit under every service we run.
+                This page is what happens when you hire us to install it.
+              </p>
+              <p>
+                A founder-led squad embeds with your team, writes the plan,
+                builds the scorecard, and runs the weekly cadence with you. The
+                sections below are exactly what gets installed, who runs it, and
+                what it costs.{" "}
+                <Link
+                  href="/pulse-system"
+                  className="text-blush link-underline"
+                >
+                  See the methodology →
+                </Link>
+              </p>
+            </div>
           </div>
         </Reveal>
-
-        <Reveal delay={0.1}>
-          <p className="font-display text-[clamp(2rem,6vw,5.5rem)] leading-[0.95] tracking-tightest text-bone max-w-[18ch]">
-            <span className="text-blush">(</span>Financial Plan{" "}
-            <span className="text-blush">+</span> Marketing Plan
-            <span className="text-blush">)</span>{" "}
-            <span className="text-blush italic font-display-light">×</span>{" "}
-            Daily Workflow
-          </p>
-        </Reveal>
-
-        <Reveal delay={0.25}>
-          <p className="mt-12 max-w-3xl text-lg sm:text-xl text-bone/75 leading-relaxed">
-            Three things, multiplied. Most brands have one or two. Almost no
-            one has all three — and because it&apos;s a multiplication, a zero
-            in any term zeros the result. The Pulse System is how we make sure
-            none of them are zero, week after week.
-          </p>
-        </Reveal>
       </section>
-
-      <div className="divider-line" />
 
       {/* ═════════════════════════════════════════ PILLARS */}
       <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 bg-ink-700/40">

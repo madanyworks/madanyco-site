@@ -5,16 +5,18 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/cn";
 
-// The Pulse System™ — two destinations: methodology + flagship engagement.
+// The Pulse System™ — two destinations: read the method (free) vs hire us to install it (paid).
 const PULSE_METHODOLOGY = {
   href: "/pulse-system",
+  kicker: "Methodology · free to read",
   label: "The Pulse System™",
-  sub: "Our methodology",
+  desc: "How we think — the equation, the five pillars, the cadence.",
 };
 const PULSE_FLAGSHIP = {
   href: "/solutions/pulse-system",
-  label: "Pulse Engagement",
-  sub: "Flagship · the full install",
+  kicker: "Flagship engagement",
+  label: "Get it installed",
+  desc: "A founder-led squad installs & runs it with you. From $15K/mo.",
 };
 
 type PillarItem = {
@@ -125,7 +127,7 @@ export default function Nav() {
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-9">
             <div
-              className="relative"
+              className="relative h-20 flex items-center"
               onMouseEnter={() => setSolutionsOpen(true)}
               onMouseLeave={() => setSolutionsOpen(false)}
             >
@@ -151,17 +153,17 @@ export default function Nav() {
                 </span>
               </button>
 
-              {/* Mega-menu */}
+              {/* Mega-menu — fixed + viewport-centered so the wide panel never crops on either edge */}
               <div
                 role="menu"
                 className={cn(
-                  "absolute top-full right-0 pt-3 z-50 transition-all duration-150",
+                  "fixed top-20 left-1/2 -translate-x-1/2 w-[min(95vw,1100px)] pt-3 z-50 transition-all duration-150",
                   solutionsOpen
                     ? "opacity-100 visible translate-y-0"
                     : "opacity-0 invisible -translate-y-1 pointer-events-none"
                 )}
               >
-                <div className="w-[min(95vw,1100px)] rounded-2xl border hairline border-bone/10 bg-ink-700/95 backdrop-blur-md p-6 shadow-2xl">
+                <div className="w-full rounded-2xl border hairline border-bone/10 bg-ink-700/95 backdrop-blur-md p-6 shadow-2xl">
                   {/* Pulse top strip */}
                   <div className="grid grid-cols-2 gap-3 mb-5 pb-5 border-b hairline border-b-bone/10">
                     <PulseLink
@@ -295,33 +297,44 @@ export default function Nav() {
         )}
       >
         <div className="pt-28 px-6 sm:px-10 h-full overflow-y-auto pb-12">
-          {/* Pulse pinned at top */}
+          {/* Pulse pinned at top — read the method vs hire us to install it */}
           <div className="mb-6 grid gap-3">
             <Link
               href={PULSE_METHODOLOGY.href}
-              className="block p-4 rounded-xl border hairline border-bone/10 bg-bone/[0.03] hover:bg-blush/10 transition"
+              className="block p-4 rounded-xl border hairline border-bone/10 bg-bone/[0.03] hover:bg-bone/[0.06] transition"
             >
-              <p className="text-[10px] uppercase tracking-[0.25em] text-blush mb-1">
-                {PULSE_METHODOLOGY.sub}
-              </p>
+              <div className="flex items-center justify-between mb-1">
+                <p className="text-[10px] uppercase tracking-[0.25em] text-bone/50">
+                  {PULSE_METHODOLOGY.kicker}
+                </p>
+                <span className="text-[9px] uppercase tracking-[0.2em] border border-bone/20 text-bone/60 px-1.5 py-0.5 rounded-sm font-bold">
+                  Read
+                </span>
+              </div>
               <p className="font-display text-xl tracking-tighter text-bone">
                 {PULSE_METHODOLOGY.label}
+              </p>
+              <p className="mt-1 text-xs text-bone/55 leading-snug">
+                {PULSE_METHODOLOGY.desc}
               </p>
             </Link>
             <Link
               href={PULSE_FLAGSHIP.href}
-              className="block p-4 rounded-xl border hairline border-blush/30 bg-blush/10 hover:bg-blush hover:text-ink transition"
+              className="block p-4 rounded-xl border hairline border-blush/40 bg-blush/10 hover:bg-blush/15 transition"
             >
-              <div className="flex items-center justify-between">
-                <p className="text-[10px] uppercase tracking-[0.25em] text-blush group-hover:text-ink/70 mb-1">
-                  {PULSE_FLAGSHIP.sub}
+              <div className="flex items-center justify-between mb-1">
+                <p className="text-[10px] uppercase tracking-[0.25em] text-blush">
+                  {PULSE_FLAGSHIP.kicker}
                 </p>
                 <span className="text-[9px] uppercase tracking-[0.2em] bg-hot text-ink px-1.5 py-0.5 rounded-sm font-bold">
-                  Flagship
+                  Hire us
                 </span>
               </div>
               <p className="font-display text-xl tracking-tighter text-bone">
                 {PULSE_FLAGSHIP.label}
+              </p>
+              <p className="mt-1 text-xs text-bone/70 leading-snug">
+                {PULSE_FLAGSHIP.desc}
               </p>
             </Link>
           </div>
@@ -388,7 +401,7 @@ function PulseLink({
   active,
   flagship,
 }: {
-  data: { href: string; label: string; sub: string };
+  data: { href: string; kicker: string; label: string; desc: string };
   active: boolean;
   flagship?: boolean;
 }) {
@@ -400,7 +413,7 @@ function PulseLink({
         "group block p-4 rounded-xl border hairline transition",
         flagship
           ? "border-blush/40 bg-blush/10 hover:bg-blush hover:text-ink"
-          : "border-bone/10 bg-bone/[0.02] hover:bg-bone/5",
+          : "border-bone/10 bg-bone/[0.02] hover:bg-bone/5 hover:border-bone/20",
         active && "ring-1 ring-blush"
       )}
     >
@@ -408,19 +421,32 @@ function PulseLink({
         <p
           className={cn(
             "text-[10px] uppercase tracking-[0.25em]",
-            flagship ? "text-blush group-hover:text-ink/70" : "text-blush"
+            flagship ? "text-blush group-hover:text-ink/70" : "text-bone/50"
           )}
         >
-          {data.sub}
+          {data.kicker}
         </p>
-        {flagship && (
-          <span className="shrink-0 text-[8px] uppercase tracking-[0.2em] bg-hot text-ink px-1.5 py-0.5 rounded-sm font-bold">
-            Flagship
-          </span>
-        )}
+        <span
+          className={cn(
+            "shrink-0 text-[8px] uppercase tracking-[0.2em] px-1.5 py-0.5 rounded-sm font-bold",
+            flagship
+              ? "bg-hot text-ink"
+              : "border border-bone/20 text-bone/55 group-hover:text-bone"
+          )}
+        >
+          {flagship ? "Hire us" : "Read"}
+        </span>
       </div>
-      <p className="mt-1 font-display text-base lg:text-lg tracking-tighter leading-tight">
+      <p className="mt-1.5 font-display text-base lg:text-lg tracking-tighter leading-tight">
         {data.label}
+      </p>
+      <p
+        className={cn(
+          "mt-1.5 text-xs leading-snug",
+          flagship ? "text-bone/70 group-hover:text-ink/80" : "text-bone/55"
+        )}
+      >
+        {data.desc}
       </p>
     </Link>
   );
