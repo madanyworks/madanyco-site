@@ -1,5 +1,6 @@
 import ServiceHero from "@/components/ServiceHero";
 import ServiceCTA from "@/components/ServiceCTA";
+import Link from "next/link";
 import PricingCard, { PricingTier } from "@/components/PricingCard";
 import Reveal from "@/components/Reveal";
 import Marquee from "@/components/Marquee";
@@ -129,6 +130,37 @@ export default function Page() {
                 creative testing framework, copy, and reporting cadence.
               </p>
             </div>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* How we do it — Pulse tie-in */}
+      <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 bg-ink-700/40 border-t hairline border-t-bone/10">
+        <Reveal>
+          <div className="grid gap-10 lg:grid-cols-12 items-end">
+            <div className="lg:col-span-5">
+              <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
+                <span className="h-px w-12 bg-blush" />
+                How we do it
+              </div>
+              <h2 className="font-display text-big leading-[0.95] tracking-tighter">
+                The Channels pillar of{" "}
+                <Link
+                  href="/pulse-system"
+                  className="italic font-display-light text-blush link-underline"
+                >
+                  The Pulse System™
+                </Link>
+                .
+              </h2>
+            </div>
+            <p className="lg:col-span-7 text-lg text-bone/80 leading-relaxed max-w-2xl">
+              Paid social is run end-to-end against your allowable CAC and MER
+              guardrails. Decision rules are set before launch, creative is
+              tested in iterations, and every report ends with an action —
+              scale, hold, or kill. The channel answers to the plan, not to
+              last week&apos;s ROAS.
+            </p>
           </div>
         </Reveal>
       </section>

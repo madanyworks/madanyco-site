@@ -1,5 +1,6 @@
 import ServiceHero from "@/components/ServiceHero";
 import ServiceCTA from "@/components/ServiceCTA";
+import Link from "next/link";
 import PricingCard, { PricingTier } from "@/components/PricingCard";
 import Reveal from "@/components/Reveal";
 import { IMAGES } from "@/lib/images";
@@ -241,6 +242,37 @@ export default function Page() {
             </Reveal>
           ))}
         </div>
+      </section>
+
+      {/* How we do it — Pulse tie-in */}
+      <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 bg-ink-700/40 border-t hairline border-t-bone/10">
+        <Reveal>
+          <div className="grid gap-10 lg:grid-cols-12 items-end">
+            <div className="lg:col-span-5">
+              <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
+                <span className="h-px w-12 bg-blush" />
+                How we do it
+              </div>
+              <h2 className="font-display text-big leading-[0.95] tracking-tighter">
+                The Creative Engine pillar of{" "}
+                <Link
+                  href="/pulse-system"
+                  className="italic font-display-light text-blush link-underline"
+                >
+                  The Pulse System™
+                </Link>
+                .
+              </h2>
+            </div>
+            <p className="lg:col-span-7 text-lg text-bone/80 leading-relaxed max-w-2xl">
+              Content is treated as a testable, compounding asset — not a
+              posting quota. Pillars become angles, angles become hooks, and
+              what resonates gets iterated into more of itself. Community
+              management and honest analytics feed straight back into the plan,
+              so social earns attention on purpose.
+            </p>
+          </div>
+        </Reveal>
       </section>
 
       <ServiceCTA

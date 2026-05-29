@@ -7,7 +7,7 @@ import { IMAGES } from "@/lib/images";
 export const metadata = {
   title: "About",
   description:
-    "MadanyCo is a profit-first growth partner for DTC and e-commerce brands. We steer from unit economics and operate with a weekly cadence.",
+    "MadanyCo is a founder-led, full-service growth agency for DTC and e-commerce brands. Strategy, performance, content, build, and talent — installed through The Pulse System™.",
 };
 
 const DIFFERENTIATORS = [
@@ -98,12 +98,16 @@ export default function AboutPage() {
               Who are we?
             </h2>
             <p className="lg:col-span-8 text-lg sm:text-xl text-bone/80 leading-relaxed max-w-3xl">
-              MadanyCo is a profit-first growth partner for DTC and e-commerce
-              brands. We help teams scale with clarity by steering from business
-              unit economics, building a plan you can actually run, and
-              operating a weekly cadence that turns reporting into decisions.
-              We do not chase vanity metrics. We protect margin and cash flow.
-              We make growth repeatable.
+              MadanyCo is a founder-led growth agency for DTC and e-commerce
+              brands. We run the full stack — strategy, performance, content,
+              build, and talent — and install{" "}
+              <Link href="/pulse-system" className="text-blush link-underline">
+                The Pulse System™
+              </Link>
+              : a financial plan, a marketing plan, and the daily workflow that
+              holds them together. We don&apos;t chase vanity metrics. We steer
+              from unit economics, protect margin and cash flow, and make growth
+              repeatable.
             </p>
           </div>
         </Reveal>
@@ -122,6 +126,51 @@ export default function AboutPage() {
               numbers into a system: clear targets, clear pacing, clear
               accountability. Then we run it with you.
             </p>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* THE FOUNDER */}
+      <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 border-t hairline border-t-bone/10">
+        <Reveal>
+          <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
+            <span className="h-px w-12 bg-blush" />
+            Founder-led
+          </div>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <div className="grid gap-12 lg:grid-cols-12">
+            <h2 className="lg:col-span-5 font-display text-big leading-[0.95] tracking-tighter">
+              One operator,{" "}
+              <span className="italic font-display-light text-blush">
+                a vetted bench
+              </span>
+              .
+            </h2>
+            <div className="lg:col-span-7 space-y-6 text-lg text-bone/80 leading-relaxed max-w-2xl">
+              <p>
+                MadanyCo is led by its founder, Abdalrahman Madany — an operator
+                who spent years inside Snapchat&apos;s regional ad business
+                across EMEA and North Africa, then brand-side running campaigns
+                for energy, hospitality, and DTC companies. Platform side and
+                brand side, end to end.
+              </p>
+              <p>
+                That vantage point is the whole point. Most agencies sell you a
+                layer — a channel, a deliverable, a retainer. MadanyCo was built
+                to install the layer underneath all of them: the plan, the
+                cadence, and the reporting that make every channel accountable
+                to the same numbers.
+              </p>
+              <p className="text-bone">
+                Engagements are founder-led and staffed from a vetted bench of
+                specialists — paid, creative, lifecycle, build, and talent —
+                brought in by discipline and scaled to the work. No bloated org
+                chart to pay for, no junior team learning on your budget. Just
+                the right people on the right problem, run through one operating
+                system.
+              </p>
+            </div>
           </div>
         </Reveal>
       </section>

@@ -109,15 +109,6 @@ const SERVICE_PILLARS = [
   },
 ];
 
-// Pulse System workbook months — placeholders until screenshots arrive
-const PULSE_MONTHS = [
-  { m: "Month 1", t: "Discovery + Plan" },
-  { m: "Month 2", t: "Install" },
-  { m: "Month 3", t: "First Pivot" },
-  { m: "Month 4", t: "Scale Decisions" },
-  { m: "Month 5", t: "Compound" },
-];
-
 // ──────────────────────────────────────────── page
 export default function HomePage() {
   return (
@@ -466,60 +457,12 @@ export default function HomePage() {
         </Reveal>
       </section>
 
-      {/* ═════════════════════════════════════════ PULSE PROVEN — workbooks */}
-      <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 lg:py-40 bg-ink-700/40 border-t hairline border-t-bone/10">
-        <Reveal>
-          <div className="grid gap-8 lg:grid-cols-12 items-end mb-12">
-            <div className="lg:col-span-7">
-              <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
-                <span className="h-px w-12 bg-blush" />
-                (04) Proven — the workbooks
-              </div>
-              <h2 className="font-display text-huge leading-[0.9] tracking-tighter">
-                The Pulse System™,{" "}
-                <span className="italic font-display-light text-blush">
-                  run for real
-                </span>
-                .
-              </h2>
-            </div>
-            <p className="lg:col-span-5 text-base sm:text-lg text-bone/70 leading-relaxed">
-              Redacted screenshots from a recent 5-month installation —
-              showing the plan, the cadence, the decisions, the compounding.
-              <span className="block mt-3 text-xs uppercase tracking-[0.2em] text-bone/40">
-                Workbook screenshots to be added.
-              </span>
-            </p>
-          </div>
-        </Reveal>
-
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {PULSE_MONTHS.map((m, i) => (
-            <Reveal key={m.m} delay={i * 0.05}>
-              <div className="aspect-[3/4] rounded-2xl border-2 border-dashed border-bone/15 bg-ink-600/40 flex flex-col items-center justify-center p-6 text-center">
-                <p className="text-[10px] uppercase tracking-[0.3em] text-blush mb-4">
-                  {m.m}
-                </p>
-                <p className="font-display text-lg tracking-tighter text-bone">
-                  {m.t}
-                </p>
-                <p className="mt-6 text-[10px] uppercase tracking-[0.25em] text-bone/40">
-                  Screenshot
-                  <br />
-                  placeholder
-                </p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
       {/* ═════════════════════════════════════════ STATS */}
       <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 lg:py-40 border-t hairline border-t-bone/10">
         <Reveal>
           <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
             <span className="h-px w-12 bg-blush" />
-            (05) Numbers we steer by
+            (04) Numbers we steer by
           </div>
           <h2 className="font-display text-huge leading-[0.88] tracking-tighter max-w-4xl">
             ROAS is a thermometer.
@@ -552,7 +495,7 @@ export default function HomePage() {
           <Reveal className="lg:col-span-7">
             <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-6">
               <span className="h-px w-12 bg-blush" />
-              (06) Press play
+              (05) Press play
             </div>
             <h2 className="font-display text-huge leading-[0.88] tracking-tighter">
               The brand,{" "}
@@ -610,7 +553,7 @@ export default function HomePage() {
         <Reveal>
           <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-10">
             <span className="h-px w-12 bg-blush" />
-            (07) Manifesto
+            (06) Manifesto
           </div>
         </Reveal>
 
@@ -672,7 +615,7 @@ export default function HomePage() {
         <Reveal>
           <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-10">
             <span className="h-px w-12 bg-blush" />
-            (08) Where to start
+            (07) Where to start
           </div>
           <h2 className="font-display text-huge leading-[0.9] tracking-tighter max-w-4xl">
             Two ways{" "}

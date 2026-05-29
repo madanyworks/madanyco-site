@@ -1,5 +1,6 @@
 import ServiceHero from "@/components/ServiceHero";
 import ServiceCTA from "@/components/ServiceCTA";
+import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import Marquee from "@/components/Marquee";
 import { IMAGES } from "@/lib/images";
@@ -174,6 +175,37 @@ export default function Page() {
             Most clients stay with us for a year or more — not because they
             have to, but because the ROI is clear, every single month.
           </p>
+        </Reveal>
+      </section>
+
+      {/* How we do it — Pulse tie-in */}
+      <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 border-t hairline border-t-bone/10">
+        <Reveal>
+          <div className="grid gap-10 lg:grid-cols-12 items-end">
+            <div className="lg:col-span-5">
+              <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
+                <span className="h-px w-12 bg-blush" />
+                How we do it
+              </div>
+              <h2 className="font-display text-big leading-[0.95] tracking-tighter">
+                The Growth Plan pillar of{" "}
+                <Link
+                  href="/pulse-system"
+                  className="italic font-display-light text-blush link-underline"
+                >
+                  The Pulse System™
+                </Link>
+                .
+              </h2>
+            </div>
+            <p className="lg:col-span-7 text-lg text-bone/80 leading-relaxed max-w-2xl">
+              Coaching isn&apos;t a course you finish and forget. We install the
+              same Growth Plan we run for full engagements — quarterly
+              objectives, allowable CAC, and the guardrails that keep spend
+              honest — then teach your team to run the weekly cadence
+              themselves. You keep the system long after the engagement ends.
+            </p>
+          </div>
         </Reveal>
       </section>
 

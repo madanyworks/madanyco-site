@@ -1,5 +1,6 @@
 import ServiceHero from "@/components/ServiceHero";
 import ServiceCTA from "@/components/ServiceCTA";
+import Link from "next/link";
 import Reveal from "@/components/Reveal";
 
 export const metadata = {
@@ -97,6 +98,37 @@ export default function Page() {
             </li>
           ))}
         </ul>
+      </section>
+
+      {/* How we do it — Pulse tie-in */}
+      <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 border-t hairline border-t-bone/10">
+        <Reveal>
+          <div className="grid gap-10 lg:grid-cols-12 items-end">
+            <div className="lg:col-span-5">
+              <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
+                <span className="h-px w-12 bg-blush" />
+                How we do it
+              </div>
+              <h2 className="font-display text-big leading-[0.95] tracking-tighter">
+                The conversion layer of{" "}
+                <Link
+                  href="/pulse-system"
+                  className="italic font-display-light text-blush link-underline"
+                >
+                  The Pulse System™
+                </Link>
+                .
+              </h2>
+            </div>
+            <p className="lg:col-span-7 text-lg text-bone/80 leading-relaxed max-w-2xl">
+              A site is where attention turns into revenue, so we build it as
+              part of the system — Core Web Vitals, clean tracking, and CRO
+              aligned to the same guardrails the rest of the plan runs on.
+              It&apos;s not a brochure that sits still; it&apos;s the surface
+              every channel is optimized to convert.
+            </p>
+          </div>
+        </Reveal>
       </section>
 
       <ServiceCTA

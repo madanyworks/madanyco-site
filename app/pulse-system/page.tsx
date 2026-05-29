@@ -43,14 +43,6 @@ const CADENCE = [
   { n: "Quarterly", body: "Business review. Plan vs actual, next-quarter OKRs, allowable CAC reset." },
 ];
 
-const WORKBOOK_MONTHS = [
-  { month: "Month 1", title: "Discovery + Plan" },
-  { month: "Month 2", title: "Install" },
-  { month: "Month 3", title: "First Pivot" },
-  { month: "Month 4", title: "Scale Decisions" },
-  { month: "Month 5", title: "Compound" },
-];
-
 export default function PulseSystemMethodologyPage() {
   return (
     <>
@@ -196,55 +188,12 @@ export default function PulseSystemMethodologyPage() {
         </div>
       </section>
 
-      {/* PROVEN — workbook placeholders */}
-      <section className="px-6 sm:px-10 lg:px-14 py-16 sm:py-20 lg:py-24 bg-ink-700/40 border-y hairline border-y-bone/10">
-        <Reveal>
-          <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
-            <span className="h-px w-12 bg-blush" />
-            (04) Proven — the workbooks
-          </div>
-          <h2 className="font-display text-huge leading-[0.9] tracking-tighter max-w-3xl">
-            The system,{" "}
-            <span className="italic font-display-light text-blush">
-              run for real
-            </span>
-            .
-          </h2>
-          <p className="mt-6 text-base sm:text-lg text-bone/75 max-w-2xl leading-relaxed">
-            Redacted screenshots from a recent 5-month installation. Workbook
-            screenshots coming soon — drop your file at the matching path under
-            <code className="text-blush text-sm mx-1">/public/pulse/</code>
-            to replace each placeholder.
-          </p>
-        </Reveal>
-
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {WORKBOOK_MONTHS.map((m, i) => (
-            <Reveal key={m.month} delay={i * 0.05}>
-              <div className="aspect-[3/4] rounded-2xl border-2 border-dashed border-bone/15 bg-ink-600/40 flex flex-col items-center justify-center p-6 text-center">
-                <p className="text-[10px] uppercase tracking-[0.3em] text-blush mb-4">
-                  {m.month}
-                </p>
-                <p className="font-display text-xl tracking-tighter text-bone">
-                  {m.title}
-                </p>
-                <p className="mt-6 text-[10px] uppercase tracking-[0.25em] text-bone/40">
-                  Workbook screenshot
-                  <br />
-                  to be added
-                </p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
       {/* PULSE vs Flagship CTA */}
       <section className="px-6 sm:px-10 lg:px-14 py-16 sm:py-20 lg:py-24">
         <Reveal>
           <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
             <span className="h-px w-12 bg-blush" />
-            (05) Want it installed?
+            (04) Want it installed?
           </div>
           <div className="grid gap-6 lg:grid-cols-12 items-stretch">
             <Link
