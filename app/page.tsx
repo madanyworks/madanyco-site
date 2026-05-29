@@ -92,9 +92,6 @@ export default function HomePage() {
               Online · Bahrain → Globally
             </div>
             <div className="hidden sm:flex items-center gap-3 text-[10px] uppercase tracking-[0.3em] text-bone/40">
-              <span>©</span>
-              <span>MMXXVI</span>
-              <span>·</span>
               <span>The Pulse System™</span>
             </div>
           </div>
