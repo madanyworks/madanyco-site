@@ -3,6 +3,7 @@ import EmailSignup from "./EmailSignup";
 
 const LEARN = [
   { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
   { href: "/blog", label: "Daily Blog" },
   { href: "/privacy", label: "Privacy Policy" },
   { href: "/terms", label: "Terms of Service" },

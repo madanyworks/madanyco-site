@@ -59,6 +59,11 @@ const TEAM_ON_IT = [
     body: "Klaviyo + SMS + retention. Flow architecture, segmentation, campaign calendar, win-back. The compounding revenue line most brands skip.",
   },
   {
+    role: "Data & Analytics",
+    name: "Embedded specialist",
+    body: "Owns the scorecard math. Attribution sanity, MER, CAC by cohort, payback windows. Translates platform numbers into business decisions every Monday morning.",
+  },
+  {
     role: "Your team",
     name: "On the inside",
     body: "We don't replace your team — we operate alongside them. Same Slack, same plan, same scorecard. Knowledge transfers continuously so you build muscle, not dependency.",
@@ -124,7 +129,7 @@ export default function PulseSystemPage() {
   return (
     <>
       {/* ═════════════════════════════════════════ HERO */}
-      <section className="relative min-h-[90svh] flex items-end pt-32 pb-16 px-6 sm:px-10 lg:px-14 overflow-hidden">
+      <section className="relative min-h-[60svh] flex items-end pt-28 pb-14 px-6 sm:px-10 lg:px-14 overflow-hidden">
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-blush/15 via-transparent to-transparent pointer-events-none" />
         <div className="relative w-full">
           <Reveal>
@@ -172,7 +177,7 @@ export default function PulseSystemPage() {
       />
 
       {/* ═════════════════════════════════════════ THE EQUATION */}
-      <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 lg:py-40">
+      <section className="px-6 sm:px-10 lg:px-14 py-16 sm:py-20 lg:py-24">
         <Reveal>
           <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-10">
             <span className="h-px w-12 bg-blush" />
@@ -256,9 +261,9 @@ export default function PulseSystemPage() {
           </p>
         </Reveal>
 
-        <div className="mt-16 grid gap-px bg-bone/10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 border hairline">
+        <div className="mt-14 grid gap-px bg-bone/10 sm:grid-cols-2 lg:grid-cols-3 border hairline">
           {TEAM_ON_IT.map((t, i) => (
-            <Reveal key={t.role} delay={(i % 5) * 0.05} className="bg-ink">
+            <Reveal key={t.role} delay={(i % 3) * 0.05} className="bg-ink">
               <div className="h-full p-7 sm:p-8 hover:bg-ink-600 transition">
                 <p className="text-[10px] uppercase tracking-[0.3em] text-blush mb-6">
                   {t.role}

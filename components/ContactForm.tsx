@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 const SERVICES = [
+  "The Pulse System™ (Flagship)",
   "Social Media Management",
   "Social Media Advertising",
   "Video Production",
