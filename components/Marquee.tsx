@@ -29,7 +29,9 @@ export default function Marquee({
   return (
     <div
       className={cn(
-        "relative overflow-hidden w-full select-none",
+        // overflow-x-clip hides the horizontal scroll (the infinite-loop
+        // illusion) without clipping glyph descenders (g, y, p) vertically.
+        "relative overflow-x-clip w-full select-none",
         className
       )}
       aria-hidden="true"
