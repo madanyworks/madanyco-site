@@ -3,7 +3,7 @@ import ServiceCTA from "@/components/ServiceCTA";
 import Reveal from "@/components/Reveal";
 
 export const metadata = {
-  title: "The Pulse System™ — Flagship engagement",
+  title: "The Pulse System™: Flagship engagement",
   description:
     "Our full operating-system install for ambitious DTC and e-commerce brands. Fractional CMO + embedded squad + the cadence that turns reporting into decisions.",
 };
@@ -22,7 +22,7 @@ const PILLARS = [
   {
     n: "03",
     title: "Channels",
-    body: "Meta, TikTok, Google, Snap. Fully managed end-to-end — bidding, structure, creative rotations, audience strategy, attribution. Plus website CRO alignment.",
+    body: "Meta, TikTok, Google, Snap. Fully managed end-to-end, bidding, structure, creative rotations, audience strategy, attribution. Plus website CRO alignment.",
   },
   {
     n: "04",
@@ -32,7 +32,7 @@ const PILLARS = [
   {
     n: "05",
     title: "Reporting",
-    body: "A scorecard you can read in 5 minutes. CAC by cohort, MER, contribution-margin guardrails, pacing rules — and a decision queue, not a screenshot deck.",
+    body: "A scorecard you can read in 5 minutes. CAC by cohort, MER, contribution-margin guardrails, pacing rules, and a decision queue, not a screenshot deck.",
   },
 ];
 
@@ -65,7 +65,7 @@ const TEAM_ON_IT = [
   {
     role: "Your team",
     name: "On the inside",
-    body: "We don't replace your team — we operate alongside them. Same Slack, same plan, same scorecard. Knowledge transfers continuously so you build muscle, not dependency.",
+    body: "We don't replace your team, we operate alongside them. Same Slack, same plan, same scorecard. Knowledge transfers continuously so you build muscle, not dependency.",
   },
 ];
 
@@ -114,7 +114,7 @@ const FOR_YOU_IF = [
   "You're doing $3M+ in revenue and want to scale without losing margin",
   "You have an internal team but no operating system around them",
   "You've outgrown agency retainers but aren't ready for a full in-house CMO",
-  "You want clarity on the financial side of growth — not just the creative side",
+  "You want clarity on the financial side of growth, not just the creative side",
 ];
 
 const NOT_FOR_YOU_IF = [
@@ -150,7 +150,7 @@ export default function PulseSystemPage() {
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mt-10 max-w-2xl text-lg sm:text-xl text-bone/75 leading-snug">
-              This is the engagement — not the explainer. A founder-led squad
+              This is the engagement, not the explainer. A founder-led squad
               installs the financial plan, the marketing plan, and the weekly
               cadence, then runs them with your team until the numbers move.
               New to the model?{" "}
@@ -180,7 +180,7 @@ export default function PulseSystemPage() {
             </div>
             <div className="lg:col-span-7 space-y-5 text-lg text-bone/80 leading-relaxed max-w-2xl">
               <p>
-                The Pulse System™ is our methodology — the equation, the five
+                The Pulse System™ is our methodology, the equation, the five
                 pillars, and the cadence that sit under every service we run.
                 This page is what happens when you hire us to install it.
               </p>
@@ -249,7 +249,7 @@ export default function PulseSystemPage() {
           </h2>
           <p className="mt-8 max-w-2xl text-lg text-bone/75 leading-relaxed">
             The founder leads every Pulse engagement. Specialists fill the
-            seats around him. Your team sits in the same Slack — knowledge
+            seats around him. Your team sits in the same Slack, knowledge
             transfers continuously, so you finish the engagement stronger than
             you started it.
           </p>
@@ -342,7 +342,7 @@ export default function PulseSystemPage() {
 
         <Reveal delay={0.3}>
           <p className="mt-12 text-sm uppercase tracking-[0.25em] text-bone/60">
-            Minimum 6-month engagement — that&apos;s when the compounding
+            Minimum 6-month engagement, that&apos;s when the compounding
             shows up in the P&amp;L.
           </p>
         </Reveal>
@@ -453,7 +453,7 @@ export default function PulseSystemPage() {
 
       <ServiceCTA
         headline="Ready to install the system?"
-        sub="20-minute scoping call. We'll ask about your P&L, your team, and your timeline — and tell you honestly whether Pulse is the right fit, or whether a single discipline would serve you better."
+        sub="20-minute scoping call. We'll ask about your P&L, your team, and your timeline, and tell you honestly whether Pulse is the right fit, or whether a single discipline would serve you better."
       />
     </>
   );

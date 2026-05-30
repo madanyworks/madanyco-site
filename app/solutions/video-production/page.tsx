@@ -3,19 +3,20 @@ import ServiceCTA from "@/components/ServiceCTA";
 import Reveal from "@/components/Reveal";
 import VideoPlayer from "@/components/VideoPlayer";
 import { BRAND_FILMS, REELS, HERO_VIDEOS } from "@/lib/videos";
+import PricingCard, { PricingTier } from "@/components/PricingCard";
 import Link from "next/link";
 
 export const metadata = {
   title: "Video Production",
   description:
-    "Strategic video content that captures attention — and converts. From concept to final cut, tailored to feel native to your platforms.",
+    "Strategic video content that captures attention, and converts. From concept to final cut, tailored to feel native to your platforms.",
 };
 
 const FORMATS = [
   {
     n: "01",
     title: "Live-Action Promotional",
-    body: "Brand films, product launches, and campaign hero pieces — shot, directed, and edited end-to-end.",
+    body: "Brand films, product launches, and campaign hero pieces, shot, directed, and edited end-to-end.",
   },
   {
     n: "02",
@@ -41,6 +42,48 @@ const PROCESS = [
   { n: "04", title: "Post", body: "Edit, color, sound, motion graphics, deliverables." },
 ];
 
+const TIERS: PricingTier[] = [
+  {
+    name: "HALF-DAY",
+    price: "$1,200",
+    cadence: "USD / shoot",
+    pitch: "A focused half-day shoot for a single concept.",
+    features: [
+      "Up to 4 hours on location",
+      "1 hero edit plus 3 short-form cuts",
+      "Direction, lighting, and sound",
+      "Licensed music and basic motion graphics",
+    ],
+  },
+  {
+    name: "CONTENT DAY",
+    price: "$2,400",
+    cadence: "USD / shoot",
+    featured: true,
+    pitch: "A full production day built for volume and reuse.",
+    features: [
+      "Full-day shoot, multiple setups",
+      "2 hero edits plus 8 to 10 short-form cuts",
+      "Concepting, scripting, and shot lists",
+      "Color, sound design, and captions",
+      "Delivered in formats for every platform",
+    ],
+  },
+  {
+    name: "MONTHLY ENGINE",
+    price: "From $3,500",
+    cadence: "USD / mo",
+    pitch: "Ongoing video wired into your creative testing.",
+    features: [
+      "Monthly shoot cadence",
+      "Always-on short-form pipeline",
+      "Performance-led concepts and iteration",
+      "Founder and brand POV series",
+      "Fed straight into paid testing",
+    ],
+  },
+];
+
 export default function Page() {
   return (
     <>
@@ -48,7 +91,7 @@ export default function Page() {
         eyebrow="Video Production"
         title="Elevate your brand through"
         accent="visual storytelling."
-        hook="At MadanyCo™, we don't just create videos — we craft moments that move people. From concept to final cut, every frame is designed with purpose: to engage, to convert, and to elevate your brand where it matters most."
+        hook="At MadanyCo™, we don't just create videos, we craft moments that move people. From concept to final cut, every frame is designed with purpose: to engage, to convert, and to elevate your brand where it matters most."
       />
 
       <div className="divider-line" />
@@ -62,7 +105,7 @@ export default function Page() {
             <p className="lg:col-span-5 text-lg text-bone/75 leading-relaxed">
               Whether you&apos;re a growing business or a large-scale brand, our
               video services help you communicate your story in a way that&apos;s
-              clear, captivating, and impossible to ignore — Instagram, TikTok,
+              clear, captivating, and impossible to ignore, Instagram, TikTok,
               YouTube, and beyond.
             </p>
           </div>
@@ -115,7 +158,7 @@ export default function Page() {
         </ol>
       </section>
 
-      {/* SHOWCASE — Brand films */}
+      {/* SHOWCASE, Brand films */}
       <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 border-t hairline border-t-bone/10">
         <Reveal>
           <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
@@ -136,7 +179,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* SHOWCASE — Reels */}
+      {/* SHOWCASE, Reels */}
       <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 bg-ink-700/40">
         <Reveal>
           <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
@@ -165,7 +208,32 @@ export default function Page() {
         </div>
       </section>
 
-      {/* How we do it — Pulse tie-in */}
+      {/* Packages */}
+      <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 border-t hairline border-t-bone/10">
+        <Reveal>
+          <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
+            <span className="h-px w-12 bg-blush" />
+            Packages
+          </div>
+          <h2 className="font-display text-huge leading-[0.9] tracking-tighter max-w-3xl">
+            Pick the production{" "}
+            <span className="italic font-display-light text-blush">
+              that fits
+            </span>
+            .
+          </h2>
+        </Reveal>
+
+        <div className="mt-16 grid gap-6 lg:grid-cols-3">
+          {TIERS.map((t, i) => (
+            <Reveal key={t.name} delay={i * 0.08}>
+              <PricingCard tier={t} />
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* How we do it, Pulse tie-in */}
       <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 border-t hairline border-t-bone/10">
         <Reveal>
           <div className="grid gap-10 lg:grid-cols-12 items-end">
@@ -186,7 +254,7 @@ export default function Page() {
               </h2>
             </div>
             <p className="lg:col-span-7 text-lg text-bone/80 leading-relaxed max-w-2xl">
-              Video isn&apos;t a cost line — it&apos;s the fuel for the Creative
+              Video isn&apos;t a cost line, it&apos;s the fuel for the Creative
               Engine. Concepts are built around hooks and angles, shipped in
               formats native to each platform, and fed into the testing system
               that picks the winners. The films that work become the creative
@@ -198,7 +266,7 @@ export default function Page() {
 
       <ServiceCTA
         headline="Let's build something memorable."
-        sub="Something that moves your audience — and your numbers."
+        sub="Something that moves your audience, and your numbers."
       />
     </>
   );

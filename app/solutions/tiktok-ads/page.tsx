@@ -8,7 +8,7 @@ import { IMAGES } from "@/lib/images";
 export const metadata = {
   title: "TikTok Ads",
   description:
-    "Stop sleeping on TikTok. 1.6B users worldwide. We craft campaigns that resonate — and deliver.",
+    "Stop sleeping on TikTok. 1.6B users worldwide. We craft campaigns that resonate, and deliver.",
 };
 
 const TIERS: PricingTier[] = [
@@ -42,7 +42,7 @@ const TIERS: PricingTier[] = [
     name: "LEAD",
     price: "From $2,800",
     cadence: "USD / mo",
-    pitch: "For brands serious about standing out — and scaling fast.",
+    pitch: "For brands serious about standing out, and scaling fast.",
     features: [
       "1 × 2-hour custom shoot included",
       "Daily monitoring & monthly reporting",
@@ -66,7 +66,7 @@ export default function Page() {
         eyebrow="TikTok Ads"
         title="Stop sleeping on"
         accent="TikTok."
-        hook="If you're still not advertising on TikTok, you're missing the wave. TikTok isn't a trend — it's a global phenomenon. While most brands stay glued to Meta, TikTok offers a unique opportunity to engage with a vast and active user base. We've been at the forefront — crafting campaigns that resonate, and deliver."
+        hook="If you're still not advertising on TikTok, you're missing the wave. TikTok isn't a trend, it's a global phenomenon. While most brands stay glued to Meta, TikTok offers a unique opportunity to engage with a vast and active user base. We've been at the forefront, crafting campaigns that resonate, and deliver."
         bgImage={IMAGES.tiktok1}
       />
 
@@ -108,7 +108,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* How we do it — Pulse tie-in */}
+      {/* How we do it, Pulse tie-in */}
       <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 border-t hairline border-t-bone/10">
         <Reveal>
           <div className="grid gap-10 lg:grid-cols-12 items-end">
@@ -132,8 +132,8 @@ export default function Page() {
               TikTok is held to the same standard as every other channel:
               decision rules in advance, creative tested in iterations, and
               reporting that ends with a decision. We treat the platform&apos;s
-              native grammar as a creative input — not an excuse to drop the
-              guardrails — so spend stays tied to allowable CAC and MER.
+              native grammar as a creative input, not an excuse to drop the
+              guardrails, so spend stays tied to allowable CAC and MER.
             </p>
           </div>
         </Reveal>

@@ -26,7 +26,7 @@ export default function TermsPage() {
         <p>
           You&apos;re welcome to browse, share, and link to madanyco.com. The
           content (copy, designs, brand marks) is © MadanyCo unless otherwise
-          credited — please don&apos;t republish without asking.
+          credited, please don&apos;t republish without asking.
         </p>
 
         <h2>Engaging us for work</h2>

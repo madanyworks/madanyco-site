@@ -172,7 +172,7 @@ export default function WorkPage() {
 
       <div className="divider-line" />
 
-      {/* RECENT CAMPAIGNS — SMA gallery */}
+      {/* RECENT CAMPAIGNS, SMA gallery */}
       <section className="px-6 sm:px-10 lg:px-14 py-20 sm:py-28 bg-ink-700/40">
         <Reveal>
           <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
@@ -191,7 +191,7 @@ export default function WorkPage() {
             </Link>
           </div>
           <p className="mt-6 text-lg text-bone/70 max-w-2xl">
-            From Meta to Snapchat, TikTok to Google — tailored creative put in
+            From Meta to Snapchat, TikTok to Google, tailored creative put in
             front of the right audience. Never disrupting. Always
             scroll-stopping.
           </p>
@@ -215,7 +215,7 @@ export default function WorkPage() {
         </div>
       </section>
 
-      {/* WEBSITES SHIPPED — real case studies */}
+      {/* WEBSITES SHIPPED, real case studies */}
       <section className="px-6 sm:px-10 lg:px-14 py-20 sm:py-28">
         <Reveal>
           <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
@@ -272,7 +272,7 @@ export default function WorkPage() {
         </div>
       </section>
 
-      {/* VIDEO PRODUCTION — brand films */}
+      {/* VIDEO PRODUCTION, brand films */}
       <section className="px-6 sm:px-10 lg:px-14 py-20 sm:py-28 border-t hairline border-t-bone/10 bg-ink-700/40">
         <Reveal>
           <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
@@ -296,7 +296,7 @@ export default function WorkPage() {
           </div>
           <p className="mt-6 text-lg text-bone/70 max-w-2xl leading-relaxed">
             Concept through final cut. Hotel openings, brand stories, founder
-            POV pieces — every frame designed with purpose.
+            POV pieces, every frame designed with purpose.
           </p>
         </Reveal>
 
@@ -309,7 +309,7 @@ export default function WorkPage() {
         </div>
       </section>
 
-      {/* VIDEO PRODUCTION — reels */}
+      {/* VIDEO PRODUCTION, reels */}
       <section className="px-6 sm:px-10 lg:px-14 py-20 sm:py-28 border-t hairline border-t-bone/10">
         <Reveal>
           <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
@@ -330,7 +330,7 @@ export default function WorkPage() {
             </a>
           </div>
           <p className="mt-6 text-lg text-bone/70 max-w-2xl leading-relaxed">
-            Native-format short-form — strategy-led, platform-native, written
+            Native-format short-form, strategy-led, platform-native, written
             for the algorithm and the audience at the same time.
           </p>
         </Reveal>

@@ -18,7 +18,7 @@ const TIERS: PricingTier[] = [
     cadence: "USD / campaign type / mo",
     featured: true,
     pitch:
-      "A single, focused campaign type — built and managed end-to-end. Ad spend not included.",
+      "A single, focused campaign type, built and managed end-to-end. Ad spend not included.",
     features: [
       "Google Search Ads (text-based)",
       "Display Ads",
@@ -42,19 +42,19 @@ const PROCESS = [
   {
     n: "02",
     title: "Campaign Setup",
-    body: "Full campaign structure, ad groups, creative, and tracking — built to clear conversion definitions.",
+    body: "Full campaign structure, ad groups, creative, and tracking, built to clear conversion definitions.",
   },
   {
     n: "03",
     title: "Management & Optimization",
-    body: "Continuous monitoring and data-backed adjustments. Bids, creatives, keywords, audiences — refined every week.",
+    body: "Continuous monitoring and data-backed adjustments. Bids, creatives, keywords, audiences, refined every week.",
   },
 ];
 
 const FAQS = [
   {
     q: "What's the difference between SEM and SEO?",
-    a: "SEM (Search Engine Marketing) is paid — you bid for placements and pay per click. SEO is earned — you optimize for organic visibility. Best results come from running both in parallel.",
+    a: "SEM (Search Engine Marketing) is paid, you bid for placements and pay per click. SEO is earned, you optimize for organic visibility. Best results come from running both in parallel.",
   },
   {
     q: "What's the minimum ad spend you'd recommend?",
@@ -62,11 +62,11 @@ const FAQS = [
   },
   {
     q: "Can you guarantee a #1 ranking?",
-    a: "No reputable agency can — and any that does is selling fiction. We can guarantee that we'll structure campaigns to give you the best chance, and report honestly on what's actually moving.",
+    a: "No reputable agency can, and any that does is selling fiction. We can guarantee that we'll structure campaigns to give you the best chance, and report honestly on what's actually moving.",
   },
   {
     q: "Do you support Arabic and English campaigns?",
-    a: "Yes — fully bilingual setup, copywriting, and reporting.",
+    a: "Yes, fully bilingual setup, copywriting, and reporting.",
   },
 ];
 
@@ -77,7 +77,7 @@ export default function Page() {
         eyebrow="Google Ads · Pay-Per-Click"
         title="If you don't show up,"
         accent="you don't exist."
-        hook="Attention business owners — if your business doesn't show up when people search, it might as well not exist. We build Google Ads for businesses at every stage of growth, by specialists, backed by performance."
+        hook="Attention business owners, if your business doesn't show up when people search, it might as well not exist. We build Google Ads for businesses at every stage of growth, by specialists, backed by performance."
         bgImage={IMAGES.googleAds1}
       />
 
@@ -173,7 +173,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* How we do it — Pulse tie-in */}
+      {/* How we do it, Pulse tie-in */}
       <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 bg-ink-700/40 border-t hairline border-t-bone/10">
         <Reveal>
           <div className="grid gap-10 lg:grid-cols-12 items-end">
@@ -196,7 +196,7 @@ export default function Page() {
             <p className="lg:col-span-7 text-lg text-bone/80 leading-relaxed max-w-2xl">
               Search and Display are run like every other channel: decision
               rules set in advance, conversions defined before launch, and
-              reporting that ends with a decision — not a screenshot. Your
+              reporting that ends with a decision, not a screenshot. Your
               account is held to the same allowable CAC and MER guardrails as
               the rest of the plan, so spend stays accountable to the bottom
               line.

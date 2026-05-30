@@ -36,9 +36,9 @@ const PAIN_POINTS = [
 ];
 
 const PROMISE_FEATURES = [
-  { n: "01", label: "Growth Plan", body: "A clear growth plan — what to do, in what order, and why." },
+  { n: "01", label: "Growth Plan", body: "A clear growth plan, what to do, in what order, and why." },
   { n: "02", label: "Creative Engine", body: "Pillars & angles → hooks → iterations → winners." },
-  { n: "03", label: "Channels", body: "Meta / TikTok / Google / Snap — plus website alignment." },
+  { n: "03", label: "Channels", body: "Meta / TikTok / Google / Snap, plus website alignment." },
   { n: "04", label: "Lifecycle", body: "Email & SMS flows + campaigns that lift LTV." },
   { n: "05", label: "Reporting", body: "CAC targets, MER, contribution-margin guardrails." },
 ];
@@ -75,7 +75,7 @@ const CLOSING_PHRASES = [
   "The Pulse System™",
 ];
 
-// 5 service pillars — new agency-model IA
+// 5 service pillars, new agency-model IA
 const SERVICE_PILLARS = [
   {
     n: "01",
@@ -150,7 +150,7 @@ export default function HomePage() {
           <div className="mt-12 sm:mt-16 grid gap-8 lg:grid-cols-12 items-end">
             <p className="lg:col-span-6 text-lg sm:text-xl text-bone/70 max-w-xl leading-snug">
               A profit-first growth partner for DTC and e-commerce brands. We
-              install <span className="text-bone">The Pulse System™</span> — a
+              install <span className="text-bone">The Pulse System™</span>, a
               financial plan, a marketing plan, and the daily workflow that
               holds them together.
             </p>
@@ -205,7 +205,7 @@ export default function HomePage() {
 
         <Reveal delay={0.25}>
           <p className="mt-12 max-w-2xl text-lg sm:text-xl text-bone/70 leading-relaxed">
-            With one operating system, built for profitable growth — a
+            With one operating system, built for profitable growth, a
             financial plan, a marketing plan, and the daily workflow that
             holds them together. We onboard a small number of brands each
             quarter; that&apos;s the only way the cadence actually compounds.
@@ -290,7 +290,7 @@ export default function HomePage() {
                 <span className="text-bone">predictable growth</span>.
               </p>
               <p className="font-display text-2xl sm:text-3xl tracking-tighter text-bone leading-tight pt-2">
-                Growth lives in the doing — in the volume of actions taken per
+                Growth lives in the doing, in the volume of actions taken per
                 unit of time.
               </p>
             </div>
@@ -508,7 +508,7 @@ export default function HomePage() {
           <Reveal className="lg:col-span-5" delay={0.15}>
             <p className="text-base sm:text-lg text-bone/70 leading-relaxed max-w-md">
               Promotional pieces from recent brand work. Concept through final
-              cut — the kind of films we ship for clients across hospitality,
+              cut, the kind of films we ship for clients across hospitality,
               wellness, and DTC.
             </p>
           </Reveal>
@@ -640,7 +640,7 @@ export default function HomePage() {
               </h3>
               <p className="mt-6 text-base sm:text-lg text-bone/80 leading-relaxed max-w-md">
                 For Fractional CMO, the full Pulse System engagement, custom
-                builds, or anything ongoing. 20-minute scoping call — we&apos;ll
+                builds, or anything ongoing. 20-minute scoping call, we&apos;ll
                 tell you honestly whether we&apos;re the right fit.
               </p>
               <span className="mt-10 inline-flex items-center gap-3 text-sm uppercase tracking-widest text-hot group-hover:text-bone transition">
@@ -666,7 +666,7 @@ export default function HomePage() {
               </h3>
               <p className="mt-6 text-base sm:text-lg text-bone/80 leading-relaxed max-w-md">
                 For one-off audits, single-channel campaigns, build packages,
-                or a Snapchat strategy doc. Drop a brief through the form — we
+                or a Snapchat strategy doc. Drop a brief through the form, we
                 respond within 1–2 business days with scope and price.
               </p>
               <span className="mt-10 inline-flex items-center gap-3 text-sm uppercase tracking-widest text-bone group-hover:text-blush transition">
@@ -701,7 +701,7 @@ export default function HomePage() {
             </h2>
             <p className="mt-6 text-base sm:text-lg text-bone/70 max-w-md">
               Marketing is changing, and so are we. Be first to know
-              what&apos;s next — no spam, no noise, just insights worth your
+              what&apos;s next, no spam, no noise, just insights worth your
               busy time.
             </p>
           </Reveal>

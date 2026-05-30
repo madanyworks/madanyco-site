@@ -5,12 +5,12 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/cn";
 
-// The Pulse System™ — two destinations: read the method (free) vs hire us to install it (paid).
+// The Pulse System™, two destinations: read the method (free) vs hire us to install it (paid).
 const PULSE_METHODOLOGY = {
   href: "/pulse-system",
   kicker: "Methodology · free to read",
   label: "The Pulse System™",
-  desc: "How we think — the equation, the five pillars, the cadence.",
+  desc: "How we think, the equation, the five pillars, the cadence.",
 };
 const PULSE_FLAGSHIP = {
   href: "/solutions/pulse-system",
@@ -34,8 +34,7 @@ const PILLARS: Pillar[] = [
   {
     title: "Strategy & Leadership",
     items: [
-      { href: "/solutions/fractional-cmo", label: "Fractional CMO", badge: "new" },
-      { href: "/solutions/coaching-training", label: "Coaching & Training" },
+      { href: "/solutions/fractional-cmo", label: "Fractional CMO & Coaching", badge: "new" },
       { href: "/solutions/launch", label: "Launch Strategy", badge: "new" },
     ],
   },
@@ -153,7 +152,7 @@ export default function Nav() {
                 </span>
               </button>
 
-              {/* Mega-menu — fixed + viewport-centered so the wide panel never crops on either edge */}
+              {/* Mega-menu, fixed + viewport-centered so the wide panel never crops on either edge */}
               <div
                 role="menu"
                 className={cn(
@@ -297,7 +296,7 @@ export default function Nav() {
         )}
       >
         <div className="pt-28 px-6 sm:px-10 h-full overflow-y-auto pb-12">
-          {/* Pulse pinned at top — read the method vs hire us to install it */}
+          {/* Pulse pinned at top, read the method vs hire us to install it */}
           <div className="mb-6 grid gap-3">
             <Link
               href={PULSE_METHODOLOGY.href}

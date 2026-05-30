@@ -53,7 +53,7 @@ const TIERS: PricingTier[] = [
     price: "$3,500",
     cadence: "/ month",
     pitch:
-      "For brands that aren't just playing the social media game — they're rewriting the rules.",
+      "For brands that aren't just playing the social media game, they're rewriting the rules.",
     features: [
       "Up to 20 Custom Feed Posts",
       "4 Short-Form Video Productions",
@@ -78,7 +78,7 @@ const PROCESS = [
   {
     n: "02",
     title: "Included Posts",
-    body: "Built for attention. Designed for action. A mix of custom feed posts, story designs, and resharing UGC that fits your voice. Higher tiers add monthly photo & video shoots — concept to casting to post-production.",
+    body: "Built for attention. Designed for action. A mix of custom feed posts, story designs, and resharing UGC that fits your voice. Higher tiers add monthly photo & video shoots, concept to casting to post-production.",
   },
   {
     n: "03",
@@ -88,12 +88,12 @@ const PROCESS = [
   {
     n: "04",
     title: "Community Management",
-    body: "Brands aren't built by broadcasting — they're built by conversations. We monitor and respond across every platform, in your voice, drawn from your values.",
+    body: "Brands aren't built by broadcasting, they're built by conversations. We monitor and respond across every platform, in your voice, drawn from your values.",
   },
   {
     n: "05",
     title: "Reporting",
-    body: "Monthly reports across every active channel: key metrics, trends, and what's next. Growth isn't about doing more — it's about knowing better.",
+    body: "Monthly reports across every active channel: key metrics, trends, and what's next. Growth isn't about doing more, it's about knowing better.",
   },
 ];
 
@@ -104,7 +104,7 @@ const FAQS = [
   },
   {
     q: "How much of my time is needed?",
-    a: "About 2 hours for the initial onboarding call. After that, as involved as you want — we work with hands-on collaborators and hands-off clients alike.",
+    a: "About 2 hours for the initial onboarding call. After that, as involved as you want, we work with hands-on collaborators and hands-off clients alike.",
   },
   {
     q: "How do you schedule the content?",
@@ -112,7 +112,7 @@ const FAQS = [
   },
   {
     q: "Can I see content before it's posted?",
-    a: "Absolutely. We prepare a visual calendar in Google Docs — each post on its own slide — for fast, simple feedback and approvals.",
+    a: "Absolutely. We prepare a visual calendar in Google Docs, each post on its own slide, for fast, simple feedback and approvals.",
   },
 ];
 
@@ -123,7 +123,7 @@ export default function Page() {
         eyebrow="Social Media Management"
         title="Stop chasing attention."
         accent="Start earning it."
-        hook="You're focused on building a real business. Social media demands a second full-time job: content, engagement, strategy, platform changes. We get it — we craft media strategies that don't just post into the void; they connect, convert, and build real momentum."
+        hook="You're focused on building a real business. Social media demands a second full-time job: content, engagement, strategy, platform changes. We get it, we craft media strategies that don't just post into the void; they connect, convert, and build real momentum."
         bgImage={IMAGES.smmHero}
       />
 
@@ -141,7 +141,7 @@ export default function Page() {
             <div className="space-y-6 text-lg text-bone/80 leading-relaxed max-w-2xl">
               <p>
                 At MadanyCo, we craft media strategies that don&apos;t just post
-                into the void — they connect, convert, and build real momentum.
+                into the void, they connect, convert, and build real momentum.
               </p>
               <ul className="grid gap-3 pl-0">
                 {[
@@ -244,7 +244,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* How we do it — Pulse tie-in */}
+      {/* How we do it, Pulse tie-in */}
       <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 bg-ink-700/40 border-t hairline border-t-bone/10">
         <Reveal>
           <div className="grid gap-10 lg:grid-cols-12 items-end">
@@ -265,7 +265,7 @@ export default function Page() {
               </h2>
             </div>
             <p className="lg:col-span-7 text-lg text-bone/80 leading-relaxed max-w-2xl">
-              Content is treated as a testable, compounding asset — not a
+              Content is treated as a testable, compounding asset, not a
               posting quota. Pillars become angles, angles become hooks, and
               what resonates gets iterated into more of itself. Community
               management and honest analytics feed straight back into the plan,
@@ -277,7 +277,7 @@ export default function Page() {
 
       <ServiceCTA
         headline="Build a brand that moves people."
-        sub="Start with a 20-minute scoping call. We'll tell you the truth about your social presence — what's working, what isn't, and what to do first."
+        sub="Start with a 20-minute scoping call. We'll tell you the truth about your social presence, what's working, what isn't, and what to do first."
       />
     </>
   );

@@ -1,5 +1,5 @@
 /**
- * Corporate Experience case studies — 10 brands the founder has shipped for.
+ * Corporate Experience case studies, 10 brands the founder has shipped for.
  * Source: madanyco.com/corporateexperience/[slug] (scraped 2026-05).
  */
 import { IMAGES, img } from "@/lib/images";
@@ -52,7 +52,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         title: "Creative, UGC & Brand Architecture",
-        body: "Built a UGC-driven content engine producing 60–90 monthly performance-ready assets. Scaled influencer outreach to 15–20 recurring creators per month — increasing social content velocity 3×. Lifted paid creative CTR from 1% to 5%+.",
+        body: "Built a UGC-driven content engine producing 60–90 monthly performance-ready assets. Scaled influencer outreach to 15–20 recurring creators per month, increasing social content velocity 3×. Lifted paid creative CTR from 1% to 5%+.",
       },
       {
         title: "Brand Partnerships",
@@ -60,7 +60,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         title: "Event Marketing & Sponsorship",
-        body: "Won 1st place at GoSports Battle of The Brands (Dubai Active 2025). Secured fashion events and AR sponsorships — 30% brand exposure increase, 15% post-event sales conversion uplift. Platinum sponsor at Storm Games (Al Fujairah).",
+        body: "Won 1st place at GoSports Battle of The Brands (Dubai Active 2025). Secured fashion events and AR sponsorships, 30% brand exposure increase, 15% post-event sales conversion uplift. Platinum sponsor at Storm Games (Al Fujairah).",
       },
       {
         title: "E-commerce Marketing",
@@ -68,7 +68,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         title: "Influencer & Affiliate (Awin)",
-        body: "Campaigns reached 20M+ viewers — 60% engagement increase, 40% follower growth, 30% increase in code usage at checkout. Affiliate programme contributed 20% of total online sales.",
+        body: "Campaigns reached 20M+ viewers, 60% engagement increase, 40% follower growth, 30% increase in code usage at checkout. Affiliate programme contributed 20% of total online sales.",
       },
     ],
     gallery: [
@@ -88,9 +88,9 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: "snap-inc",
     name: "Snap Inc. (Snapchat)",
-    role: "SMB Account-Based Marketing — EMEA & North Africa",
+    role: "SMB Account-Based Marketing, EMEA & North Africa",
     summary:
-      "Boosted SMB account-based marketing across Europe, Middle East, and North Africa — a portfolio of 37,500+ small and medium businesses spanning MENA and North America.",
+      "Boosted SMB account-based marketing across Europe, Middle East, and North Africa, a portfolio of 37,500+ small and medium businesses spanning MENA and North America.",
     logo: IMAGES.ceSnap,
     contributions: [
       {
@@ -99,7 +99,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         title: "Media Planning",
-        body: "Led campaigns that increased digital engagement by 40% and doubled online customer engagement — boosting web traffic by 35% within six months.",
+        body: "Led campaigns that increased digital engagement by 40% and doubled online customer engagement, boosting web traffic by 35% within six months.",
       },
       {
         title: "CRM & Automation (Salesforce)",
@@ -127,7 +127,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         title: "Influencer Marketing",
-        body: "Orchestrated campaigns reaching 10M viewers — 25% engagement and 20% follower growth.",
+        body: "Orchestrated campaigns reaching 10M viewers, 25% engagement and 20% follower growth.",
       },
     ],
     gallery: [
@@ -150,7 +150,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: "genpact-emea",
     name: "Genpact EMEA",
     summary:
-      "Marketing leadership for Genpact's EMEA digital transformation services portfolio — strategy, content, demand gen, and high-profile B2B partnerships.",
+      "Marketing leadership for Genpact's EMEA digital transformation services portfolio, strategy, content, demand gen, and high-profile B2B partnerships.",
     logo: IMAGES.ceGenpact,
     contributions: [
       {
@@ -163,11 +163,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         title: "Market Research & Analytics",
-        body: "Conducted Egypt market analysis identifying digital-transformation trends and optimised marketing strategies — improving resonance accuracy and B2B campaign performance by 25%.",
+        body: "Conducted Egypt market analysis identifying digital-transformation trends and optimised marketing strategies, improving resonance accuracy and B2B campaign performance by 25%.",
       },
       {
         title: "Event Marketing & Sponsorship",
-        body: "Coordinated flagship digital marketing programme with record attendance of 5,000+ industry professionals — a 50% increase from previous years.",
+        body: "Coordinated flagship digital marketing programme with record attendance of 5,000+ industry professionals, a 50% increase from previous years.",
       },
       {
         title: "E-commerce",
@@ -183,7 +183,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         title: "Digital PR",
-        body: "Positioned Genpact as a thought leader — acquired Snapchat, GoDaddy, and Unilever accounts.",
+        body: "Positioned Genpact as a thought leader, acquired Snapchat, GoDaddy, and Unilever accounts.",
       },
       {
         title: "Mobile Marketing",
@@ -217,20 +217,20 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: "hype-energy",
     name: "Hype Energy Drinks",
     summary:
-      "Global energy beverage brand (founded 1994 by Formula One driver Bertrand Gachot). Marketing leadership across Tunisia, Morocco, and Egypt — strategy, GTM, and product launches.",
+      "Global energy beverage brand (founded 1994 by Formula One driver Bertrand Gachot). Marketing leadership across Tunisia, Morocco, and Egypt, strategy, GTM, and product launches.",
     logo: IMAGES.ceHype,
     contributions: [
       {
         title: "Digital Strategic Marketing",
-        body: "Engineered market entry strategy for new products in Tunisia, Morocco, Egypt — 25% market-share increase in year one. Executed turnaround strategy improving brand perception with a 40% sales increase in the fiscal year.",
+        body: "Engineered market entry strategy for new products in Tunisia, Morocco, Egypt, 25% market-share increase in year one. Executed turnaround strategy improving brand perception with a 40% sales increase in the fiscal year.",
       },
       {
         title: "Media Planning & Buying",
-        body: "Led digital strategy with social and influencer partnerships — 50% engagement increase, 40% follower growth. Product SEO and content marketing drove 45% organic traffic increase.",
+        body: "Led digital strategy with social and influencer partnerships, 50% engagement increase, 40% follower growth. Product SEO and content marketing drove 45% organic traffic increase.",
       },
       {
         title: "Creative, UGC & Branding",
-        body: "Oversaw launch of two new products in Egypt: Protein Bars and Hype Mojito — 35% shelf-impact increase. Directed production of marketing collateral and digital content.",
+        body: "Oversaw launch of two new products in Egypt: Protein Bars and Hype Mojito, 35% shelf-impact increase. Directed production of marketing collateral and digital content.",
       },
       {
         title: "PR & Communications",
@@ -254,11 +254,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         title: "E-commerce",
-        body: "Led online distribution — 50% direct online sales increase. Dynamic pricing and promotions drove 30% promotional-period uplift.",
+        body: "Led online distribution, 50% direct online sales increase. Dynamic pricing and promotions drove 30% promotional-period uplift.",
       },
       {
         title: "Mobile Marketing",
-        body: "Launched SMS marketing — 30% retail purchase increase. Mobile-exclusive promotions drove 20% aggregator transaction volume increase.",
+        body: "Launched SMS marketing, 30% retail purchase increase. Mobile-exclusive promotions drove 20% aggregator transaction volume increase.",
       },
       {
         title: "Influencer & Affiliate",
@@ -349,7 +349,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     contributions: [
       {
         title: "Digital Strategic Marketing",
-        body: "20% increase in brand recognition and 15% increase in annual revenue. Introduced the firm to three new high-value industries — achieving 25% above expected sales targets within the first six months.",
+        body: "20% increase in brand recognition and 15% increase in annual revenue. Introduced the firm to three new high-value industries, achieving 25% above expected sales targets within the first six months.",
       },
       {
         title: "Creative, UGC & Branding",
@@ -357,7 +357,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         title: "Market Research & Analytics",
-        body: "Segmentation analysis and predictive analytics for trend forecasting — increased client retention by 15%.",
+        body: "Segmentation analysis and predictive analytics for trend forecasting, increased client retention by 15%.",
       },
       {
         title: "Event Marketing",
@@ -417,7 +417,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     contributions: [
       {
         title: "Launch & Expansion",
-        body: "Managed launch and expansion into the Cairo market — established 4 new physical branches and 6 cloud kitchens within a year. Achieved daily sales exceeding 10,000 EGP from a single location.",
+        body: "Managed launch and expansion into the Cairo market, established 4 new physical branches and 6 cloud kitchens within a year. Achieved daily sales exceeding 10,000 EGP from a single location.",
       },
       {
         title: "Brand Identity",
@@ -433,7 +433,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         title: "E-commerce",
-        body: "Streamlined online ordering — 35% increase in online orders.",
+        body: "Streamlined online ordering, 35% increase in online orders.",
       },
       {
         title: "Influencer",
@@ -460,7 +460,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: "willnwilly",
     name: "WILLNWILLY",
     summary:
-      "Middle-East-based online service for FUT/FC coins on EA Sports' FC Ultimate Team — safe transactions, no-ban guarantee, taxes covered. Operating since 2020.",
+      "Middle-East-based online service for FUT/FC coins on EA Sports' FC Ultimate Team, safe transactions, no-ban guarantee, taxes covered. Operating since 2020.",
     logo: IMAGES.ceWillnWilly,
     contributions: [
       {
@@ -519,16 +519,16 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: "ugo-beverages",
     name: "UGO Beverages",
     summary:
-      "Beverage brand under Management Gate. Led market expansion across Libya, Oman, Jordan, and Egypt — strategy, brand, distribution, and digital.",
+      "Beverage brand under Management Gate. Led market expansion across Libya, Oman, Jordan, and Egypt, strategy, brand, distribution, and digital.",
     logo: IMAGES.ceUGO,
     contributions: [
       {
         title: "Digital Strategic Marketing",
-        body: "Comprehensive market-penetration strategy expanding UGO's presence in Libya, Oman, Jordan, and Egypt — 30% market-share increase in year one.",
+        body: "Comprehensive market-penetration strategy expanding UGO's presence in Libya, Oman, Jordan, and Egypt, 30% market-share increase in year one.",
       },
       {
         title: "Creative, UGC & Branding",
-        body: "Oversaw rebranding — 45% engagement increase among targeted age groups and 25% sales uplift during campaign periods.",
+        body: "Oversaw rebranding, 45% engagement increase among targeted age groups and 25% sales uplift during campaign periods.",
       },
       {
         title: "Market Research & Analytics",
@@ -580,7 +580,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   // ───────────────────────────── 10. HAC
   {
     slug: "hac",
-    name: "HAC — Hesham Abbas for Consulting",
+    name: "HAC, Hesham Abbas for Consulting",
     legalName: "Hesham Abbas For Consulting W.L.L (HAFCS)",
     summary:
       "Bahrain-headquartered consultancy serving Bahrain, KSA, UAE, Kuwait, and Egypt. Marketing leadership across positioning, content, and lead generation.",

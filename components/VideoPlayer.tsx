@@ -14,7 +14,7 @@ type VideoPlayerProps = {
 
 /**
  * Click-to-play video card. Nothing loads (no video bytes downloaded) until the
- * user hits play — the poster is just a static JPEG, so page weight stays light
+ * user hits play, the poster is just a static JPEG, so page weight stays light
  * even with many videos in a gallery.
  */
 export default function VideoPlayer({

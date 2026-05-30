@@ -5,7 +5,7 @@ import { getAllPosts } from "@/lib/blog";
 export const metadata = {
   title: "Daily Blog",
   description:
-    "Notes from the front lines of profitable growth — unit economics, creative testing, lifecycle, and the operating systems behind compounding brands.",
+    "Notes from the front lines of profitable growth, unit economics, creative testing, lifecycle, and the operating systems behind compounding brands.",
 };
 
 export default function BlogIndex() {
@@ -56,24 +56,36 @@ export default function BlogIndex() {
                     href={`/blog/${p.slug}`}
                     className="block group border-t hairline border-t-bone/10 py-10 lg:py-12"
                   >
-                    <div className="grid gap-6 lg:grid-cols-12 items-baseline">
-                      <div className="lg:col-span-2 flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-bone/50">
-                        {p.date && (
-                          <time>
-                            {new Date(p.date).toLocaleDateString("en-GB", {
-                              day: "2-digit",
-                              month: "short",
-                              year: "numeric",
-                            })}
-                          </time>
-                        )}
-                      </div>
-                      <div className="lg:col-span-7">
-                        {p.tag && (
-                          <p className="text-xs uppercase tracking-[0.3em] text-blush mb-4">
-                            {p.tag}
-                          </p>
-                        )}
+                    <div className="grid gap-6 lg:gap-10 lg:grid-cols-12 lg:items-center">
+                      {p.image && (
+                        <div className="lg:col-span-4 overflow-hidden rounded-2xl border hairline border-bone/10 aspect-[16/10] bg-ink-600/40">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={p.image}
+                            alt={p.title}
+                            loading="lazy"
+                            className="h-full w-full object-cover group-hover:scale-105 transition duration-700"
+                          />
+                        </div>
+                      )}
+                      <div className={p.image ? "lg:col-span-6" : "lg:col-span-10"}>
+                        <div className="flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-bone/50 mb-5">
+                          {p.date && (
+                            <time>
+                              {new Date(p.date).toLocaleDateString("en-GB", {
+                                day: "2-digit",
+                                month: "short",
+                                year: "numeric",
+                              })}
+                            </time>
+                          )}
+                          {p.tag && (
+                            <>
+                              <span className="h-1 w-1 rounded-full bg-blush" />
+                              <span className="text-blush">{p.tag}</span>
+                            </>
+                          )}
+                        </div>
                         <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl tracking-tightest leading-[0.95] text-bone group-hover:text-blush transition">
                           {p.title}
                         </h2>
@@ -83,7 +95,7 @@ export default function BlogIndex() {
                           </p>
                         )}
                       </div>
-                      <div className="lg:col-span-3 flex lg:justify-end items-baseline gap-4 text-xs uppercase tracking-[0.25em]">
+                      <div className="lg:col-span-2 flex items-baseline gap-4 lg:flex-col lg:items-end lg:gap-3 text-xs uppercase tracking-[0.25em]">
                         {p.readTime && (
                           <span className="text-bone/50">{p.readTime}</span>
                         )}

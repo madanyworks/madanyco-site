@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Get Started",
   description:
-    "This is where it all starts. Tell us about your business — we'll come back within 1–2 business days.",
+    "This is where it all starts. Tell us about your business, we'll come back within 1–2 business days.",
 };
 
 const INFO = [

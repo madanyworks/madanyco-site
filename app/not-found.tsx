@@ -15,7 +15,7 @@ export default function NotFound() {
           .
         </h1>
         <p className="mt-10 max-w-xl text-lg text-bone/70">
-          The link you followed isn&apos;t there anymore — or maybe never was.
+          The link you followed isn&apos;t there anymore, or maybe never was.
           Try one of the doors below.
         </p>
         <div className="mt-10 flex flex-wrap gap-4">

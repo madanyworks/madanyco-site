@@ -2,7 +2,7 @@
  * Video manifest. All files live in /public/videos/.
  * Posters live in /public/videos/posters/.
  *
- * Compressed from original .mov screen recordings — H.264, CRF 26, faststart.
+ * Compressed from original .mov screen recordings, H.264, CRF 26, faststart.
  */
 
 export type VideoOrientation = "landscape" | "portrait" | "square";

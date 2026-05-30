@@ -17,6 +17,12 @@ const nextConfig = {
         destination: "/solutions/:slug",
         permanent: true,
       },
+      // Merged Fractional CMO + Coaching under one page (May 2026)
+      {
+        source: "/solutions/coaching-training",
+        destination: "/solutions/fractional-cmo",
+        permanent: true,
+      },
     ];
   },
 };

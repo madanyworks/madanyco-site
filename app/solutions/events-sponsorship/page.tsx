@@ -6,7 +6,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Events & Sponsorship",
   description:
-    "Activations that convert attention into pipeline. Strategy, sponsorship, retail, and experiential — wired into lifecycle so the spend shows up in the P&L.",
+    "Activations that convert attention into pipeline. Strategy, sponsorship, retail, and experiential, wired into lifecycle so the spend shows up in the P&L.",
 };
 
 const WHAT_YOU_GET = [
@@ -24,7 +24,7 @@ export default function Page() {
         eyebrow="Talent & Experiential"
         title="Activations that convert"
         accent="attention into pipeline."
-        hook="Events only pay off when they're wired into the rest of your marketing. We plan and run activations, sponsorships, retail pilots, and experiential moments — with capture, attribution, and follow-up built in, so the spend shows up in the P&L, not just the photos."
+        hook="Events only pay off when they're wired into the rest of your marketing. We plan and run activations, sponsorships, retail pilots, and experiential moments, with capture, attribution, and follow-up built in, so the spend shows up in the P&L, not just the photos."
       />
 
       <div className="divider-line" />
@@ -119,8 +119,42 @@ export default function Page() {
             </div>
             <p className="lg:col-span-7 text-lg sm:text-xl text-bone/80 leading-relaxed max-w-2xl">
               Brands investing in events, sponsorships, or retail who want
-              measurable return — not just reach.
+              measurable return, not just reach.
             </p>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* Investment */}
+      <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 border-t hairline border-t-bone/10">
+        <Reveal>
+          <div className="grid gap-10 lg:grid-cols-12 items-end">
+            <div className="lg:col-span-5">
+              <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
+                <span className="h-px w-12 bg-blush" />
+                Investment
+              </div>
+              <h2 className="font-display text-big leading-[0.95] tracking-tighter">
+                Scoped to the moment,{" "}
+                <span className="italic font-display-light text-blush">
+                  from $3,500 per project
+                </span>
+                .
+              </h2>
+            </div>
+            <div className="lg:col-span-7 space-y-5 text-lg text-bone/80 leading-relaxed max-w-2xl">
+              <p>
+                Events aren&apos;t a fixed package; the right number depends on
+                the format, the venue, and the goal. Strategy and management
+                start at $3,500 per project, with production, media, and talent
+                billed transparently at cost.
+              </p>
+              <p>
+                Tell us the moment and the budget, and we&apos;ll come back with
+                a scope that puts a capture mechanism and a measurement plan
+                behind every dollar of spend.
+              </p>
+            </div>
           </div>
         </Reveal>
       </section>

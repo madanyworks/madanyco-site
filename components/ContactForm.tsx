@@ -4,9 +4,8 @@ import { useState } from "react";
 
 const SERVICES = [
   "The Pulse System™ (Flagship)",
-  "Fractional CMO",
+  "Fractional CMO & Coaching",
   "Launch Strategy",
-  "Coaching & Training",
   "Snapchat Ads",
   "Social Media Advertising",
   "TikTok Ads",
@@ -61,7 +60,7 @@ export default function ContactForm() {
           Got it. Expect a reply within 1–2 business days.
         </p>
         <p className="mt-4 text-bone/70">
-          We read every message ourselves — no auto-responders, no funnels. We
+          We read every message ourselves, no auto-responders, no funnels. We
           appreciate your time.
         </p>
       </div>

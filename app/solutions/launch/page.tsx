@@ -2,11 +2,12 @@ import ServiceHero from "@/components/ServiceHero";
 import ServiceCTA from "@/components/ServiceCTA";
 import Reveal from "@/components/Reveal";
 import Link from "next/link";
+import PricingCard, { PricingTier } from "@/components/PricingCard";
 
 export const metadata = {
   title: "Launch Strategy",
   description:
-    "Launch like you've done it before — because we have. Market sizing, positioning, channel strategy, and a day-by-day rollout. New brand, new SKU, new market.",
+    "Launch like you've done it before, because we have. Market sizing, positioning, channel strategy, and a day-by-day rollout. New brand, new SKU, new market.",
 };
 
 const WHAT_YOU_GET = [
@@ -17,6 +18,49 @@ const WHAT_YOU_GET = [
   "A measurement plan so you know what worked by week one",
 ];
 
+const TIERS: PricingTier[] = [
+  {
+    name: "BLUEPRINT",
+    price: "$2,500",
+    cadence: "USD / project",
+    pitch: "The full go-to-market plan, yours to run.",
+    features: [
+      "Market sizing and competitive landscape",
+      "Positioning, ICP, and offer strategy",
+      "Channel and budget plan with unit economics",
+      "Day-by-day rollout sequence and milestones",
+      "Measurement plan and launch-week scorecard",
+    ],
+  },
+  {
+    name: "LAUNCH",
+    price: "From $6,000",
+    cadence: "USD / project",
+    featured: true,
+    pitch: "We build the plan and run the launch with you.",
+    features: [
+      "Everything in Blueprint",
+      "Creative direction and asset production",
+      "Channel setup, tracking, and campaign build",
+      "Hands-on management through go-live",
+      "Weekly war-room through launch window",
+    ],
+  },
+  {
+    name: "LAUNCH + RUN",
+    price: "From $9,000",
+    cadence: "USD / project",
+    pitch: "End to end, through the first 90 days.",
+    features: [
+      "Everything in Launch",
+      "Full execution across paid and lifecycle",
+      "Daily optimization against launch targets",
+      "Post-launch iteration and scale plan",
+      "Handover into an always-on operating system",
+    ],
+  },
+];
+
 export default function Page() {
   return (
     <>
@@ -24,7 +68,7 @@ export default function Page() {
         eyebrow="Strategy & Leadership"
         title="Launch like you've"
         accent="done it before."
-        hook="A launch is the riskiest, highest-leverage moment a brand has. We de-risk it: market sizing, positioning, channel strategy, a creative plan, and a day-by-day rollout — so you go to market with a system, not a hope. New brand, new SKU, new market: same disciplined playbook."
+        hook="A launch is the riskiest, highest-leverage moment a brand has. We de-risk it: market sizing, positioning, channel strategy, a creative plan, and a day-by-day rollout, so you go to market with a system, not a hope. New brand, new SKU, new market: same disciplined playbook."
       />
 
       <div className="divider-line" />
@@ -56,6 +100,31 @@ export default function Page() {
             </Reveal>
           ))}
         </ul>
+      </section>
+
+      {/* Packages */}
+      <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 border-t hairline border-t-bone/10">
+        <Reveal>
+          <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
+            <span className="h-px w-12 bg-blush" />
+            Packages
+          </div>
+          <h2 className="font-display text-huge leading-[0.9] tracking-tighter max-w-3xl">
+            Go to market with{" "}
+            <span className="italic font-display-light text-blush">
+              a system
+            </span>
+            .
+          </h2>
+        </Reveal>
+
+        <div className="mt-16 grid gap-6 lg:grid-cols-3">
+          {TIERS.map((t, i) => (
+            <Reveal key={t.name} delay={i * 0.08}>
+              <PricingCard tier={t} />
+            </Reveal>
+          ))}
+        </div>
       </section>
 
       <section className="px-6 sm:px-10 lg:px-14 py-20 sm:py-28 bg-ink-700/40 border-y hairline border-y-bone/10">
@@ -115,7 +184,7 @@ export default function Page() {
               </h2>
             </div>
             <p className="lg:col-span-7 text-lg sm:text-xl text-bone/80 leading-relaxed max-w-2xl">
-              Founders launching a new brand, product line, or market entry —
+              Founders launching a new brand, product line, or market entry,
               especially into MENA/GCC, where local nuance makes or breaks the
               launch.
             </p>
@@ -125,7 +194,7 @@ export default function Page() {
 
       <ServiceCTA
         headline="Tell us about the launch."
-        sub="Stage, market, timeline, budget. We'll come back with how we'd shape the first 90 days — and whether it's the kind of moment we're the right partner for."
+        sub="Stage, market, timeline, budget. We'll come back with how we'd shape the first 90 days, and whether it's the kind of moment we're the right partner for."
       />
     </>
   );

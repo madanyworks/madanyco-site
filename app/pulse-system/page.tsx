@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 import Marquee from "@/components/Marquee";
 
 export const metadata = {
-  title: "The Pulse System™ — Our methodology",
+  title: "The Pulse System™: Our methodology",
   description:
     "MadanyCo's operating layer for profitable growth: a financial plan + a marketing plan × a daily workflow. How we deliver every service we run.",
 };
@@ -32,7 +32,7 @@ const PILLARS = [
   {
     n: "05",
     title: "Reporting",
-    body: "A scorecard you can read in five minutes. CAC by cohort, MER, contribution-margin guardrails — and a decision queue, not a screenshot deck.",
+    body: "A scorecard you can read in five minutes. CAC by cohort, MER, contribution-margin guardrails, and a decision queue, not a screenshot deck.",
   },
 ];
 
@@ -69,7 +69,7 @@ export default function PulseSystemMethodologyPage() {
             <p className="mt-10 max-w-2xl text-lg sm:text-xl text-bone/75 leading-snug">
               Our operating layer for profitable growth. The financial plan,
               the marketing plan, and the daily workflow that holds them
-              together. This is how we deliver every service we run — and the
+              together. This is how we deliver every service we run, and the
               reason MadanyCo doesn&apos;t read like another agency.
             </p>
           </Reveal>
@@ -113,7 +113,7 @@ export default function PulseSystemMethodologyPage() {
         <Reveal delay={0.25}>
           <p className="mt-10 max-w-3xl text-lg sm:text-xl text-bone/75 leading-relaxed">
             Three things, multiplied. Most brands have one or two. Almost no
-            one has all three — and because it&apos;s a multiplication, a zero
+            one has all three, and because it&apos;s a multiplication, a zero
             in any term zeros the result. The Pulse System is how we make sure
             none of them are zero, week after week.
           </p>
@@ -227,12 +227,12 @@ export default function PulseSystemMethodologyPage() {
                 Or a CMO seat
               </p>
               <h3 className="font-display text-big leading-[0.95] tracking-tightest max-w-[12ch]">
-                Fractional CMO
+                Fractional CMO &amp; Coaching
               </h3>
               <p className="mt-6 text-base text-bone/75 leading-relaxed">
-                Senior marketing leadership without the full-time hire — the
-                Pulse System framing, run from a CMO seat at a fraction of the
-                cost.
+                Senior marketing leadership without the full-time hire, or
+                coaching that builds the capability in-house. Either way it runs
+                on the Pulse System, at a fraction of the cost.
               </p>
               <span className="mt-8 inline-flex items-center gap-2 text-sm uppercase tracking-widest text-bone group-hover:text-blush transition">
                 Read the offer →

@@ -2,11 +2,12 @@ import ServiceHero from "@/components/ServiceHero";
 import ServiceCTA from "@/components/ServiceCTA";
 import Reveal from "@/components/Reveal";
 import Link from "next/link";
+import PricingCard, { PricingTier } from "@/components/PricingCard";
 
 export const metadata = {
   title: "Marketing Automation",
   description:
-    "Turn chaos into precision. Lifecycle, CRM, reporting, and AI-assisted workflows that compound — built so your team focuses on growth, not manual work.",
+    "Turn chaos into precision. Lifecycle, CRM, reporting, and AI-assisted workflows that compound, built so your team focuses on growth, not manual work.",
 };
 
 const WHAT_YOU_GET = [
@@ -17,6 +18,49 @@ const WHAT_YOU_GET = [
   "Documentation and team training so the system outlives any one person",
 ];
 
+const TIERS: PricingTier[] = [
+  {
+    name: "SETUP",
+    price: "$1,900",
+    cadence: "USD / one-time",
+    pitch: "A one-time build to get the core flows live.",
+    features: [
+      "Klaviyo (or equivalent) account setup",
+      "Core flows: welcome, abandonment, post-purchase",
+      "List segmentation and clean data structure",
+      "One reporting dashboard wired to revenue",
+      "Handover docs so your team can run it",
+    ],
+  },
+  {
+    name: "MANAGED",
+    price: "$1,600",
+    cadence: "USD / mo",
+    featured: true,
+    pitch: "Ongoing lifecycle management on a cadence.",
+    features: [
+      "Everything in Setup, run for you",
+      "Monthly campaign and flow calendar",
+      "Continuous segmentation and A/B testing",
+      "Deliverability and list-health monitoring",
+      "Monthly reporting tied to LTV and MER",
+    ],
+  },
+  {
+    name: "FULL STACK",
+    price: "From $2,900",
+    cadence: "USD / mo",
+    pitch: "Lifecycle plus automation and AI ops.",
+    features: [
+      "Lifecycle across email, SMS, and push",
+      "AI-assisted creative and ops workflows",
+      "Cross-stack data flows and integrations",
+      "Custom dashboards across every channel",
+      "Quarterly systems review and roadmap",
+    ],
+  },
+];
+
 export default function Page() {
   return (
     <>
@@ -24,7 +68,7 @@ export default function Page() {
         eyebrow="Build & Systems"
         title="Turn chaos into precision."
         accent="Automation that compounds."
-        hook="Your team is your greatest asset — so stop burning it on manual work. We build the systems, flows, and automations that turn scattered effort into a repeatable, revenue-generating machine: lifecycle that lifts LTV, reporting that runs itself, and AI-assisted workflows that free your team to focus on growth."
+        hook="Your team is your greatest asset, so stop burning it on manual work. We build the systems, flows, and automations that turn scattered effort into a repeatable, revenue-generating machine: lifecycle that lifts LTV, reporting that runs itself, and AI-assisted workflows that free your team to focus on growth."
       />
 
       <div className="divider-line" />
@@ -56,6 +100,31 @@ export default function Page() {
             </Reveal>
           ))}
         </ul>
+      </section>
+
+      {/* Packages */}
+      <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 border-t hairline border-t-bone/10">
+        <Reveal>
+          <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
+            <span className="h-px w-12 bg-blush" />
+            Packages
+          </div>
+          <h2 className="font-display text-huge leading-[0.9] tracking-tighter max-w-3xl">
+            Build it once,{" "}
+            <span className="italic font-display-light text-blush">
+              compound forever
+            </span>
+            .
+          </h2>
+        </Reveal>
+
+        <div className="mt-16 grid gap-6 lg:grid-cols-3">
+          {TIERS.map((t, i) => (
+            <Reveal key={t.name} delay={i * 0.08}>
+              <PricingCard tier={t} />
+            </Reveal>
+          ))}
+        </div>
       </section>
 
       <section className="px-6 sm:px-10 lg:px-14 py-20 sm:py-28 bg-ink-700/40 border-y hairline border-y-bone/10">
@@ -93,7 +162,7 @@ export default function Page() {
             Proof
           </div>
           <p className="font-display text-big leading-[0.95] tracking-tighter max-w-4xl">
-            Lifecycle and reporting systems built across a 3-brand portfolio —{" "}
+            Lifecycle and reporting systems built across a 3-brand portfolio,{" "}
             <span className="italic font-display-light text-blush">
               turned a disconnected channel mix into one accountable,
               MER-governed operation

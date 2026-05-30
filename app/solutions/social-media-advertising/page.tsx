@@ -49,7 +49,7 @@ const TIERS: PricingTier[] = [
     name: "LEAD",
     price: "$3,900",
     cadence: "USD / mo",
-    pitch: "Strategic, multi-channel, bilingual — for brands ready to scale.",
+    pitch: "Strategic, multi-channel, bilingual, for brands ready to scale.",
     features: [
       "Strategic Campaign Planning",
       "Multiple Campaigns (awareness, traffic, conversions)",
@@ -134,7 +134,7 @@ export default function Page() {
         </Reveal>
       </section>
 
-      {/* How we do it — Pulse tie-in */}
+      {/* How we do it, Pulse tie-in */}
       <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 bg-ink-700/40 border-t hairline border-t-bone/10">
         <Reveal>
           <div className="grid gap-10 lg:grid-cols-12 items-end">
@@ -157,7 +157,7 @@ export default function Page() {
             <p className="lg:col-span-7 text-lg text-bone/80 leading-relaxed max-w-2xl">
               Paid social is run end-to-end against your allowable CAC and MER
               guardrails. Decision rules are set before launch, creative is
-              tested in iterations, and every report ends with an action —
+              tested in iterations, and every report ends with an action,
               scale, hold, or kill. The channel answers to the plan, not to
               last week&apos;s ROAS.
             </p>

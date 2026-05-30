@@ -64,8 +64,8 @@ export default function Page() {
       <ServiceHero
         eyebrow="Attention Business Owner"
         title="Got a product to sell?"
-        accent="Let's get it online — fast."
-        hook="Shopify isn't just a platform. It's your launchpad. With MadanyCo.™ as your Shopify Partner, you're not just building an eCommerce store — you're building a brand that converts. Sleek storefronts, seamless checkout, and the backend tech that keeps your store running while you sleep."
+        accent="Let's get it online, fast."
+        hook="Shopify isn't just a platform. It's your launchpad. With MadanyCo.™ as your Shopify Partner, you're not just building an eCommerce store, you're building a brand that converts. Sleek storefronts, seamless checkout, and the backend tech that keeps your store running while you sleep."
       />
 
       <div className="divider-line" />
@@ -83,7 +83,7 @@ export default function Page() {
                 We help founders and fast-growing businesses go from idea to
                 income. Whether you&apos;re launching your first product or
                 migrating from a clunky system, we handle the setup, design,
-                and marketing integrations — so you can focus on selling.
+                and marketing integrations, so you can focus on selling.
               </p>
               <p className="text-bone">
                 No fluff. Just beautiful, scalable, revenue-ready eCommerce.
@@ -117,7 +117,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* How we do it — Pulse tie-in */}
+      {/* How we do it, Pulse tie-in */}
       <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 border-t hairline border-t-bone/10">
         <Reveal>
           <div className="grid gap-10 lg:grid-cols-12 items-end">
@@ -138,7 +138,7 @@ export default function Page() {
               </h2>
             </div>
             <p className="lg:col-span-7 text-lg text-bone/80 leading-relaxed max-w-2xl">
-              A storefront isn&apos;t a one-off build — it&apos;s the surface
+              A storefront isn&apos;t a one-off build, it&apos;s the surface
               every channel steers traffic toward. We build it as part of the
               system: tracking wired correctly, lifecycle hooks in place, and
               CRO aligned to the same guardrails the paid channels answer to.
@@ -150,7 +150,7 @@ export default function Page() {
 
       <ServiceCTA
         headline="Turn your product into a powerhouse."
-        sub="Book a free consultation. Bring product, ambition, and timeline — we'll bring the build plan."
+        sub="Book a free consultation. Bring product, ambition, and timeline, we'll bring the build plan."
       />
     </>
   );

@@ -19,7 +19,7 @@ export default function Marquee({
   items,
   className,
   textClass = "font-display text-4xl sm:text-6xl tracking-tightest",
-  separator = "—",
+  separator = "·",
   reverse = false,
   speed = "default",
 }: MarqueeProps) {

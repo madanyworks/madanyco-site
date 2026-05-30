@@ -4,7 +4,7 @@ import Reveal from "@/components/Reveal";
 export const metadata = {
   title: "Solutions",
   description:
-    "Everything you need to grow, scale, and launch. Strategy, performance, content, build, and talent — installed through The Pulse System™.",
+    "Everything you need to grow, scale, and launch. Strategy, performance, content, build, and talent, installed through The Pulse System™.",
 };
 
 const FLAGSHIP = {
@@ -32,23 +32,19 @@ const PILLARS: Pillar[] = [
   {
     n: "01",
     title: "Strategy & Leadership",
-    intro: "The CMO seat, the plan, and the teaching — without the headcount cost.",
+    intro: "The CMO seat, the plan, and the teaching, without the headcount cost.",
     items: [
       {
         href: "/solutions/fractional-cmo",
-        label: "Fractional CMO",
-        blurb: "Senior marketing leadership without the full-time hire.",
+        label: "Fractional CMO & Coaching",
+        blurb:
+          "Senior marketing leadership, or coaching to build it in-house. For founders ready to scale.",
         badge: "new",
-      },
-      {
-        href: "/solutions/coaching-training",
-        label: "Coaching & Training",
-        blurb: "Fractional CMO and team upskilling — for founders ready to scale.",
       },
       {
         href: "/solutions/launch",
         label: "Launch Strategy",
-        blurb: "New brand, new SKU, new market — same disciplined playbook.",
+        blurb: "New brand, new SKU, new market, same disciplined playbook.",
         badge: "new",
       },
     ],
@@ -94,7 +90,7 @@ const PILLARS: Pillar[] = [
       {
         href: "/solutions/video-production",
         label: "Video Production",
-        blurb: "Strategic video content that captures attention — and converts.",
+        blurb: "Strategic video content that captures attention, and converts.",
       },
       {
         href: "/solutions/content-creation",
@@ -130,7 +126,7 @@ const PILLARS: Pillar[] = [
   {
     n: "05",
     title: "Talent & Experiential",
-    intro: "The people you hire and the moments you stage — built to last and to convert.",
+    intro: "The people you hire and the moments you stage, built to last and to convert.",
     items: [
       {
         href: "/solutions/recruitment",
@@ -171,14 +167,14 @@ export default function SolutionsIndex() {
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mt-10 max-w-2xl text-lg sm:text-xl text-bone/70 leading-snug">
-              Five pillars. Sixteen disciplines. One operating layer —{" "}
+              Five pillars. Sixteen disciplines. One operating layer,{" "}
               <Link
                 href="/pulse-system"
                 className="text-blush link-underline"
               >
                 The Pulse System™
               </Link>{" "}
-              — that makes profitable growth repeatable across all of them.
+              that makes profitable growth repeatable across all of them.
             </p>
           </Reveal>
         </div>
@@ -236,13 +232,13 @@ export default function SolutionsIndex() {
             </div>
           </Reveal>
 
-          <ul className="grid gap-px bg-bone/10 sm:grid-cols-2 lg:grid-cols-3 border hairline">
+          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {pillar.items.map((item, i) => (
-              <Reveal key={item.href} delay={(i % 3) * 0.05} className="bg-ink">
+              <Reveal key={item.href} delay={(i % 3) * 0.05}>
                 <li className="h-full">
                   <Link
                     href={item.href}
-                    className="group flex flex-col h-full p-7 lg:p-9 hover:bg-blush hover:text-ink transition duration-500"
+                    className="group flex flex-col h-full rounded-2xl p-7 lg:p-9 border hairline border-bone/10 bg-ink-600/40 hover:bg-blush hover:text-ink hover:border-blush transition duration-500"
                   >
                     <div className="flex items-center justify-between mb-10 text-[10px] uppercase tracking-[0.3em] opacity-70">
                       <div className="flex items-center gap-2">
@@ -283,7 +279,7 @@ export default function SolutionsIndex() {
               </h2>
               <p className="mt-6 text-lg sm:text-xl text-bone/70 max-w-2xl">
                 That&apos;s what the scoping call is for. Tell us the shape of
-                the problem and we&apos;ll come back with the right fit — or
+                the problem and we&apos;ll come back with the right fit, or
                 tell you we&apos;re not it.
               </p>
             </div>

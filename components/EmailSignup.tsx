@@ -8,14 +8,21 @@ export default function EmailSignup({
   variant?: "default" | "compact";
 }) {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "sent" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "sent" | "error"
+  >("idle");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!email) return;
-    // No backend wired up — handle off-platform (Formspree / Mailchimp etc.).
-    // For now, fake-confirm so the UI feels alive.
+    if (!email || status === "sending") return;
+    setStatus("sending");
     try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (!res.ok) throw new Error("subscribe failed");
       setStatus("sent");
       setEmail("");
     } catch {
@@ -36,9 +43,14 @@ export default function EmailSignup({
         />
         <button
           type="submit"
-          className="text-xs uppercase tracking-widest text-blush hover:text-bone transition"
+          disabled={status === "sending"}
+          className="text-xs uppercase tracking-widest text-blush hover:text-bone transition disabled:opacity-50"
         >
-          {status === "sent" ? "✓ Thanks" : "Sign up →"}
+          {status === "sent"
+            ? "✓ Thanks"
+            : status === "sending"
+              ? "…"
+              : "Sign up →"}
         </button>
       </form>
     );
@@ -61,10 +73,17 @@ export default function EmailSignup({
         />
         <button
           type="submit"
-          className="shrink-0 inline-flex items-center gap-2 text-sm uppercase tracking-[0.25em] text-blush hover:text-bone transition"
+          disabled={status === "sending"}
+          className="shrink-0 inline-flex items-center gap-2 text-sm uppercase tracking-[0.25em] text-blush hover:text-bone transition disabled:opacity-50"
         >
-          {status === "sent" ? "Thanks ✓" : "Sign up"}
-          {status !== "sent" && <span aria-hidden>→</span>}
+          {status === "sent"
+            ? "Thanks ✓"
+            : status === "sending"
+              ? "Sending…"
+              : "Sign up"}
+          {status === "idle" || status === "error" ? (
+            <span aria-hidden>→</span>
+          ) : null}
         </button>
       </div>
       <p className="mt-4 text-xs uppercase tracking-[0.2em] text-bone/40">
@@ -72,7 +91,12 @@ export default function EmailSignup({
       </p>
       {status === "sent" && (
         <p className="mt-2 text-sm text-blush">
-          Thanks! Enjoy the rest of your day — we&apos;ll stay in touch.
+          Thanks! Enjoy the rest of your day, we&apos;ll stay in touch.
+        </p>
+      )}
+      {status === "error" && (
+        <p className="mt-2 text-sm text-bone/60">
+          Something went wrong. Email hello@madanyco.com and we&apos;ll add you.
         </p>
       )}
     </form>

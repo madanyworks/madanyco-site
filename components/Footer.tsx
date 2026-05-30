@@ -79,7 +79,7 @@ export default function Footer() {
               Newsletter
             </p>
             <p className="text-bone/70 max-w-md mb-5">
-              We don&apos;t spam, promise. Marketing is changing — be first to
+              We don&apos;t spam, promise. Marketing is changing, be first to
               know what&apos;s next.
             </p>
             <EmailSignup />

@@ -11,6 +11,7 @@ export type PostMeta = {
   excerpt: string;
   tag?: string;
   readTime?: string;
+  image?: string;
 };
 
 const POSTS_DIR = path.join(process.cwd(), "content", "blog");
@@ -30,6 +31,7 @@ export function getAllPosts(): PostMeta[] {
         excerpt: data.excerpt ?? "",
         tag: data.tag ?? "",
         readTime: data.readTime ?? "",
+        image: data.image ?? "",
       } as PostMeta;
     })
     .sort((a, b) => (a.date < b.date ? 1 : -1));
@@ -51,6 +53,7 @@ export async function getPost(
       excerpt: data.excerpt ?? "",
       tag: data.tag ?? "",
       readTime: data.readTime ?? "",
+      image: data.image ?? "",
     },
     html: processed.toString(),
   };

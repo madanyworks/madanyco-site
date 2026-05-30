@@ -2,11 +2,12 @@ import ServiceHero from "@/components/ServiceHero";
 import ServiceCTA from "@/components/ServiceCTA";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import PricingCard, { PricingTier } from "@/components/PricingCard";
 
 export const metadata = {
   title: "Website Development",
   description:
-    "Your website should work — turning visitors into leads, and leads into loyal customers. International design + modern SEO + local insight.",
+    "Your website should work, turning visitors into leads, and leads into loyal customers. International design + modern SEO + local insight.",
 };
 
 const CLIENTS = [
@@ -30,12 +31,55 @@ const PILLARS = [
   {
     n: "02",
     title: "Modern SEO foundations",
-    body: "Core Web Vitals, semantic markup, schema, and metadata built into the build — not bolted on.",
+    body: "Core Web Vitals, semantic markup, schema, and metadata built into the build, not bolted on.",
   },
   {
     n: "03",
     title: "Local insight",
     body: "Bilingual readiness, regional brand cues, and an understanding of what converts in your market.",
+  },
+];
+
+const TIERS: PricingTier[] = [
+  {
+    name: "LANDING",
+    price: "$1,400",
+    cadence: "USD / project",
+    pitch: "One high-converting page, built to perform.",
+    features: [
+      "Single landing or one-page site",
+      "Conversion-first layout and copy direction",
+      "Core Web Vitals and on-page SEO",
+      "Analytics and lead capture wired in",
+      "Mobile-first and bilingual-ready",
+    ],
+  },
+  {
+    name: "BUSINESS SITE",
+    price: "$3,500",
+    cadence: "USD / project",
+    featured: true,
+    pitch: "A full marketing site that earns trust and leads.",
+    features: [
+      "6 to 8 pages, custom design system",
+      "SEO foundations: schema, metadata, speed",
+      "CMS so your team can edit with ease",
+      "Lead flows and CRM connection",
+      "Launch support and training",
+    ],
+  },
+  {
+    name: "CUSTOM",
+    price: "From $7,500",
+    cadence: "USD / project",
+    pitch: "Complex builds, integrations, and bespoke UX.",
+    features: [
+      "Custom functionality and integrations",
+      "Multi-language and multi-region",
+      "Advanced tracking and CRO setup",
+      "Design and motion crafted to spec",
+      "Ongoing care plan available",
+    ],
   },
 ];
 
@@ -46,7 +90,7 @@ export default function Page() {
         eyebrow="Website Development"
         title="You don't need a website."
         accent="You need a digital storefront."
-        hook="Let's be honest — a pretty design won't cut it anymore. Your website should work: turning visitors into leads, and leads into loyal customers. We combine international design standards, modern SEO, and local insight to craft sites that speak to your audience — and to Google."
+        hook="Let's be honest, a pretty design won't cut it anymore. Your website should work: turning visitors into leads, and leads into loyal customers. We combine international design standards, modern SEO, and local insight to craft sites that speak to your audience, and to Google."
       />
 
       <div className="divider-line" />
@@ -100,7 +144,32 @@ export default function Page() {
         </ul>
       </section>
 
-      {/* How we do it — Pulse tie-in */}
+      {/* Packages */}
+      <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 border-t hairline border-t-bone/10">
+        <Reveal>
+          <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
+            <span className="h-px w-12 bg-blush" />
+            Packages
+          </div>
+          <h2 className="font-display text-huge leading-[0.9] tracking-tighter max-w-3xl">
+            Build the storefront{" "}
+            <span className="italic font-display-light text-blush">
+              that fits
+            </span>
+            .
+          </h2>
+        </Reveal>
+
+        <div className="mt-16 grid gap-6 lg:grid-cols-3">
+          {TIERS.map((t, i) => (
+            <Reveal key={t.name} delay={i * 0.08}>
+              <PricingCard tier={t} />
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* How we do it, Pulse tie-in */}
       <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 border-t hairline border-t-bone/10">
         <Reveal>
           <div className="grid gap-10 lg:grid-cols-12 items-end">
@@ -122,7 +191,7 @@ export default function Page() {
             </div>
             <p className="lg:col-span-7 text-lg text-bone/80 leading-relaxed max-w-2xl">
               A site is where attention turns into revenue, so we build it as
-              part of the system — Core Web Vitals, clean tracking, and CRO
+              part of the system, Core Web Vitals, clean tracking, and CRO
               aligned to the same guardrails the rest of the plan runs on.
               It&apos;s not a brochure that sits still; it&apos;s the surface
               every channel is optimized to convert.

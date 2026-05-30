@@ -21,13 +21,13 @@ const body = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://madanyco.com"),
   title: {
-    default: "MadanyCo.™ — Market for people, not at people.",
-    template: "%s — MadanyCo.™",
+    default: "MadanyCo.™: Market for people, not at people.",
+    template: "%s · MadanyCo.™",
   },
   description:
-    "Profit-first growth partner for DTC and e-commerce brands. We install The Pulse System™ — a clear financial plan + marketing plan × daily workflow.",
+    "Profit-first growth partner for DTC and e-commerce brands. We install The Pulse System™: a clear financial plan + marketing plan × daily workflow.",
   openGraph: {
-    title: "MadanyCo.™ — Market for people, not at people.",
+    title: "MadanyCo.™: Market for people, not at people.",
     description:
       "Profit-first growth partner for DTC and e-commerce brands. We install The Pulse System™.",
     url: "https://madanyco.com",

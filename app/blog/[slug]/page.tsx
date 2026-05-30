@@ -64,6 +64,21 @@ export default async function BlogPostPage({
         </Reveal>
       </header>
 
+      {post.meta.image && (
+        <div className="mt-12 px-6 sm:px-10 lg:px-14 max-w-4xl mx-auto">
+          <Reveal>
+            <div className="overflow-hidden rounded-2xl border hairline border-bone/10 aspect-[16/9] bg-ink-600/40">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={post.meta.image}
+                alt={post.meta.title}
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </Reveal>
+        </div>
+      )}
+
       <div className="mt-16 px-6 sm:px-10 lg:px-14 max-w-3xl mx-auto">
         <Reveal>
           <div

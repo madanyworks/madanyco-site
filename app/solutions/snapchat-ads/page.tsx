@@ -3,6 +3,7 @@ import ServiceCTA from "@/components/ServiceCTA";
 import Reveal from "@/components/Reveal";
 import Link from "next/link";
 import Marquee from "@/components/Marquee";
+import PricingCard, { PricingTier } from "@/components/PricingCard";
 
 export const metadata = {
   title: "Snapchat Ads",
@@ -12,10 +13,53 @@ export const metadata = {
 
 const WHAT_YOU_GET = [
   "Audience strategy built for Snap's interest-graph (not Meta lookalikes)",
-  "Snapchat-native creative — vertical, sound-on, story-first",
+  "Snapchat-native creative, vertical, sound-on, story-first",
   "Full-funnel campaign architecture: awareness → consideration → conversion",
   "Bilingual execution (Arabic + English) where the market needs it",
   "Daily monitoring, weekly creative iteration, monthly reporting",
+];
+
+const TIERS: PricingTier[] = [
+  {
+    name: "SPARK",
+    price: "$1,200",
+    cadence: "USD / mo",
+    pitch: "For brands testing Snap as a new channel.",
+    features: [
+      "Up to 4 Snap-native creatives per month",
+      "Awareness and consideration campaigns",
+      "Interest-graph audience build",
+      "Setup, monitoring, and monthly reporting",
+      "Minimum ad spend: $30 / day",
+    ],
+  },
+  {
+    name: "LIFT",
+    price: "$1,900",
+    cadence: "USD / mo",
+    featured: true,
+    pitch: "For brands ready to take Snap full-funnel.",
+    features: [
+      "Up to 10 creatives per month",
+      "Full-funnel architecture, awareness to conversion",
+      "Weekly creative iteration and testing",
+      "Bilingual execution (Arabic + English)",
+      "Pixel / CAPI setup and conversion tracking",
+    ],
+  },
+  {
+    name: "LEAD",
+    price: "From $3,200",
+    cadence: "USD / mo",
+    pitch: "For brands going hard on Snap in MENA and beyond.",
+    features: [
+      "1 × Snap-native content shoot included",
+      "Daily optimization against allowable CAC and MER",
+      "Advanced audience and creative experiments",
+      "Dedicated strategist, monthly business review",
+      "Priority support",
+    ],
+  },
 ];
 
 export default function Page() {
@@ -25,7 +69,7 @@ export default function Page() {
         eyebrow="Performance & Paid · Specialty"
         title="Snapchat Ads."
         accent="A channel most agencies don't own."
-        hook="Snap doesn't behave like Meta. Different audience, different creative grammar, different bidding logic. We've spent years operating inside Snap — building MENA SMB ads, training the regional ecosystem, and running campaigns end-to-end. Bring us the channel most of your competitors are sleeping on."
+        hook="Snap doesn't behave like Meta. Different audience, different creative grammar, different bidding logic. We've spent years operating inside Snap, building MENA SMB ads, training the regional ecosystem, and running campaigns end-to-end. Bring us the channel most of your competitors are sleeping on."
       />
 
       <Marquee
@@ -71,6 +115,35 @@ export default function Page() {
         </ul>
       </section>
 
+      {/* Packages */}
+      <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 border-t hairline border-t-bone/10">
+        <Reveal>
+          <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-8">
+            <span className="h-px w-12 bg-blush" />
+            Packages
+          </div>
+          <h2 className="font-display text-huge leading-[0.9] tracking-tighter max-w-3xl">
+            Own the channel{" "}
+            <span className="italic font-display-light text-blush">
+              most brands sleep on
+            </span>
+            .
+          </h2>
+          <p className="mt-6 max-w-2xl text-bone/70 leading-relaxed">
+            Management fees below. Ad spend is separate and billed to your own
+            ad account, so every dollar of media stays yours.
+          </p>
+        </Reveal>
+
+        <div className="mt-16 grid gap-6 lg:grid-cols-3">
+          {TIERS.map((t, i) => (
+            <Reveal key={t.name} delay={i * 0.08}>
+              <PricingCard tier={t} />
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
       <section className="px-6 sm:px-10 lg:px-14 py-20 sm:py-28 bg-ink-700/40 border-y hairline border-y-bone/10">
         <Reveal>
           <div className="grid gap-10 lg:grid-cols-12 items-end">
@@ -93,7 +166,7 @@ export default function Page() {
             <p className="lg:col-span-7 text-lg text-bone/80 leading-relaxed max-w-2xl">
               Decision rules set in advance. Creative tested in iterations.
               Reporting that ends with a decision, not a screenshot. Snap is
-              treated like every other channel — held to the same allowable CAC
+              treated like every other channel, held to the same allowable CAC
               and MER guardrails.
             </p>
           </div>
@@ -108,7 +181,7 @@ export default function Page() {
           </div>
           <p className="font-display text-big leading-[0.95] tracking-tighter max-w-4xl">
             Spent years operating inside Snapchat&apos;s SMB business across
-            EMEA and North Africa —{" "}
+            EMEA and North Africa,{" "}
             <span className="italic font-display-light text-blush">
               managing a portfolio of tens of thousands of advertisers
             </span>{" "}
@@ -138,7 +211,7 @@ export default function Page() {
             </div>
             <p className="lg:col-span-7 text-lg sm:text-xl text-bone/80 leading-relaxed max-w-2xl">
               Especially brands selling to under-35s in MENA, GCC, or Tier-1
-              English markets — where Snap reach is high and competition is
+              English markets, where Snap reach is high and competition is
               thin.
             </p>
           </div>
@@ -147,7 +220,7 @@ export default function Page() {
 
       <ServiceCTA
         headline="Run a Snap campaign that actually works."
-        sub="Tell us the product, the market, and the budget. We'll tell you whether Snap is right for your category — and if it is, how we'd structure the first 90 days."
+        sub="Tell us the product, the market, and the budget. We'll tell you whether Snap is right for your category, and if it is, how we'd structure the first 90 days."
       />
     </>
   );

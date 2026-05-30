@@ -7,7 +7,7 @@ import { IMAGES } from "@/lib/images";
 export const metadata = {
   title: "About",
   description:
-    "MadanyCo is a founder-led, full-service growth agency for DTC and e-commerce brands. Strategy, performance, content, build, and talent — installed through The Pulse System™.",
+    "MadanyCo is a founder-led, full-service growth agency for DTC and e-commerce brands. Strategy, performance, content, build, and talent, installed through The Pulse System™.",
 };
 
 const DIFFERENTIATORS = [
@@ -99,8 +99,8 @@ export default function AboutPage() {
             </h2>
             <p className="lg:col-span-8 text-lg sm:text-xl text-bone/80 leading-relaxed max-w-3xl">
               MadanyCo is a founder-led growth agency for DTC and e-commerce
-              brands. We run the full stack — strategy, performance, content,
-              build, and talent — and install{" "}
+              brands. We run the full stack, strategy, performance, content,
+              build, and talent, and install{" "}
               <Link href="/pulse-system" className="text-blush link-underline">
                 The Pulse System™
               </Link>
@@ -149,7 +149,7 @@ export default function AboutPage() {
             </h2>
             <div className="lg:col-span-7 space-y-6 text-lg text-bone/80 leading-relaxed max-w-2xl">
               <p>
-                MadanyCo is led by its founder, Abdalrahman Madany — an operator
+                MadanyCo is led by its founder, Abdalrahman Madany, an operator
                 who spent years inside Snapchat&apos;s regional ad business
                 across EMEA and North Africa, then brand-side running campaigns
                 for energy, hospitality, and DTC companies. Platform side and
@@ -157,14 +157,14 @@ export default function AboutPage() {
               </p>
               <p>
                 That vantage point is the whole point. Most agencies sell you a
-                layer — a channel, a deliverable, a retainer. MadanyCo was built
+                layer, a channel, a deliverable, a retainer. MadanyCo was built
                 to install the layer underneath all of them: the plan, the
                 cadence, and the reporting that make every channel accountable
                 to the same numbers.
               </p>
               <p className="text-bone">
                 Engagements are founder-led and staffed from a vetted bench of
-                specialists — paid, creative, lifecycle, build, and talent —
+                specialists, paid, creative, lifecycle, build, and talent,
                 brought in by discipline and scaled to the work. No bloated org
                 chart to pay for, no junior team learning on your budget. Just
                 the right people on the right problem, run through one operating
@@ -220,7 +220,7 @@ export default function AboutPage() {
 
       <div className="divider-line" />
 
-      {/* PRINCIPLES — large text list */}
+      {/* PRINCIPLES, large text list */}
       <section className="px-6 sm:px-10 lg:px-14 py-24 sm:py-32">
         <Reveal>
           <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-blush mb-10">

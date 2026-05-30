@@ -6,7 +6,7 @@ import { CASE_STUDIES } from "@/content/portfolio";
 export const metadata = {
   title: "Portfolio · Corporate Experience",
   description:
-    "Corporate experience of Abdalrahman Madany — projects directly undertaken or managed across Snap Inc., Genpact EMEA, Seissense, Hype Energy, Buffalo Burger, and more.",
+    "Corporate experience of Abdalrahman Madany, projects directly undertaken or managed across Snap Inc., Genpact EMEA, Seissense, Hype Energy, Buffalo Burger, and more.",
 };
 
 const CAPABILITIES = [
@@ -47,7 +47,7 @@ export default function PortfolioPage() {
           <Reveal delay={0.2}>
             <p className="mt-10 max-w-2xl text-lg sm:text-xl text-bone/70 leading-snug">
               Ten case studies. From Snap Inc. and Genpact EMEA to Seissense and
-              Hype Energy — projects directly undertaken or managed by
+              Hype Energy, projects directly undertaken or managed by
               MadanyCo&apos;s founder, Abdalrahman Madany.
             </p>
           </Reveal>
@@ -140,7 +140,7 @@ export default function PortfolioPage() {
               undertaken or managed by Abdalrahman Madany, our Founder. This is
               the individual portfolio of our Founder who has shaped the
               agency. Some projects here may have been completed during previous
-              full-time employment — the stakeholders of those companies were
+              full-time employment, the stakeholders of those companies were
               involved in the collaborative process. Therefore, while the
               projects reflect the expertise and contributions of AM, they are
               not solely attributed to MadanyCo.™ agency. We acknowledge the
@@ -160,7 +160,7 @@ export default function PortfolioPage() {
                 Want to put this to work?
               </h2>
               <p className="mt-6 text-lg sm:text-xl text-bone/70 max-w-2xl">
-                Fractional CMO engagements, growth audits, or team training —
+                Fractional CMO engagements, growth audits, or team training,
                 tell us the shape of the problem and we&apos;ll come back with
                 a fit.
               </p>
